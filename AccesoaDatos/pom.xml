@@ -35,15 +35,16 @@
 			<version>5.4.2.Final</version>
 		</dependency>
 
-		<!-- Because this is a web app, we also have a dependency on the servlet 
-			api. -->
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>3.1.0</version>
-			<scope>provided</scope>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.4.2.Final</version>
 		</dependency>
-
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
+		</dependency>
 		<!-- Hibernate uses slf4j for logging, for our purposes here use the simple 
 			backend -->
 		<dependency>
@@ -59,4 +60,12 @@
 			<version>3.12.1.GA</version>
 		</dependency>
 	</dependencies>
+	<build>
+		<resources>
+			<resource>
+				<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+	</build>
 </project>

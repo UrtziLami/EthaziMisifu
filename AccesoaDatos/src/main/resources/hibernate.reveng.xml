@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+<type-mapping>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="INTEGER" hibernate-type="int"
+		not-null="true">
+	</sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string" length="50"
+		not-null="true">
+	</sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string" length="4"
+		not-null="false">
+	</sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string" length="4"
+		not-null="false">
+	</sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string" length="4"
+		not-null="false">
+	</sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string" length="4"
+		not-null="false">
+	</sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string" length="4"
+		not-null="false">
+	</sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string" length="2"
+		not-null="false">
+	</sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string" length="4"
+		not-null="false">
+	</sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string" length="4"
+		not-null="false">
+	</sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string" length="4"
+		not-null="false">
+	</sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string" length="12"
+		not-null="false">
+	</sql-type>
+</type-mapping>
+
+<table-filter match-name="paises" match-catalog="estados"></table-filter>
+	<table-filter match-name="table 1" match-catalog="estados"></table-filter>
+	<table-filter></table-filter>
+<table catalog="estados" name="paises">
+	<column name="cod_pais"></column>
+	<column name="nom_pais"></column>
+</table>
+<table catalog="estados" name="table 1">
+		<column name="nom_pais"></column>
+		<column name="De_16_a_18"></column>
+		<column name="De_5_a_29"></column>
+		<column name="de_22"></column>
+		<column name="cod_pais"></column>
+		<column name="de_24"></column>
+		<column name="de_18"></column>
+		<column name="De_15_a_24"></column>
+		<column name="De_0_a_29"></column>
+		<column name="de_20"></column>
+	</table>
+</hibernate-reverse-engineering>

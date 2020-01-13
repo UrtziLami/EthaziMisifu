@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 12-ene-2020 13:29:37 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="ethazi_misifu" dynamic-insert="false" dynamic-update="false" mutable="true" name="lehena.Alojamenduak" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="alojamenduak">
+        <id name="idAlojamenduak" type="int">
+            <column name="idAlojamenduak"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="izena" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="izena"/>
+        </property>
+        <property generated="never" lazy="false" name="deskribapena" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="deskribapena"/>
+        </property>
+        <property generated="never" lazy="false" name="udalerri" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="udalerri"/>
+        </property>
+        <property generated="never" lazy="false" name="probintzia" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="probintzia"/>
+        </property>
+        <property generated="never" lazy="false" name="email" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="email"/>
+        </property>
+        <property generated="never" lazy="false" name="telefonoa" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="telefonoa"/>
+        </property>
+        <property generated="never" lazy="false" name="web" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="web"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="reservases" optimistic-lock="true" sort="unsorted" table="reservas">
+            <key on-delete="noaction">
+                <column name="Alojamenduak_idAlojamenduak" not-null="true"/>
+            </key>
+            <one-to-many class="lehena.Reservas" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

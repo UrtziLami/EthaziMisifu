@@ -1,7 +1,5 @@
 package kontroladorea;
 
-import java.util.Date;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,35 +8,33 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import lehena.Alojamenduak;
-
+import lehena.Ostatuak;
 public class HibernateUtil {
-
-	    private static SessionFactory factory;
+	 private static SessionFactory factory;
 	    private static ServiceRegistry serviceRegistry;
 	 
 	
 	    public static void addAllConfigs() {
 	        Configuration config = new Configuration();
 	        config.configure();
-	        config.addAnnotatedClass(Alojamenduak.class);
-	        config.addResource("Student.hbm.xml");
+	        config.addAnnotatedClass(Ostatuak.class);
+	        config.addResource("./lehena/Ostatuak.hbm.xml");
 	        serviceRegistry = new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
 	        factory = config.buildSessionFactory(serviceRegistry);
 	    }
 	 
-	    public static long insertAlojamendu(int id, String name, int marks, Date joindate) {
+	    public static long insertAlojamendu(String name,String deskribapena,String udalerri,String probintzia,String telefonoa,String email,String web) {
 	        Session session = factory.openSession();
 	        Transaction tx = null;
 	        Integer stId = null;
 	        try
 	        {
 	            tx = session.beginTransaction();
-	            Alojamenduak al = new Alojamenduak();
+	            Ostatuak al = new Ostatuak();
 	            
 	            al.setIzena(name);
-	            al.setUdalerri(udalerri);
 	            al.setDeskribapena(deskribapena);
+	            al.setUdalerri(udalerri);
 	            al.setProbintzia(probintzia);
 	            al.setTelefonoa(telefonoa);
 	            al.setEmail(email);
@@ -59,5 +55,4 @@ public class HibernateUtil {
 	         
 	        return stId;
 	    }
-	}
-
+}

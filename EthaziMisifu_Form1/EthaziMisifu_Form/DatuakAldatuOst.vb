@@ -89,4 +89,8 @@ Public Class DatuakAldatuOst
         klas.Show()
         Hide()
     End Sub
+
+    Private Sub txtBTelefonoa_TextChanged(sender As Object, e As EventArgs) Handles txtBTelefonoa.TextChanged
+
+    End Sub
 End Class

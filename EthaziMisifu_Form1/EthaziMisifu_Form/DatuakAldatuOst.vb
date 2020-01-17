@@ -8,9 +8,11 @@ Public Class DatuakAldatuOst
     Dim email As String
     Dim telefonoa As String
     Dim web As String
+    Dim latit As String
+    Dim longi As String
     Dim konn As MySqlConnection
 
-    Public Sub datuak(iz As String, des As String, ud As String, pro As String, em As String, tel As String, we As String, id As String)
+    Public Sub datuak(iz As String, des As String, ud As String, pro As String, em As String, tel As String, we As String, id As String, lat As String, lon As String)
         izena = iz
         deskb = des
         udalerri = ud
@@ -19,6 +21,8 @@ Public Class DatuakAldatuOst
         telefonoa = tel
         web = we
         idOs = id
+        latit = lat
+        longi = lon
     End Sub
     Private Sub btnGorde_Click(sender As Object, e As EventArgs) Handles btnGorde.Click
         datuakAldatu()
@@ -38,9 +42,11 @@ Public Class DatuakAldatuOst
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
             End Try
-            Dim myCommand As New MySqlCommand("update ostatuak set izena = '" & txtBIzena.Text & "', deskribapena = '" & RtxtBDesk.Text & "', udalerri = '" & txtBUdalerri.Text & "', probintzia'" & txtBProbintzia.Text & "', email = '" & txtBEmail.Text & "', telefonoa = '" & txtBTelefonoa.Text & "', web = '" & txtBWeb.Text & "' where idOstatuak = " & idOs, konn)
+            Dim myCommand As New MySqlCommand("update ostatuak set izena = '" & txtBIzena.Text & "', deskribapena = '" & RtxtBDesk.Text & "', udalerri = '" & txtBUdalerri.Text & "', probintzia'" & txtBProbintzia.Text & "', email = '" & txtBEmail.Text & "', telefonoa = '" & txtBTelefonoa.Text & "', web = '" & txtBWeb.Text & "', longitudea = '" & txtBLon.Text & "', latitudea = '" & txtBLat.Text & "' where idOstatuak = " & idOs, konn)
             myCommand.ExecuteNonQuery()
             konn.Close()
+        Else
+            MessageBox.Show("Email-a txarto dago.")
         End If
     End Sub
     Private Sub DatuakAldatuOst_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -51,6 +57,8 @@ Public Class DatuakAldatuOst
         txtBTelefonoa.Text = telefonoa
         txtBWeb.Text = web
         txtBUdalerri.Text = udalerri
+        txtBLat.Text = latit
+        txtBLon.Text = longi
     End Sub
     Private Sub txtBIzena_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtBIzena.KeyPress
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then

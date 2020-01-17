@@ -4,11 +4,13 @@ Public Class DatuakAldatuErab
     Dim izenAb As String
     Dim pasa As String
     Dim IDBe As String
+    Dim era As String
     Dim konn As MySqlConnection
-    Public Sub datuak(izAbi As String, pash As String, id As String)
+    Public Sub datuak(izAbi As String, pash As String, id As String, erab As String)
         izenAb = izAbi
         pasa = pash
         IDBe = id
+        era = erab
     End Sub
     Private Sub datuakAldatu()
         Try
@@ -18,13 +20,14 @@ Public Class DatuakAldatuErab
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar al servidor")
         End Try
-        Dim myCommand As New MySqlCommand("update erabiltzaileak set izenAbizena = '" & HasiSaioaLeihoa.AES_Encrypt(txtBIzenAbi.Text, HasiSaioaLeihoa.kodEncDes) & "', pasahitza = '" & HasiSaioaLeihoa.AES_Encrypt(txtBPas1.Text, HasiSaioaLeihoa.kodEncDes) & "' where idBezeroak = " & IDBe, konn)
+        Dim myCommand As New MySqlCommand("update erabiltzaileak set izenAbizena = '" & HasiSaioaLeihoa.AES_Encrypt(txtBIzenAbi.Text, HasiSaioaLeihoa.kodEncDes) & "', pasahitza = '" & HasiSaioaLeihoa.AES_Encrypt(txtBPas1.Text, HasiSaioaLeihoa.kodEncDes) & "', erabIzena = '" & HasiSaioaLeihoa.AES_Encrypt(txtBErabIzena.Text, HasiSaioaLeihoa.kodEncDes) & "' where idBezeroak = " & IDBe, konn)
         myCommand.ExecuteNonQuery()
         konn.Close()
     End Sub
     Private Sub DatuakAldatuErab_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtBIzenAbi.Text = izenAb
         txtBPas1.Text = pasa
+        txtBErabIzena.Text = era
     End Sub
     Private Sub Form_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         Process.GetCurrentProcess.Kill()
@@ -41,5 +44,11 @@ Public Class DatuakAldatuErab
         Dim klas As New ErabiltzaileLeihoa
         klas.Show()
         Hide()
+    End Sub
+
+    Private Sub txtBIzenAbi_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtBIzenAbi.KeyPress
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
     End Sub
 End Class

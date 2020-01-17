@@ -29,6 +29,8 @@ Partial Class DatuakAldatuErab
         Me.txtBPas1 = New System.Windows.Forms.TextBox()
         Me.btnGorde = New System.Windows.Forms.Button()
         Me.btnAtzera = New System.Windows.Forms.Button()
+        Me.txtBErabIzena = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblIzenAb
@@ -36,7 +38,7 @@ Partial Class DatuakAldatuErab
         Me.lblIzenAb.AutoSize = True
         Me.lblIzenAb.BackColor = System.Drawing.Color.Transparent
         Me.lblIzenAb.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIzenAb.Location = New System.Drawing.Point(289, 182)
+        Me.lblIzenAb.Location = New System.Drawing.Point(263, 128)
         Me.lblIzenAb.Name = "lblIzenAb"
         Me.lblIzenAb.Size = New System.Drawing.Size(132, 25)
         Me.lblIzenAb.TabIndex = 0
@@ -44,7 +46,7 @@ Partial Class DatuakAldatuErab
         '
         'txtBIzenAbi
         '
-        Me.txtBIzenAbi.Location = New System.Drawing.Point(427, 187)
+        Me.txtBIzenAbi.Location = New System.Drawing.Point(427, 133)
         Me.txtBIzenAbi.Name = "txtBIzenAbi"
         Me.txtBIzenAbi.Size = New System.Drawing.Size(289, 20)
         Me.txtBIzenAbi.TabIndex = 1
@@ -54,7 +56,7 @@ Partial Class DatuakAldatuErab
         Me.lblPasahitza.AutoSize = True
         Me.lblPasahitza.BackColor = System.Drawing.Color.Transparent
         Me.lblPasahitza.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPasahitza.Location = New System.Drawing.Point(289, 299)
+        Me.lblPasahitza.Location = New System.Drawing.Point(263, 220)
         Me.lblPasahitza.Name = "lblPasahitza"
         Me.lblPasahitza.Size = New System.Drawing.Size(104, 25)
         Me.lblPasahitza.TabIndex = 2
@@ -62,7 +64,7 @@ Partial Class DatuakAldatuErab
         '
         'txtBPas1
         '
-        Me.txtBPas1.Location = New System.Drawing.Point(427, 304)
+        Me.txtBPas1.Location = New System.Drawing.Point(427, 225)
         Me.txtBPas1.Name = "txtBPas1"
         Me.txtBPas1.Size = New System.Drawing.Size(289, 20)
         Me.txtBPas1.TabIndex = 3
@@ -87,12 +89,32 @@ Partial Class DatuakAldatuErab
         Me.btnAtzera.TabIndex = 7
         Me.btnAtzera.UseVisualStyleBackColor = True
         '
+        'txtBErabIzena
+        '
+        Me.txtBErabIzena.Location = New System.Drawing.Point(427, 322)
+        Me.txtBErabIzena.Name = "txtBErabIzena"
+        Me.txtBErabIzena.Size = New System.Drawing.Size(289, 20)
+        Me.txtBErabIzena.TabIndex = 9
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(263, 317)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(165, 25)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Erabiltzaile Izena:"
+        '
         'DatuakAldatuErab
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
+        Me.Controls.Add(Me.txtBErabIzena)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnAtzera)
         Me.Controls.Add(Me.btnGorde)
         Me.Controls.Add(Me.txtBPas1)
@@ -114,4 +136,6 @@ Partial Class DatuakAldatuErab
     Friend WithEvents txtBPas1 As TextBox
     Friend WithEvents btnGorde As Button
     Friend WithEvents btnAtzera As Button
+    Friend WithEvents txtBErabIzena As TextBox
+    Friend WithEvents Label1 As Label
 End Class

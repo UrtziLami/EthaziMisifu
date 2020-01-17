@@ -3,16 +3,24 @@ Public Class DatuakAldatuErre
     Private Sub DatuakAldatuErre_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtBErab.Text = erabiltzailea
         txtBOsta.Text = ostatua
+        mCIrte.MinDate = mCSart.SelectionStart
+        mCSart.MinDate = Today
+        mCSart.SetDate(sartze)
+        mCIrte.SetDate(irtetze)
     End Sub
 
     Dim erabiltzailea As String
     Dim ostatua As String
     Dim IDErre As String
+    Dim sartze As DateTime
+    Dim irtetze As DateTime
     Dim konn As MySqlConnection
-    Public Sub datuak(erab As String, ost As String, iderr As String)
+    Public Sub datuak(erab As String, ost As String, iderr As String, sart As DateTime, irt As DateTime)
         erabiltzailea = erab
         ostatua = ost
         IDErre = iderr
+        sartze = sart
+        irtetze = irt
     End Sub
     Private Sub txtBErab_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtBErab.KeyPress
         If Not IsNumeric(e.KeyChar) Then
@@ -50,5 +58,21 @@ Public Class DatuakAldatuErre
         Dim klas As New ErreserbaLeihoa
         klas.Show()
         Hide()
+    End Sub
+
+    Private Sub mCSart_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mCSart.DateChanged
+        mCIrte.MinDate = mCSart.SelectionStart
+    End Sub
+
+    Private Sub txtBErab_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtBErab.KeyPress
+        If Not IsNumeric(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtBOsta_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtBOsta.KeyPress
+        If Not IsNumeric(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
     End Sub
 End Class

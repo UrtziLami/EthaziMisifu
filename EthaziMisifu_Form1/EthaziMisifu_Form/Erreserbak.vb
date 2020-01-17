@@ -10,6 +10,8 @@ Public Class ErreserbaLeihoa
         ListView1.Columns.Add("Id", 100, HorizontalAlignment.Center)
         ListView1.Columns.Add("Erabiltzailea", 100, HorizontalAlignment.Center)
         ListView1.Columns.Add("Ostatua", 100, HorizontalAlignment.Center)
+        ListView1.Columns.Add("Sartze Data", 100, HorizontalAlignment.Center)
+        ListView1.Columns.Add("Irtetze Data", 100, HorizontalAlignment.Center)
     End Sub
 
     Private Sub datuakKargatu()
@@ -26,10 +28,12 @@ Public Class ErreserbaLeihoa
         rd = myCommand.ExecuteReader
         While (rd.Read)
             Dim obj As New ListViewItem(rd(0).ToString, 0)
-            idera = rd(1).ToString
-            idost = rd(2).ToString
+            idost = rd(1).ToString
+            idera = rd(2).ToString
             obj.SubItems.Add(aldatuErab(idera))
             obj.SubItems.Add(aldatuOst(idost))
+            obj.SubItems.Add(rd(3).ToString)
+            obj.SubItems.Add(rd(4).ToString)
             ListView1.Items.Add(obj)
         End While
         rd.Close()
@@ -64,7 +68,7 @@ Public Class ErreserbaLeihoa
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar al servidor")
         End Try
-        Dim komand As New MySqlCommand("select izena from ostatuak where idOstatuak = " & id, konn)
+        Dim komand As New MySqlCommand("select izena from ostatuak where sinadura = " & id, konn)
         Dim dr As MySqlDataReader
         Dim ost As String
         dr = komand.ExecuteReader
@@ -94,8 +98,12 @@ Public Class ErreserbaLeihoa
     End Sub
     Private Sub aldaketa()
         Dim id As String = ListView1.SelectedItems(0).SubItems(0).Text
+        Dim sart As String = ListView1.SelectedItems(0).SubItems(3).Text
+        Dim irt As String = ListView1.SelectedItems(0).SubItems(4).Text
+        Dim sartze As DateTime = Convert.ToDateTime(sart)
+        Dim irtetze As DateTime = Convert.ToDateTime(irt)
         Dim errAld As New DatuakAldatuErre
-        errAld.datuak(idera, idost, id)
+        errAld.datuak(idera, idost, id, sartze, irtetze)
         errAld.Show()
         Hide()
     End Sub

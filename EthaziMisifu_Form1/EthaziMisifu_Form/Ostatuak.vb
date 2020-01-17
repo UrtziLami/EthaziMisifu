@@ -67,8 +67,10 @@ Public Class OstatuLeiho
         Dim email As String = ListView1.SelectedItems(0).SubItems(5).Text
         Dim telf As String = ListView1.SelectedItems(0).SubItems(6).Text
         Dim web As String = ListView1.SelectedItems(0).SubItems(7).Text
+        Dim lon As String = ListView1.SelectedItems(0).SubItems(8).Text
+        Dim lat As String = ListView1.SelectedItems(0).SubItems(9).Text
         Dim ostAld As New DatuakAldatuOst
-        ostAld.datuak(iz, desk, udal, prob, email, telf, web, id)
+        ostAld.datuak(iz, desk, udal, prob, email, telf, web, id, lat, lon)
         ostAld.Show()
         Hide()
     End Sub

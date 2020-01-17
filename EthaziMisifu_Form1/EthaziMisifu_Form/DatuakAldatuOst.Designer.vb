@@ -39,6 +39,10 @@ Partial Class DatuakAldatuOst
         Me.btnGorde = New System.Windows.Forms.Button()
         Me.RtxtBDesk = New System.Windows.Forms.RichTextBox()
         Me.btnAtzera = New System.Windows.Forms.Button()
+        Me.txtBLon = New System.Windows.Forms.TextBox()
+        Me.txtBLat = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -57,7 +61,7 @@ Partial Class DatuakAldatuOst
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(79, 243)
+        Me.Label2.Location = New System.Drawing.Point(77, 306)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(139, 25)
         Me.Label2.TabIndex = 1
@@ -101,7 +105,7 @@ Partial Class DatuakAldatuOst
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(79, 174)
+        Me.Label6.Location = New System.Drawing.Point(79, 169)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(106, 25)
         Me.Label6.TabIndex = 5
@@ -112,7 +116,7 @@ Partial Class DatuakAldatuOst
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(517, 174)
+        Me.Label7.Location = New System.Drawing.Point(517, 169)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(60, 25)
         Me.Label7.TabIndex = 6
@@ -164,7 +168,7 @@ Partial Class DatuakAldatuOst
         '
         Me.btnGorde.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.gorde
         Me.btnGorde.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnGorde.Location = New System.Drawing.Point(607, 497)
+        Me.btnGorde.Location = New System.Drawing.Point(622, 530)
         Me.btnGorde.Name = "btnGorde"
         Me.btnGorde.Size = New System.Drawing.Size(95, 88)
         Me.btnGorde.TabIndex = 7
@@ -172,7 +176,7 @@ Partial Class DatuakAldatuOst
         '
         'RtxtBDesk
         '
-        Me.RtxtBDesk.Location = New System.Drawing.Point(82, 282)
+        Me.RtxtBDesk.Location = New System.Drawing.Point(82, 345)
         Me.RtxtBDesk.Name = "RtxtBDesk"
         Me.RtxtBDesk.Size = New System.Drawing.Size(828, 142)
         Me.RtxtBDesk.TabIndex = 15
@@ -182,11 +186,47 @@ Partial Class DatuakAldatuOst
         '
         Me.btnAtzera.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.atras
         Me.btnAtzera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnAtzera.Location = New System.Drawing.Point(261, 497)
+        Me.btnAtzera.Location = New System.Drawing.Point(257, 530)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(95, 88)
         Me.btnAtzera.TabIndex = 16
         Me.btnAtzera.UseVisualStyleBackColor = True
+        '
+        'txtBLon
+        '
+        Me.txtBLon.Location = New System.Drawing.Point(191, 245)
+        Me.txtBLon.Name = "txtBLon"
+        Me.txtBLon.Size = New System.Drawing.Size(289, 20)
+        Me.txtBLon.TabIndex = 20
+        '
+        'txtBLat
+        '
+        Me.txtBLat.Location = New System.Drawing.Point(622, 245)
+        Me.txtBLat.Name = "txtBLat"
+        Me.txtBLat.Size = New System.Drawing.Size(289, 20)
+        Me.txtBLat.TabIndex = 19
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(511, 240)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(98, 25)
+        Me.Label8.TabIndex = 18
+        Me.Label8.Text = "Latitudea:"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(77, 240)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(115, 25)
+        Me.Label9.TabIndex = 17
+        Me.Label9.Text = "Longitudea:"
         '
         'DatuakAldatuOst
         '
@@ -194,6 +234,10 @@ Partial Class DatuakAldatuOst
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
+        Me.Controls.Add(Me.txtBLon)
+        Me.Controls.Add(Me.txtBLat)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnAtzera)
         Me.Controls.Add(Me.RtxtBDesk)
         Me.Controls.Add(Me.txtBUdalerri)
@@ -235,4 +279,8 @@ Partial Class DatuakAldatuOst
     Friend WithEvents txtBUdalerri As TextBox
     Friend WithEvents RtxtBDesk As RichTextBox
     Friend WithEvents btnAtzera As Button
+    Friend WithEvents txtBLon As TextBox
+    Friend WithEvents txtBLat As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
 End Class

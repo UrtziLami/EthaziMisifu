@@ -5,8 +5,9 @@ Public Class ErabiltzaileLeihoa
         ListView1.View = View.Details
         ListView1.Clear()
         ListView1.Columns.Add("Id", 80, HorizontalAlignment.Center)
-        ListView1.Columns.Add("IzenAbizena", 120, HorizontalAlignment.Center)
+        ListView1.Columns.Add("Izen Abizena", 120, HorizontalAlignment.Center)
         ListView1.Columns.Add("Pasahitza", 120, HorizontalAlignment.Center)
+        ListView1.Columns.Add("Erabiltzaile Izena", 100, HorizontalAlignment.Center)
     End Sub
 
     Private Sub datuakKargatu()
@@ -24,6 +25,7 @@ Public Class ErabiltzaileLeihoa
             Dim obj As New ListViewItem(rd(0).ToString, 0)
             obj.SubItems.Add(HasiSaioaLeihoa.AES_Decrypt(rd(1).ToString, HasiSaioaLeihoa.kodEncDes))
             obj.SubItems.Add(HasiSaioaLeihoa.AES_Decrypt(rd(2).ToString, HasiSaioaLeihoa.kodEncDes))
+            obj.SubItems.Add(HasiSaioaLeihoa.AES_Decrypt(rd(3).ToString, HasiSaioaLeihoa.kodEncDes))
             ListView1.Items.Add(obj)
         End While
         rd.Close()
@@ -49,10 +51,11 @@ Public Class ErabiltzaileLeihoa
     End Sub
     Private Sub aldaketa()
         Dim id As String = ListView1.SelectedItems(0).SubItems(0).Text
-        Dim era As String = ListView1.SelectedItems(0).SubItems(1).Text
+        Dim iz As String = ListView1.SelectedItems(0).SubItems(1).Text
         Dim pas As String = ListView1.SelectedItems(0).SubItems(2).Text
+        Dim era As String = ListView1.SelectedItems(0).SubItems(3).Text
         Dim erabAld As New DatuakAldatuErab
-        erabAld.datuak(era, pas, id)
+        erabAld.datuak(iz, pas, id, era)
         erabAld.Show()
         Hide()
     End Sub

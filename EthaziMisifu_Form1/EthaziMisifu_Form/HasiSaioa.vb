@@ -52,7 +52,7 @@ Public Class HasiSaioaLeihoa
         Dim rd As MySqlDataReader
         rd = myCommand.ExecuteReader
         While rd.Read
-            eraBD = rd(1).ToString
+            eraBD = rd(3).ToString
             pasBD = rd(2).ToString
             pswDes = AES_Decrypt(pasBD, kodEncDes)
             eraDes = AES_Decrypt(eraBD, kodEncDes)
@@ -112,7 +112,7 @@ Public Class HasiSaioaLeihoa
         End Try
         Dim erabEnc As String = AES_Encrypt(txtBxErabiltzailea.Text, kodEncDes)
         Dim pshEnc As String = AES_Encrypt(txBPasahitza.Text, kodEncDes)
-        Dim myCommand As New MySqlCommand("insert into erabiltzaileak (izenAbizena, pasahitza) values ('" & erabEnc & "', '" & pshEnc & "')", konn)
+        Dim myCommand As New MySqlCommand("insert into erabiltzaileak (erabIzena, pasahitza) values ('" & erabEnc & "', '" & pshEnc & "')", konn)
         myCommand.ExecuteNonQuery()
         konn.Close()
     End Sub

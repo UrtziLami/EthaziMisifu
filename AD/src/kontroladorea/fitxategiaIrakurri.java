@@ -1,5 +1,6 @@
 package kontroladorea;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -67,11 +68,31 @@ public class fitxategiaIrakurri {
 			// Badaukagu kargatuta liburuak eta orain inprimatuko ditugu
 
 		} catch (SAXException e) {
-			JOptionPane.showMessageDialog(null, "SAX EXZEPZIOA" );
-		
-			JOptionPane.showMessageDialog(null, e.getMessage());
+			e.printStackTrace();
 		} catch (IOException e) {
-			JOptionPane.showMessageDialog(null, "XML FITXATEGIA TXARTO DAGO" );
+			
+			e.printStackTrace();
+		}
+		System.out.println();
+		return objetuenLista;
+	}
+	public static ArrayList<Ostatuak> igoFitzategiaXML(String ruta) {
+		ArrayList<Ostatuak> objetuenLista = new ArrayList<Ostatuak>();
+		try {
+			// Sortu Faktoria
+			XMLReader reader = XMLReaderFactory.createXMLReader();
+			// Lotu maneiatzailearekin
+			reader.setContentHandler(new XMLManeiatzailea(objetuenLista));
+			// Prozesatu liburuen fitxategia
+			reader.parse(new InputSource(new FileInputStream(ruta)));
+			// Badaukagu kargatuta liburuak eta orain inprimatuko ditugu
+
+			for (Ostatuak elem: objetuenLista) {
+				HibernateUtil.insertAlojamendu(elem.getIzena(), elem.getDeskribapena(), elem.getUdalerri(), elem.getProbintzia(), elem.getTelefonoa(), elem.getEmail(), elem.getWeb());
+			}
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		System.out.println();

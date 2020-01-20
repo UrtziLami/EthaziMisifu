@@ -48,7 +48,9 @@ public class XMLManeiatzailea extends DefaultHandler{
 			alojamendu.setIzena(balioa);
 			break;
 		case "turismdescription":
+			balioa.replaceAll("/","");
 			balioa.replaceAll("<[^>]*>","");
+			balioa.replaceAll("lt;[^gt;]*gt;","");
 			alojamendu.setDeskribapena(balioa);
 			break;
 		case "phonenumber":

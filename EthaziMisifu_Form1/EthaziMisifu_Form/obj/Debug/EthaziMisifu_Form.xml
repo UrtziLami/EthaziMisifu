@@ -72,6 +72,16 @@ EthaziMisifu_Form
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:EthaziMisifu_Form.My.Resources.Resources.upload">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:EthaziMisifu_Form.My.Resources.Resources.upload1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="T:EthaziMisifu_Form.My.Resources.Resource1">
 <summary>
   Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.

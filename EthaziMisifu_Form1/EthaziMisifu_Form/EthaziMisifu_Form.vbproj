@@ -113,10 +113,22 @@
     <Compile Include="DatuakAldatuOst.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ErabiltzaileaSartu.Designer.vb">
+      <DependentUpon>ErabiltzaileaSartu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErabiltzaileaSartu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Erreserbak.Designer.vb">
       <DependentUpon>Erreserbak.vb</DependentUpon>
     </Compile>
     <Compile Include="Erreserbak.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErreserbaSartu.Designer.vb">
+      <DependentUpon>ErreserbaSartu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErreserbaSartu.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
@@ -159,6 +171,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="OstatuaSartu.Designer.vb">
+      <DependentUpon>OstatuaSartu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OstatuaSartu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Resource1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -174,6 +192,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatuakAldatuOst.resx">
       <DependentUpon>DatuakAldatuOst.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErabiltzaileaSartu.resx">
+      <DependentUpon>ErabiltzaileaSartu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErreserbaSartu.resx">
+      <DependentUpon>ErreserbaSartu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ostatuak.resx">
       <DependentUpon>Ostatuak.vb</DependentUpon>
@@ -196,6 +220,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="OstatuaSartu.resx">
+      <DependentUpon>OstatuaSartu.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resource1.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>ResXFileCodeGenerator</Generator>
@@ -216,6 +243,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="descarga.ico" />
+    <None Include="Resources\upload1.png" />
+    <None Include="Resources\upload.png" />
     <None Include="Resources\casa.png" />
     <None Include="Resources\icono-persona1.png" />
     <None Include="Resources\reservas.png" />

@@ -4,7 +4,7 @@ Public Class OstatuLeiho
     Private Sub kolumnakSortu()
         ListView1.View = View.Details
         ListView1.Clear()
-        ListView1.Columns.Add("Id", 80, HorizontalAlignment.Center)
+        ListView1.Columns.Add("Sinadura", 80, HorizontalAlignment.Center)
         ListView1.Columns.Add("Izena", 100, HorizontalAlignment.Center)
         ListView1.Columns.Add("Deskribapena", 150, HorizontalAlignment.Center)
         ListView1.Columns.Add("Udalerria", 100, HorizontalAlignment.Center)
@@ -12,8 +12,9 @@ Public Class OstatuLeiho
         ListView1.Columns.Add("Email-a", 100, HorizontalAlignment.Center)
         ListView1.Columns.Add("Telefonoa", 100, HorizontalAlignment.Center)
         ListView1.Columns.Add("Web-a", 100, HorizontalAlignment.Center)
+        ListView1.Columns.Add("Longitudea", 100, HorizontalAlignment.Center)
+        ListView1.Columns.Add("Latitudea", 100, HorizontalAlignment.Center)
     End Sub
-
     Private Sub datuakKargatu()
         Try
             'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
@@ -35,6 +36,8 @@ Public Class OstatuLeiho
             obj.SubItems.Add(rd(5).ToString)
             obj.SubItems.Add(rd(6).ToString)
             obj.SubItems.Add(rd(7).ToString)
+            obj.SubItems.Add(rd(8).ToString)
+            obj.SubItems.Add(rd(9).ToString)
             ListView1.Items.Add(obj)
         End While
         rd.Close()
@@ -91,9 +94,17 @@ Public Class OstatuLeiho
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar al servidor")
         End Try
-        Dim myCommand As New MySqlCommand("delete from ostatuak where idAlojamenduak = " & ListView1.SelectedItems(0).SubItems(0).Text, konn)
+        Dim myCommand As New MySqlCommand("delete from ostatuak where sinadura = '" & ListView1.SelectedItems(0).SubItems(0).Text & "'", konn)
         myCommand.ExecuteNonQuery()
         konn.Close()
+        kolumnakSortu()
+        datuakKargatu()
+    End Sub
+
+    Private Sub btnSartu_Click(sender As Object, e As EventArgs) Handles btnSartu.Click
+        Dim lei As New OstatuaSartu
+        lei.Show()
+        Hide()
     End Sub
 End Class
 

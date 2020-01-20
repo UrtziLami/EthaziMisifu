@@ -48,7 +48,7 @@ Public Class ErreserbaLeihoa
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar al servidor")
         End Try
-        Dim komand As New MySqlCommand("select izenAbizena from erabiltzaileak where idBezeroak = " & id, konn)
+        Dim komand As New MySqlCommand("select erabIzena from erabiltzaileak where idBezeroak = " & id, konn)
         Dim dr As MySqlDataReader
         Dim erab As String
         dr = komand.ExecuteReader
@@ -126,5 +126,11 @@ Public Class ErreserbaLeihoa
         Dim komand As New MySqlCommand("delete from erreserbak where idErreserba = " & ListView1.SelectedItems(0).SubItems(0).Text, konn)
         komand.ExecuteNonQuery()
         konn.Close()
+    End Sub
+
+    Private Sub btnSartu_Click(sender As Object, e As EventArgs) Handles btnSartu.Click
+        Dim lei As New ErreserbaSartu
+        lei.Show()
+        Hide()
     End Sub
 End Class

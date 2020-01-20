@@ -27,6 +27,7 @@ Partial Class ErreserbaLeihoa
         Me.btnAtzera = New System.Windows.Forms.Button()
         Me.btnAldatu = New System.Windows.Forms.Button()
         Me.btnKendu = New System.Windows.Forms.Button()
+        Me.btnSartu = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ListView1
@@ -43,7 +44,7 @@ Partial Class ErreserbaLeihoa
         Me.btnAtzera.BackColor = System.Drawing.Color.Transparent
         Me.btnAtzera.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resource1.atras
         Me.btnAtzera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnAtzera.Location = New System.Drawing.Point(179, 559)
+        Me.btnAtzera.Location = New System.Drawing.Point(159, 559)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(100, 58)
         Me.btnAtzera.TabIndex = 5
@@ -55,7 +56,7 @@ Partial Class ErreserbaLeihoa
         Me.btnAldatu.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resource1.aldatu
         Me.btnAldatu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnAldatu.Enabled = False
-        Me.btnAldatu.Location = New System.Drawing.Point(476, 559)
+        Me.btnAldatu.Location = New System.Drawing.Point(555, 559)
         Me.btnAldatu.Name = "btnAldatu"
         Me.btnAldatu.Size = New System.Drawing.Size(98, 58)
         Me.btnAldatu.TabIndex = 2
@@ -73,12 +74,24 @@ Partial Class ErreserbaLeihoa
         Me.btnKendu.TabIndex = 7
         Me.btnKendu.UseVisualStyleBackColor = False
         '
+        'btnSartu
+        '
+        Me.btnSartu.BackColor = System.Drawing.Color.Transparent
+        Me.btnSartu.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.upload1
+        Me.btnSartu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSartu.Location = New System.Drawing.Point(360, 559)
+        Me.btnSartu.Name = "btnSartu"
+        Me.btnSartu.Size = New System.Drawing.Size(100, 58)
+        Me.btnSartu.TabIndex = 8
+        Me.btnSartu.UseVisualStyleBackColor = False
+        '
         'ErreserbaLeihoa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
+        Me.Controls.Add(Me.btnSartu)
         Me.Controls.Add(Me.btnKendu)
         Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.btnAtzera)
@@ -94,4 +107,5 @@ Partial Class ErreserbaLeihoa
     Friend WithEvents btnAtzera As Button
     Friend WithEvents ListView1 As ListView
     Friend WithEvents btnKendu As Button
+    Friend WithEvents btnSartu As Button
 End Class

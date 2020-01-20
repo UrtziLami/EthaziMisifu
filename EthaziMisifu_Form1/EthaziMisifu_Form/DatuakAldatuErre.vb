@@ -1,8 +1,10 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class DatuakAldatuErre
     Private Sub DatuakAldatuErre_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtBErab.Text = erabiltzailea
-        txtBOsta.Text = ostatua
+        erabiltzaileakAtera()
+        ostatuakAtera()
+        cmbBOsta.SelectedText = ostatua
+        cmbBerab.SelectedText = erabiltzailea
         mCIrte.MinDate = mCSart.SelectionStart
         mCSart.MinDate = Today
         mCSart.SetDate(sartze)
@@ -22,15 +24,6 @@ Public Class DatuakAldatuErre
         sartze = sart
         irtetze = irt
     End Sub
-    Private Sub txtBErab_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtBErab.KeyPress
-        If Not IsNumeric(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
-    Private Sub balidatuDatuak()
-
-    End Sub
-
     Private Sub datuakAldatu()
         Try
             'konn = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
@@ -39,12 +32,46 @@ Public Class DatuakAldatuErre
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar al servidor")
         End Try
-        Dim myCommand As New MySqlCommand("update erreserbak set Erabiltzaileak_idBezeroak = '" & txtBErab.Text & "', Alojamenduak_idAlojamenduak = '" & txtBOsta.Text & "' where idReservas = " & IDErre, konn)
+        Dim myCommand As New MySqlCommand("update erreserbak set Erabiltzaileak_idBezeroak = '" & cmbBerab.SelectedText & "', Ostatuak_sinadura = '" & cmbBOsta.SelectedText & "', sartuData = '" & mCSart.SelectionStart & "', ateraData = '" & mCIrte.SelectionStart & "' where idErreserba = " & IDErre, konn)
         myCommand.ExecuteNonQuery()
         konn.Close()
     End Sub
     Private Sub Form_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         Process.GetCurrentProcess.Kill()
+    End Sub
+    Private Sub ostatuakAtera()
+        Try
+            'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
+            konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")
+            konn.Open()
+        Catch ex As MySqlException
+            MessageBox.Show("No se ha podido conectar al servidor")
+        End Try
+        Dim komand As New MySqlCommand("select sinadura from ostatuak", konn)
+        Dim dr As MySqlDataReader
+        dr = komand.ExecuteReader
+        While dr.Read
+            cmbBOsta.Items.Add(dr(0).ToString)
+        End While
+        dr.Close()
+        konn.Close()
+    End Sub
+    Private Sub erabiltzaileakAtera()
+        Try
+            'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
+            konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")
+            konn.Open()
+        Catch ex As MySqlException
+            MessageBox.Show("No se ha podido conectar al servidor")
+        End Try
+        Dim komand As New MySqlCommand("select idBezeroak from erabiltzaileak", konn)
+        Dim dr As MySqlDataReader
+        dr = komand.ExecuteReader
+        While dr.Read
+            cmbBerab.Items.Add(dr(0).ToString)
+        End While
+        dr.Close()
+        konn.Close()
     End Sub
 
     Private Sub btnGorde_Click(sender As Object, e As EventArgs) Handles btnGorde.Click
@@ -64,13 +91,13 @@ Public Class DatuakAldatuErre
         mCIrte.MinDate = mCSart.SelectionStart
     End Sub
 
-    Private Sub txtBErab_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtBErab.KeyPress
+    Private Sub txtBErab_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If Not IsNumeric(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub txtBOsta_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtBOsta.KeyPress
+    Private Sub txtBOsta_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If Not IsNumeric(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
         End If

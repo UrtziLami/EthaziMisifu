@@ -27,12 +27,14 @@ Partial Class ErabiltzaileLeihoa
         Me.btnAtzera = New System.Windows.Forms.Button()
         Me.btnAldatu = New System.Windows.Forms.Button()
         Me.btnKendu = New System.Windows.Forms.Button()
+        Me.btnSartu = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ListView1
         '
         Me.ListView1.FullRowSelect = True
         Me.ListView1.Location = New System.Drawing.Point(65, 63)
+        Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(840, 426)
         Me.ListView1.TabIndex = 4
@@ -42,7 +44,7 @@ Partial Class ErabiltzaileLeihoa
         '
         Me.btnAtzera.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resource1.atras
         Me.btnAtzera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnAtzera.Location = New System.Drawing.Point(141, 556)
+        Me.btnAtzera.Location = New System.Drawing.Point(107, 556)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(92, 57)
         Me.btnAtzera.TabIndex = 3
@@ -57,7 +59,7 @@ Partial Class ErabiltzaileLeihoa
         Me.btnAldatu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnAldatu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
         Me.btnAldatu.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnAldatu.Location = New System.Drawing.Point(404, 556)
+        Me.btnAldatu.Location = New System.Drawing.Point(546, 556)
         Me.btnAldatu.Name = "btnAldatu"
         Me.btnAldatu.Size = New System.Drawing.Size(103, 57)
         Me.btnAldatu.TabIndex = 2
@@ -72,11 +74,26 @@ Partial Class ErabiltzaileLeihoa
         Me.btnKendu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnKendu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
         Me.btnKendu.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnKendu.Location = New System.Drawing.Point(685, 556)
+        Me.btnKendu.Location = New System.Drawing.Point(750, 556)
         Me.btnKendu.Name = "btnKendu"
         Me.btnKendu.Size = New System.Drawing.Size(103, 57)
         Me.btnKendu.TabIndex = 5
         Me.btnKendu.UseVisualStyleBackColor = True
+        '
+        'btnSartu
+        '
+        Me.btnSartu.BackColor = System.Drawing.Color.Transparent
+        Me.btnSartu.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.upload1
+        Me.btnSartu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSartu.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnSartu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnSartu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.btnSartu.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnSartu.Location = New System.Drawing.Point(323, 556)
+        Me.btnSartu.Name = "btnSartu"
+        Me.btnSartu.Size = New System.Drawing.Size(103, 57)
+        Me.btnSartu.TabIndex = 6
+        Me.btnSartu.UseVisualStyleBackColor = False
         '
         'ErabiltzaileLeihoa
         '
@@ -84,6 +101,7 @@ Partial Class ErabiltzaileLeihoa
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
+        Me.Controls.Add(Me.btnSartu)
         Me.Controls.Add(Me.btnKendu)
         Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.btnAtzera)
@@ -99,4 +117,5 @@ Partial Class ErabiltzaileLeihoa
     Friend WithEvents btnAtzera As Button
     Friend WithEvents ListView1 As ListView
     Friend WithEvents btnKendu As Button
+    Friend WithEvents btnSartu As Button
 End Class

@@ -80,4 +80,10 @@ Public Class ErabiltzaileLeihoa
         myCommand.ExecuteNonQuery()
         konn.Close()
     End Sub
+
+    Private Sub btnSartu_Click(sender As Object, e As EventArgs) Handles btnSartu.Click
+        Dim lei As New ErabiltzaileaSartu
+        lei.Show()
+        Hide()
+    End Sub
 End Class

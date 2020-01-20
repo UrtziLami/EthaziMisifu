@@ -26,7 +26,6 @@ Partial Class HasiSaioaLeihoa
         Me.txtBxErabiltzailea = New System.Windows.Forms.TextBox()
         Me.txBPasahitza = New System.Windows.Forms.TextBox()
         Me.chbErabGog = New System.Windows.Forms.CheckBox()
-        Me.btnInserta = New System.Windows.Forms.Button()
         Me.btnHasiSaioa = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -61,15 +60,6 @@ Partial Class HasiSaioaLeihoa
         Me.chbErabGog.TabIndex = 5
         Me.chbErabGog.Text = "Erabiltzailea gogoratu"
         Me.chbErabGog.UseVisualStyleBackColor = False
-        '
-        'btnInserta
-        '
-        Me.btnInserta.Location = New System.Drawing.Point(140, 460)
-        Me.btnInserta.Name = "btnInserta"
-        Me.btnInserta.Size = New System.Drawing.Size(75, 23)
-        Me.btnInserta.TabIndex = 6
-        Me.btnInserta.Text = "Insertar"
-        Me.btnInserta.UseVisualStyleBackColor = True
         '
         'btnHasiSaioa
         '
@@ -124,7 +114,6 @@ Partial Class HasiSaioaLeihoa
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
-        Me.Controls.Add(Me.btnInserta)
         Me.Controls.Add(Me.chbErabGog)
         Me.Controls.Add(Me.btnHasiSaioa)
         Me.Controls.Add(Me.txBPasahitza)
@@ -149,6 +138,5 @@ Partial Class HasiSaioaLeihoa
     Friend WithEvents txBPasahitza As TextBox
     Friend WithEvents btnHasiSaioa As Button
     Friend WithEvents chbErabGog As CheckBox
-    Friend WithEvents btnInserta As Button
     Friend WithEvents Label1 As Label
 End Class

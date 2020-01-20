@@ -48,3 +48,6 @@ C:\Users\Admin1\git\EthaziMisifu\EthaziMisifu_Form1\EthaziMisifu_Form\obj\Debug\
 C:\Users\Admin1\git\EthaziMisifu\EthaziMisifu_Form1\EthaziMisifu_Form\obj\Debug\EthaziMisifu_Form.exe
 C:\Users\Admin1\git\EthaziMisifu\EthaziMisifu_Form1\EthaziMisifu_Form\obj\Debug\EthaziMisifu_Form.xml
 C:\Users\Admin1\git\EthaziMisifu\EthaziMisifu_Form1\EthaziMisifu_Form\obj\Debug\EthaziMisifu_Form.pdb
+C:\Users\Admin1\git\EthaziMisifu\EthaziMisifu_Form1\EthaziMisifu_Form\obj\Debug\EthaziMisifu_Form.ErabiltzaileaSartu.resources
+C:\Users\Admin1\git\EthaziMisifu\EthaziMisifu_Form1\EthaziMisifu_Form\obj\Debug\EthaziMisifu_Form.ErreserbaSartu.resources
+C:\Users\Admin1\git\EthaziMisifu\EthaziMisifu_Form1\EthaziMisifu_Form\obj\Debug\EthaziMisifu_Form.OstatuaSartu.resources

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class DatuakAldatuOst
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class DatuakAldatuOst
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DatuakAldatuOst))
         Me.Label1 = New System.Windows.Forms.Label()
@@ -176,9 +176,9 @@ Partial Class DatuakAldatuOst
         '
         'RtxtBDesk
         '
-        Me.RtxtBDesk.Location = New System.Drawing.Point(82, 345)
+        Me.RtxtBDesk.Location = New System.Drawing.Point(82, 348)
         Me.RtxtBDesk.Name = "RtxtBDesk"
-        Me.RtxtBDesk.Size = New System.Drawing.Size(828, 142)
+        Me.RtxtBDesk.Size = New System.Drawing.Size(828, 145)
         Me.RtxtBDesk.TabIndex = 15
         Me.RtxtBDesk.Text = ""
         '

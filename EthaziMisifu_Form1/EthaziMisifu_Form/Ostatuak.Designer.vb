@@ -27,6 +27,7 @@ Partial Class OstatuLeiho
         Me.btnAtzera = New System.Windows.Forms.Button()
         Me.btnAldatu = New System.Windows.Forms.Button()
         Me.btnKendu = New System.Windows.Forms.Button()
+        Me.btnSartu = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ListView1
@@ -42,7 +43,7 @@ Partial Class OstatuLeiho
         '
         Me.btnAtzera.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resource1.atras
         Me.btnAtzera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnAtzera.Location = New System.Drawing.Point(186, 558)
+        Me.btnAtzera.Location = New System.Drawing.Point(162, 558)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(101, 60)
         Me.btnAtzera.TabIndex = 4
@@ -53,7 +54,7 @@ Partial Class OstatuLeiho
         Me.btnAldatu.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resource1.aldatu
         Me.btnAldatu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnAldatu.Enabled = False
-        Me.btnAldatu.Location = New System.Drawing.Point(468, 558)
+        Me.btnAldatu.Location = New System.Drawing.Point(547, 558)
         Me.btnAldatu.Name = "btnAldatu"
         Me.btnAldatu.Size = New System.Drawing.Size(102, 60)
         Me.btnAldatu.TabIndex = 3
@@ -70,12 +71,23 @@ Partial Class OstatuLeiho
         Me.btnKendu.TabIndex = 6
         Me.btnKendu.UseVisualStyleBackColor = True
         '
+        'btnSartu
+        '
+        Me.btnSartu.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.upload1
+        Me.btnSartu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSartu.Location = New System.Drawing.Point(356, 558)
+        Me.btnSartu.Name = "btnSartu"
+        Me.btnSartu.Size = New System.Drawing.Size(101, 60)
+        Me.btnSartu.TabIndex = 7
+        Me.btnSartu.UseVisualStyleBackColor = True
+        '
         'OstatuLeiho
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
+        Me.Controls.Add(Me.btnSartu)
         Me.Controls.Add(Me.btnKendu)
         Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.btnAtzera)
@@ -90,4 +102,5 @@ Partial Class OstatuLeiho
     Friend WithEvents btnAtzera As Button
     Friend WithEvents ListView1 As ListView
     Friend WithEvents btnKendu As Button
+    Friend WithEvents btnSartu As Button
 End Class

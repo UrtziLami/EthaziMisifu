@@ -42,7 +42,7 @@ Public Class DatuakAldatuOst
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
             End Try
-            Dim myCommand As New MySqlCommand("update ostatuak set izena = '" & txtBIzena.Text & "', deskribapena = '" & RtxtBDesk.Text & "', udalerri = '" & txtBUdalerri.Text & "', probintzia'" & txtBProbintzia.Text & "', email = '" & txtBEmail.Text & "', telefonoa = '" & txtBTelefonoa.Text & "', web = '" & txtBWeb.Text & "', longitudea = '" & txtBLon.Text & "', latitudea = '" & txtBLat.Text & "' where idOstatuak = " & idOs, konn)
+            Dim myCommand As New MySqlCommand("update ostatuak set izena = '" & txtBIzena.Text & "', deskribapena = '" & RtxtBDesk.Text & "', udalerri = '" & txtBUdalerri.Text & "', probintzia = '" & txtBProbintzia.Text & "', email = '" & txtBEmail.Text & "', telefonoa = '" & txtBTelefonoa.Text & "', web = '" & txtBWeb.Text & "', longitudea = '" & txtBLon.Text & "', latitudea = '" & txtBLat.Text & "' where sinadura like '" & idOs & "'", konn)
             myCommand.ExecuteNonQuery()
             konn.Close()
         Else
@@ -59,6 +59,7 @@ Public Class DatuakAldatuOst
         txtBUdalerri.Text = udalerri
         txtBLat.Text = latit
         txtBLon.Text = longi
+        txtBTelefonoa.MaxLength = 9
     End Sub
     Private Sub txtBIzena_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtBIzena.KeyPress
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
@@ -90,7 +91,4 @@ Public Class DatuakAldatuOst
         Hide()
     End Sub
 
-    Private Sub txtBTelefonoa_TextChanged(sender As Object, e As EventArgs) Handles txtBTelefonoa.TextChanged
-
-    End Sub
 End Class

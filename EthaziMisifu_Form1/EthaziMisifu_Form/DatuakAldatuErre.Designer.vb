@@ -26,13 +26,13 @@ Partial Class DatuakAldatuErre
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnGorde = New System.Windows.Forms.Button()
-        Me.txtBErab = New System.Windows.Forms.TextBox()
-        Me.txtBOsta = New System.Windows.Forms.TextBox()
         Me.btnAtzera = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.mCSart = New System.Windows.Forms.MonthCalendar()
         Me.mCIrte = New System.Windows.Forms.MonthCalendar()
+        Me.cmbBerab = New System.Windows.Forms.ComboBox()
+        Me.cmbBOsta = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -66,20 +66,6 @@ Partial Class DatuakAldatuErre
         Me.btnGorde.Size = New System.Drawing.Size(88, 85)
         Me.btnGorde.TabIndex = 2
         Me.btnGorde.UseVisualStyleBackColor = True
-        '
-        'txtBErab
-        '
-        Me.txtBErab.Location = New System.Drawing.Point(423, 65)
-        Me.txtBErab.Name = "txtBErab"
-        Me.txtBErab.Size = New System.Drawing.Size(284, 20)
-        Me.txtBErab.TabIndex = 3
-        '
-        'txtBOsta
-        '
-        Me.txtBOsta.Location = New System.Drawing.Point(423, 136)
-        Me.txtBOsta.Name = "txtBOsta"
-        Me.txtBOsta.Size = New System.Drawing.Size(284, 20)
-        Me.txtBOsta.TabIndex = 4
         '
         'btnAtzera
         '
@@ -127,19 +113,35 @@ Partial Class DatuakAldatuErre
         Me.mCIrte.Name = "mCIrte"
         Me.mCIrte.TabIndex = 10
         '
+        'cmbBerab
+        '
+        Me.cmbBerab.FormattingEnabled = True
+        Me.cmbBerab.Location = New System.Drawing.Point(453, 63)
+        Me.cmbBerab.Name = "cmbBerab"
+        Me.cmbBerab.Size = New System.Drawing.Size(255, 21)
+        Me.cmbBerab.TabIndex = 11
+        '
+        'cmbBOsta
+        '
+        Me.cmbBOsta.FormattingEnabled = True
+        Me.cmbBOsta.Location = New System.Drawing.Point(453, 137)
+        Me.cmbBOsta.Name = "cmbBOsta"
+        Me.cmbBOsta.Size = New System.Drawing.Size(255, 21)
+        Me.cmbBOsta.TabIndex = 12
+        '
         'DatuakAldatuErre
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
+        Me.Controls.Add(Me.cmbBOsta)
+        Me.Controls.Add(Me.cmbBerab)
         Me.Controls.Add(Me.mCIrte)
         Me.Controls.Add(Me.mCSart)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnAtzera)
-        Me.Controls.Add(Me.txtBOsta)
-        Me.Controls.Add(Me.txtBErab)
         Me.Controls.Add(Me.btnGorde)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -155,11 +157,11 @@ Partial Class DatuakAldatuErre
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents btnGorde As Button
-    Friend WithEvents txtBErab As TextBox
-    Friend WithEvents txtBOsta As TextBox
     Friend WithEvents btnAtzera As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents mCSart As MonthCalendar
     Friend WithEvents mCIrte As MonthCalendar
+    Friend WithEvents cmbBerab As ComboBox
+    Friend WithEvents cmbBOsta As ComboBox
 End Class

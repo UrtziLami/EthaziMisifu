@@ -101,21 +101,6 @@ Public Class HasiSaioaLeihoa
         txtBxErabiltzailea.Text = My.Settings.Erabiltzailea
         txBPasahitza.Text = My.Settings.Pasahitza
     End Sub
-
-    Private Sub btnInserta_Click(sender As Object, e As EventArgs) Handles btnInserta.Click
-        Try
-            'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-            konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")
-            konn.Open()
-        Catch ex As MySqlException
-            MessageBox.Show("No se ha podido conectar al servidor")
-        End Try
-        Dim erabEnc As String = AES_Encrypt(txtBxErabiltzailea.Text, kodEncDes)
-        Dim pshEnc As String = AES_Encrypt(txBPasahitza.Text, kodEncDes)
-        Dim myCommand As New MySqlCommand("insert into erabiltzaileak (erabIzena, pasahitza) values ('" & erabEnc & "', '" & pshEnc & "')", konn)
-        myCommand.ExecuteNonQuery()
-        konn.Close()
-    End Sub
     Public Function AES_Encrypt(ByVal input As String, ByVal pass As String) As String
         Dim AES As New System.Security.Cryptography.RijndaelManaged
         Dim Hash_AES As New System.Security.Cryptography.MD5CryptoServiceProvider

@@ -41,7 +41,7 @@ Public Class Erregistratu
             cm.CommandText = "INSERT INTO erabiltzaileak (izenAbizena,pasahitza) VALUES('" + TextBox1.Text + "', '" + AES_Encrypt(TextBox2.Text, wf1.kodEnc) + "')"
             cm.Connection = conn
             cm.ExecuteNonQuery()
-            Response.Redirect("WebForm2.aspx")
+            Response.Redirect("Taulak.aspx")
         End If
 
 
@@ -66,7 +66,7 @@ Public Class Erregistratu
         End Try
     End Function
 
-    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Protected Sub bueltatu(sender As Object, e As EventArgs) Handles btnBueltatu.Click
         Response.Redirect("Login.aspx")
     End Sub
 End Class

@@ -41,13 +41,13 @@ Partial Public Class WebForm4
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox1.
+    '''Control TextBoxIzena.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextBoxIzena As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label3.
@@ -59,13 +59,13 @@ Partial Public Class WebForm4
     Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox2.
+    '''Control TextBoxDeskr.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextBoxDeskr As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label4.
@@ -77,13 +77,13 @@ Partial Public Class WebForm4
     Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox3.
+    '''Control TextBoxUdalerri.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox3 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextBoxUdalerri As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label5.
@@ -95,13 +95,13 @@ Partial Public Class WebForm4
     Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox4.
+    '''Control TextBoxProbint.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox4 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextBoxProbint As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label6.
@@ -113,13 +113,13 @@ Partial Public Class WebForm4
     Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox5.
+    '''Control TextBoxEmail.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox5 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextBoxEmail As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label7.
@@ -131,13 +131,13 @@ Partial Public Class WebForm4
     Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox6.
+    '''Control TextBoxTelef.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox6 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextBoxTelef As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label8.
@@ -149,22 +149,22 @@ Partial Public Class WebForm4
     Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox7.
+    '''Control TextBoxWeb.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox7 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextBoxWeb As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control Button1.
+    '''Control btnBueltatu.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnBueltatu As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Control btnInsertatu.

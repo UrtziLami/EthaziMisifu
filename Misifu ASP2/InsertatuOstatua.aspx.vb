@@ -16,28 +16,39 @@ Public Class WebForm4
         End Try
 
         Dim konprobatu As Boolean = True
-        If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" And TextBox6.Text <> "" And TextBox7.Text <> "" Then
+        If TextBoxIzena.Text <> "" And TextBoxDeskr.Text <> "" And TextBoxUdalerri.Text <> "" And TextBoxProbint.Text <> "" And TextBoxEmail.Text <> "" And TextBoxTelef.Text <> "" And TextBoxWeb.Text <> "" Then
             Try
-                Convert.ToInt32(TextBox1.Text)
+                Convert.ToInt32(TextBoxIzena.Text)
                 konprobatu = False
-                MsgBox("Erabiltzailea ezin du zenbakiak eduki", vbCritical, "Txarto")
+                MsgBox("Ostatua ezin du zenbakiak eduki", vbCritical, "Txarto")
             Catch ex As Exception
 
             End Try
         Else
             konprobatu = False
-            MsgBox("Erabiltzailea sartu", vbCritical, "Txarto")
+            MsgBox("Eremuak falta dira", vbCritical, "Txarto")
+        End If
+
+        konprobatu = balidatuEmail(TextBoxEmail.Text)
+        If konprobatu = False Then
+            MsgBox("Email txarto sartuta", vbCritical, "Txarto")
+        End If
+
+        If TextBoxTelef.Text.Length = 9 Then
+            Try
+                Convert.ToInt32(TextBoxTelef.Text)
+            Catch ex As Exception
+                konprobatu = False
+                MsgBox("Telefonoa ezin du letrak izan", vbCritical, "Txarto")
+            End Try
+        Else
+            konprobatu = False
+            MsgBox("Telefonoa txarto sartuta", vbCritical, "Txarto")
         End If
 
         If konprobatu = True Then
-            If TextBox2.Text <> TextBox3.Text Or TextBox2.Text = "" Then
-                konprobatu = False
-                MsgBox("Pasahitzak desberdinak dira", vbCritical, "Txarto")
-            End If
-        End If
-        If konprobatu = True Then
             Dim cm = New MySqlCommand()
-            cm.CommandText = "INSERT INTO ostatuak (izena,deskribapena,udalerri,probintzia,email,telefonoa,web) VALUES()"
+            cm.CommandText = "INSERT INTO ostatuak (izena,deskribapena,udalerri,probintzia,email,telefonoa,web) VALUES('" + TextBoxIzena.Text + "', '" + TextBoxDeskr.Text + "', '" + TextBoxUdalerri.Text + "', '" + TextBoxProbint.Text + "', '" + TextBoxEmail.Text + "', '" + TextBoxTelef.Text + "', '" + TextBoxWeb.Text + "')"
             cm.Connection = conn
             cm.ExecuteNonQuery()
             Response.Redirect("Taulak.aspx")
@@ -45,8 +56,11 @@ Public Class WebForm4
 
 
     End Sub
+    Private Function balidatuEmail(strEmail As String) As Boolean
+        Return System.Text.RegularExpressions.Regex.IsMatch(strEmail, "^(?("")("".+?""@)|(([0-9a-zA-Z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-zA-Z])@))" & "(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,6}))$")
+    End Function
 
-    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Protected Sub bueltatu(sender As Object, e As EventArgs) Handles btnBueltatu.Click
         Response.Redirect("Taulak.aspx")
     End Sub
 End Class

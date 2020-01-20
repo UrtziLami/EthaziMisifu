@@ -42,7 +42,7 @@
             <br />
             <br />
             <br />
-            <asp:Button ID="Button1" runat="server" Height="36px" Text="Bueltatu" Width="72px" />
+            <asp:Button ID="btnBueltatu" runat="server" Height="36px" Text="Bueltatu" Width="72px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnErregistratu" runat="server" Text="Erregistratu" Height="37px" Width="101px" />
         </div>

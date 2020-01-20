@@ -199,9 +199,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.Erregistratu._Button1">
+<member name="F:Misifu_ASP2.Erregistratu._btnBueltatu">
 <summary>
-Control Button1.
+Control btnBueltatu.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -460,9 +460,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._TextBox1">
+<member name="F:Misifu_ASP2.WebForm4._TextBoxIzena">
 <summary>
-Control TextBox1.
+Control TextBoxIzena.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -478,9 +478,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._TextBox2">
+<member name="F:Misifu_ASP2.WebForm4._TextBoxDeskr">
 <summary>
-Control TextBox2.
+Control TextBoxDeskr.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -496,9 +496,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._TextBox3">
+<member name="F:Misifu_ASP2.WebForm4._TextBoxUdalerri">
 <summary>
-Control TextBox3.
+Control TextBoxUdalerri.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -514,9 +514,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._TextBox4">
+<member name="F:Misifu_ASP2.WebForm4._TextBoxProbint">
 <summary>
-Control TextBox4.
+Control TextBoxProbint.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -532,9 +532,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._TextBox5">
+<member name="F:Misifu_ASP2.WebForm4._TextBoxEmail">
 <summary>
-Control TextBox5.
+Control TextBoxEmail.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -550,9 +550,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._TextBox6">
+<member name="F:Misifu_ASP2.WebForm4._TextBoxTelef">
 <summary>
-Control TextBox6.
+Control TextBoxTelef.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -568,18 +568,18 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._TextBox7">
+<member name="F:Misifu_ASP2.WebForm4._TextBoxWeb">
 <summary>
-Control TextBox7.
+Control TextBoxWeb.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._Button1">
+<member name="F:Misifu_ASP2.WebForm4._btnBueltatu">
 <summary>
-Control Button1.
+Control btnBueltatu.
 </summary>
 <remarks>
 Campo generado automáticamente.

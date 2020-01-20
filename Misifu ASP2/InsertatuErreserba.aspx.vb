@@ -76,6 +76,7 @@ Public Class WebForm5
         cm3.CommandText = "INSERT INTO erreserbak (erabiltzaileak_idBezeroak,Alojamenduak_idAlojamenduak) VALUES('" + ds.Tables(0).Rows(0)(0).ToString + "', '" + ds2.Tables(0).Rows(0)(0).ToString + "')"
         cm3.Connection = conn
         cm3.ExecuteNonQuery()
+        Response.Redirect("Taulak.aspx")
     End Sub
 
     Protected Sub bueltatu(sender As Object, e As EventArgs) Handles btnBueltatu.Click

@@ -24,37 +24,37 @@
         <div style="margin-left: 760px">
             <asp:Label ID="Label2" runat="server" Text="Izena:" Font-Size="16pt"></asp:Label>
             &nbsp;&nbsp;
-            <asp:TextBox ID="TextBox1" runat="server" Width="211px"></asp:TextBox>
+            <asp:TextBox ID="TextBoxIzena" runat="server" Width="211px"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="Label3" runat="server" Text="Deskribapena:" Font-Size="16pt"></asp:Label>
             &nbsp;&nbsp;
-            <asp:TextBox ID="TextBox2" runat="server" Width="211px"></asp:TextBox>
+            <asp:TextBox ID="TextBoxDeskr" runat="server" Width="211px"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="Label4" runat="server" Text="Udalerri:" Font-Size="16pt"></asp:Label>
             &nbsp;&nbsp;
-            <asp:TextBox ID="TextBox3" runat="server" Width="211px"></asp:TextBox>
+            <asp:TextBox ID="TextBoxUdalerri" runat="server" Width="211px"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="Label5" runat="server" Text="Probintzia:" Font-Size="16pt"></asp:Label>
             &nbsp;&nbsp;
-            <asp:TextBox ID="TextBox4" runat="server" Width="211px"></asp:TextBox>
+            <asp:TextBox ID="TextBoxProbint" runat="server" Width="211px"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="Label6" runat="server" Text="Email:" Font-Size="16pt"></asp:Label>
             &nbsp;&nbsp;
-            <asp:TextBox ID="TextBox5" runat="server" Width="211px"></asp:TextBox>
+            <asp:TextBox ID="TextBoxEmail" runat="server" Width="211px"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="Label7" runat="server" Text="Telefonoa:" Font-Size="16pt"></asp:Label>
             &nbsp;&nbsp;
-            <asp:TextBox ID="TextBox6" runat="server" Width="211px"></asp:TextBox>
+            <asp:TextBox ID="TextBoxTelef" runat="server" Width="211px"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="Label8" runat="server" Text="Web:" Font-Size="16pt"></asp:Label>
             &nbsp;&nbsp;
-            <asp:TextBox ID="TextBox7" runat="server" Width="211px"></asp:TextBox>
+            <asp:TextBox ID="TextBoxWeb" runat="server" Width="211px"></asp:TextBox>
             <br />
 
         </div>
@@ -62,7 +62,7 @@
 
                 <br />
                 <br />
-                <asp:Button ID="Button1" runat="server" Height="36px" Text="Bueltatu" Width="69px" />
+                <asp:Button ID="btnBueltatu" runat="server" Height="36px" Text="Bueltatu" Width="69px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="btnInsertatu" runat="server" Height="36px" Text="Insertatu" Width="74px" />
 

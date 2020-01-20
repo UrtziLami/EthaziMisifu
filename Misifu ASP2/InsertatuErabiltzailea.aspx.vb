@@ -41,9 +41,8 @@ Public Class InsertatuErabiltzailea
             cm.CommandText = "INSERT INTO erabiltzaileak (izenAbizena,pasahitza) VALUES('" + TextBox1.Text + "', '" + AES_Encrypt(TextBox2.Text, wf1.kodEnc) + "')"
             cm.Connection = conn
             cm.ExecuteNonQuery()
-            Response.Redirect("WebForm2.aspx")
+            Response.Redirect("Taulak.aspx")
         End If
-
 
     End Sub
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="InsertatuOstatua.aspx.vb" Inherits="Misifu_ASP2.WebForm4" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="InsertatuOstatua.aspx.vb" Inherits="Misifu_ASP2.InsertatuOstatua" %>
 
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="StyleSheet1.css" />

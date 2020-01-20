@@ -238,4 +238,28 @@ Public Class WebForm2
             Response.Redirect("InsertatuOstatua.aspx")
         End If
     End Sub
+
+    Protected Sub btnAldatu_Click(sender As Object, e As EventArgs) Handles btnAldatu.Click
+        If taula = "erabiltzaileak" Then
+            Response.Redirect("InsertatuErabiltzailea.aspx")
+        End If
+        If taula = "erreserbak" Then
+            Response.Redirect("InsertatuErreserba.aspx")
+        End If
+        If taula = "ostatuak" Then
+            Response.Redirect("AldatuOstatua.aspx")
+        End If
+    End Sub
+
+    Protected Sub btnEzabatu_Click(sender As Object, e As EventArgs) Handles btnEzabatu.Click
+        If taula = "erabiltzaileak" Then
+            Response.Redirect("InsertatuErabiltzailea.aspx")
+        End If
+        If taula = "erreserbak" Then
+            Response.Redirect("InsertatuErreserba.aspx")
+        End If
+        If taula = "ostatuak" Then
+            Response.Redirect("EzabatuOstatua.aspx")
+        End If
+    End Sub
 End Class

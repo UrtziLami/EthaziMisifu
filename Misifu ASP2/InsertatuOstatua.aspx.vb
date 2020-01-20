@@ -1,6 +1,6 @@
 ﻿Imports System.Windows
 Imports MySql.Data.MySqlClient
-Public Class WebForm4
+Public Class InsertatuOstatua
     Inherits System.Web.UI.Page
     Dim conn As MySqlConnection
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load

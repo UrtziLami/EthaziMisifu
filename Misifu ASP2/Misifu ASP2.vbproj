@@ -97,6 +97,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EzabatuOstatua.aspx" />
     <Content Include="InsertatuErabiltzailea.aspx" />
     <Content Include="Free-Background.jpg" />
     <Content Include="Erregistratu.aspx" />
@@ -106,8 +107,16 @@
     <Content Include="Taulak.aspx" />
     <Content Include="InsertatuOstatua.aspx" />
     <Content Include="InsertatuErreserba.aspx" />
+    <Content Include="AldatuOstatua.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EzabatuOstatua.aspx.designer.vb">
+      <DependentUpon>EzabatuOstatua.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EzabatuOstatua.aspx.vb">
+      <DependentUpon>EzabatuOstatua.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="InsertatuErabiltzailea.aspx.designer.vb">
       <DependentUpon>InsertatuErabiltzailea.aspx</DependentUpon>
     </Compile>
@@ -167,6 +176,13 @@
     </Compile>
     <Compile Include="InsertatuErreserba.aspx.vb">
       <DependentUpon>InsertatuErreserba.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AldatuOstatua.aspx.designer.vb">
+      <DependentUpon>AldatuOstatua.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AldatuOstatua.aspx.vb">
+      <DependentUpon>AldatuOstatua.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

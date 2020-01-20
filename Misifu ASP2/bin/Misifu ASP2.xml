@@ -37,6 +37,195 @@ Misifu ASP2
  Devuelve el objeto de registro Asp.
  </summary>
 </member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._form1">
+<summary>
+Control form1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._Label1">
+<summary>
+Control Label1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._lblID">
+<summary>
+Control lblID.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._DropDownList1">
+<summary>
+Control DropDownList1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._btnBete">
+<summary>
+Control btnBete.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._lblIzena">
+<summary>
+Control lblIzena.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._TextBoxIzena">
+<summary>
+Control TextBoxIzena.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._lblDeskrib">
+<summary>
+Control lblDeskrib.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._TextBoxDeskr">
+<summary>
+Control TextBoxDeskr.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._lblUdalerri">
+<summary>
+Control lblUdalerri.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._TextBoxUdalerri">
+<summary>
+Control TextBoxUdalerri.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._lblProbintzia">
+<summary>
+Control lblProbintzia.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._TextBoxProbint">
+<summary>
+Control TextBoxProbint.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._lblEmail">
+<summary>
+Control lblEmail.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._TextBoxEmail">
+<summary>
+Control TextBoxEmail.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._lblTelef">
+<summary>
+Control lblTelef.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._TextBoxTelef">
+<summary>
+Control TextBoxTelef.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._lblWeb">
+<summary>
+Control lblWeb.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._TextBoxWeb">
+<summary>
+Control TextBoxWeb.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._btnBueltatu">
+<summary>
+Control btnBueltatu.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.EzabatuOstatua._btnEzabatu">
+<summary>
+Control btnEzabatu.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:Misifu_ASP2.InsertatuErabiltzailea._form1">
 <summary>
 Control form1.
@@ -433,7 +622,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._form1">
+<member name="F:Misifu_ASP2.InsertatuOstatua._form1">
 <summary>
 Control form1.
 </summary>
@@ -442,7 +631,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._Label1">
+<member name="F:Misifu_ASP2.InsertatuOstatua._Label1">
 <summary>
 Control Label1.
 </summary>
@@ -451,7 +640,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._Label2">
+<member name="F:Misifu_ASP2.InsertatuOstatua._Label2">
 <summary>
 Control Label2.
 </summary>
@@ -460,7 +649,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._TextBoxIzena">
+<member name="F:Misifu_ASP2.InsertatuOstatua._TextBoxIzena">
 <summary>
 Control TextBoxIzena.
 </summary>
@@ -469,7 +658,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._Label3">
+<member name="F:Misifu_ASP2.InsertatuOstatua._Label3">
 <summary>
 Control Label3.
 </summary>
@@ -478,7 +667,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._TextBoxDeskr">
+<member name="F:Misifu_ASP2.InsertatuOstatua._TextBoxDeskr">
 <summary>
 Control TextBoxDeskr.
 </summary>
@@ -487,7 +676,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._Label4">
+<member name="F:Misifu_ASP2.InsertatuOstatua._Label4">
 <summary>
 Control Label4.
 </summary>
@@ -496,7 +685,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._TextBoxUdalerri">
+<member name="F:Misifu_ASP2.InsertatuOstatua._TextBoxUdalerri">
 <summary>
 Control TextBoxUdalerri.
 </summary>
@@ -505,7 +694,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._Label5">
+<member name="F:Misifu_ASP2.InsertatuOstatua._Label5">
 <summary>
 Control Label5.
 </summary>
@@ -514,7 +703,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._TextBoxProbint">
+<member name="F:Misifu_ASP2.InsertatuOstatua._TextBoxProbint">
 <summary>
 Control TextBoxProbint.
 </summary>
@@ -523,7 +712,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._Label6">
+<member name="F:Misifu_ASP2.InsertatuOstatua._Label6">
 <summary>
 Control Label6.
 </summary>
@@ -532,7 +721,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._TextBoxEmail">
+<member name="F:Misifu_ASP2.InsertatuOstatua._TextBoxEmail">
 <summary>
 Control TextBoxEmail.
 </summary>
@@ -541,7 +730,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._Label7">
+<member name="F:Misifu_ASP2.InsertatuOstatua._Label7">
 <summary>
 Control Label7.
 </summary>
@@ -550,7 +739,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._TextBoxTelef">
+<member name="F:Misifu_ASP2.InsertatuOstatua._TextBoxTelef">
 <summary>
 Control TextBoxTelef.
 </summary>
@@ -559,7 +748,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._Label8">
+<member name="F:Misifu_ASP2.InsertatuOstatua._Label8">
 <summary>
 Control Label8.
 </summary>
@@ -568,7 +757,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._TextBoxWeb">
+<member name="F:Misifu_ASP2.InsertatuOstatua._TextBoxWeb">
 <summary>
 Control TextBoxWeb.
 </summary>
@@ -577,7 +766,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._btnBueltatu">
+<member name="F:Misifu_ASP2.InsertatuOstatua._btnBueltatu">
 <summary>
 Control btnBueltatu.
 </summary>
@@ -586,7 +775,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm4._btnInsertatu">
+<member name="F:Misifu_ASP2.InsertatuOstatua._btnInsertatu">
 <summary>
 Control btnInsertatu.
 </summary>
@@ -670,6 +859,195 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Misifu_ASP2.WebForm5._Button2">
 <summary>
 Control Button2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._form1">
+<summary>
+Control form1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._Label1">
+<summary>
+Control Label1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._lblID">
+<summary>
+Control lblID.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._DropDownList1">
+<summary>
+Control DropDownList1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._btnBete">
+<summary>
+Control btnBete.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._lblIzena">
+<summary>
+Control lblIzena.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._TextBoxIzena">
+<summary>
+Control TextBoxIzena.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._lblDeskrib">
+<summary>
+Control lblDeskrib.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._TextBoxDeskr">
+<summary>
+Control TextBoxDeskr.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._lblUdalerri">
+<summary>
+Control lblUdalerri.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._TextBoxUdalerri">
+<summary>
+Control TextBoxUdalerri.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._lblProbintzia">
+<summary>
+Control lblProbintzia.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._TextBoxProbint">
+<summary>
+Control TextBoxProbint.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._lblEmail">
+<summary>
+Control lblEmail.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._TextBoxEmail">
+<summary>
+Control TextBoxEmail.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._lblTelef">
+<summary>
+Control lblTelef.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._TextBoxTelef">
+<summary>
+Control TextBoxTelef.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._lblWeb">
+<summary>
+Control lblWeb.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._TextBoxWeb">
+<summary>
+Control TextBoxWeb.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._btnBueltatu">
+<summary>
+Control btnBueltatu.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuOstatua._btnAldatu">
+<summary>
+Control btnAldatu.
 </summary>
 <remarks>
 Campo generado automáticamente.

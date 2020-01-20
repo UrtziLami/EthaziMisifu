@@ -243,6 +243,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="descarga.ico" />
+    <None Include="Resources\alert.png" />
     <None Include="Resources\upload1.png" />
     <None Include="Resources\upload.png" />
     <None Include="Resources\casa.png" />

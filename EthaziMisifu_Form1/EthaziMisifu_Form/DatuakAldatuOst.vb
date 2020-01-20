@@ -11,7 +11,58 @@ Public Class DatuakAldatuOst
     Dim latit As String
     Dim longi As String
     Dim konn As MySqlConnection
-
+    Private Function balidatuHutza() As Boolean
+        Dim bal As Boolean = True
+        If txtBIzena.Text.Equals("") Then
+            piBIz.Visible = True
+            bal = False
+        Else
+            piBIz.Visible = False
+        End If
+        If txtBProbintzia.Text.Equals("") Then
+            picBProb.Visible = True
+            bal = False
+        Else
+            picBProb.Visible = False
+        End If
+        If txtBUdalerri.Text.Equals("") Then
+            picBUdal.Visible = True
+            bal = False
+        Else
+            picBUdal.Visible = False
+        End If
+        If txtBLat.Text.Equals("") Then
+            picBLat.Visible = True
+            bal = False
+        Else
+            picBLat.Visible = False
+        End If
+        If txtBLon.Text.Equals("") Then
+            piBlon.Visible = True
+            bal = False
+        Else
+            piBlon.Visible = False
+        End If
+        If RtxtBDesk.Text.Equals("") Then
+            picBDesk.Visible = True
+            bal = False
+        Else
+            picBDesk.Visible = False
+        End If
+        If txtBWeb.Text.Equals("") Then
+            picBWeb.Visible = True
+            bal = False
+        Else
+            picBWeb.Visible = False
+        End If
+        If txtBTelefonoa.Text.Equals("") Or txtBTelefonoa.Text.Length < 9 Then
+            piBTel.Visible = True
+            bal = False
+        Else
+            piBTel.Visible = False
+        End If
+        Return bal
+    End Function
     Public Sub datuak(iz As String, des As String, ud As String, pro As String, em As String, tel As String, we As String, id As String, lat As String, lon As String)
         izena = iz
         deskb = des
@@ -26,15 +77,18 @@ Public Class DatuakAldatuOst
     End Sub
     Private Sub btnGorde_Click(sender As Object, e As EventArgs) Handles btnGorde.Click
         datuakAldatu()
-        Dim lei As New OstatuLeiho
-        lei.Show()
-        Hide()
     End Sub
     Private Function balidatuEmail(strEmail As String) As Boolean
-        Return System.Text.RegularExpressions.Regex.IsMatch(strEmail, "^(?("")("".+?""@)|(([0-9a-zA-Z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-zA-Z])@))" & "(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,6}))$")
+        If System.Text.RegularExpressions.Regex.IsMatch(strEmail, "^(?("")("".+?""@)|(([0-9a-zA-Z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-zA-Z])@))" & "(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,6}))$") Then
+            picBEma.Visible = False
+            Return True
+        Else
+            picBEma.Visible = True
+            Return False
+        End If
     End Function
     Private Sub datuakAldatu()
-        If balidatuEmail(txtBEmail.Text) Then
+        If balidatuEmail(txtBEmail.Text) And balidatuHutza() Then
             Try
                 'konn = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
                 konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")
@@ -45,8 +99,11 @@ Public Class DatuakAldatuOst
             Dim myCommand As New MySqlCommand("update ostatuak set izena = '" & txtBIzena.Text & "', deskribapena = '" & RtxtBDesk.Text & "', udalerri = '" & txtBUdalerri.Text & "', probintzia = '" & txtBProbintzia.Text & "', email = '" & txtBEmail.Text & "', telefonoa = '" & txtBTelefonoa.Text & "', web = '" & txtBWeb.Text & "', longitudea = '" & txtBLon.Text & "', latitudea = '" & txtBLat.Text & "' where sinadura like '" & idOs & "'", konn)
             myCommand.ExecuteNonQuery()
             konn.Close()
+            Dim lei As New OstatuLeiho
+            lei.Show()
+            Hide()
         Else
-            MessageBox.Show("Email-a txarto dago.")
+            MessageBox.Show("Datuak txarto daude.")
         End If
     End Sub
     Private Sub DatuakAldatuOst_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -90,5 +147,4 @@ Public Class DatuakAldatuOst
         klas.Show()
         Hide()
     End Sub
-
 End Class

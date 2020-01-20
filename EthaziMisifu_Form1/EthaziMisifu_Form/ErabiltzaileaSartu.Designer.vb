@@ -30,6 +30,12 @@ Partial Class ErabiltzaileaSartu
         Me.lblPasahitza = New System.Windows.Forms.Label()
         Me.txtBIzenAbi = New System.Windows.Forms.TextBox()
         Me.lblIzenAb = New System.Windows.Forms.Label()
+        Me.picBIzAb = New System.Windows.Forms.PictureBox()
+        Me.picBErabIzn = New System.Windows.Forms.PictureBox()
+        Me.picBPas = New System.Windows.Forms.PictureBox()
+        CType(Me.picBIzAb, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picBErabIzn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picBPas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtBErabIzena
@@ -106,12 +112,51 @@ Partial Class ErabiltzaileaSartu
         Me.lblIzenAb.TabIndex = 10
         Me.lblIzenAb.Text = "Izen Abizena:"
         '
+        'picBIzAb
+        '
+        Me.picBIzAb.BackColor = System.Drawing.Color.Transparent
+        Me.picBIzAb.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
+        Me.picBIzAb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picBIzAb.Location = New System.Drawing.Point(725, 124)
+        Me.picBIzAb.Name = "picBIzAb"
+        Me.picBIzAb.Size = New System.Drawing.Size(23, 20)
+        Me.picBIzAb.TabIndex = 44
+        Me.picBIzAb.TabStop = False
+        Me.picBIzAb.Visible = False
+        '
+        'picBErabIzn
+        '
+        Me.picBErabIzn.BackColor = System.Drawing.Color.Transparent
+        Me.picBErabIzn.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
+        Me.picBErabIzn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picBErabIzn.Location = New System.Drawing.Point(725, 313)
+        Me.picBErabIzn.Name = "picBErabIzn"
+        Me.picBErabIzn.Size = New System.Drawing.Size(23, 20)
+        Me.picBErabIzn.TabIndex = 45
+        Me.picBErabIzn.TabStop = False
+        Me.picBErabIzn.Visible = False
+        '
+        'picBPas
+        '
+        Me.picBPas.BackColor = System.Drawing.Color.Transparent
+        Me.picBPas.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
+        Me.picBPas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picBPas.Location = New System.Drawing.Point(725, 216)
+        Me.picBPas.Name = "picBPas"
+        Me.picBPas.Size = New System.Drawing.Size(23, 20)
+        Me.picBPas.TabIndex = 45
+        Me.picBPas.TabStop = False
+        Me.picBPas.Visible = False
+        '
         'ErabiltzaileaSartu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
+        Me.Controls.Add(Me.picBPas)
+        Me.Controls.Add(Me.picBErabIzn)
+        Me.Controls.Add(Me.picBIzAb)
         Me.Controls.Add(Me.txtBErabIzena)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnAtzera)
@@ -123,6 +168,9 @@ Partial Class ErabiltzaileaSartu
         Me.Name = "ErabiltzaileaSartu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ErabiltzaileaSartu"
+        CType(Me.picBIzAb, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picBErabIzn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picBPas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -136,4 +184,7 @@ Partial Class ErabiltzaileaSartu
     Friend WithEvents lblPasahitza As Label
     Friend WithEvents txtBIzenAbi As TextBox
     Friend WithEvents lblIzenAb As Label
+    Friend WithEvents picBIzAb As PictureBox
+    Friend WithEvents picBErabIzn As PictureBox
+    Friend WithEvents picBPas As PictureBox
 End Class

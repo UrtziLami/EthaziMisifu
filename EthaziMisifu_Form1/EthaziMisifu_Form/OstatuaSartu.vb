@@ -26,67 +26,65 @@ Public Class OstatuaSartu
             Dim lei As New OstatuLeiho
             lei.Show()
             Hide()
-            txtBEmail.BackColor = Color.White
         Else
-            txtBEmail.BackColor = Color.Red
-            MessageBox.Show("Datuak txarto dago.")
+            MessageBox.Show("Datuak txarto daude.")
         End If
     End Sub
     Private Function balidatuHutza() As Boolean
         Dim bal As Boolean = True
         If txtBIzena.Text.Equals("") Then
-            txtBIzena.BackColor = Color.Red
+            pcBIz.Visible = True
             bal = False
         Else
-            txtBIzena.BackColor = Color.White
+            pcBIz.Visible = False
         End If
         If txtBProbintzia.Text.Equals("") Then
-            txtBProbintzia.BackColor = Color.Red
+            piBPro.Visible = True
             bal = False
         Else
-            txtBProbintzia.BackColor = Color.White
+            piBPro.Visible = False
         End If
         If txtBSinadura.Text.Equals("") Then
-            txtBSinadura.BackColor = Color.Red
+            picBSina.Visible = True
             bal = False
         Else
-            txtBSinadura.BackColor = Color.White
+            picBSina.Visible = True
         End If
         If txtBUdalerri.Text.Equals("") Then
-            txtBUdalerri.BackColor = Color.Red
+            pcBUda.Visible = True
             bal = False
         Else
-            txtBUdalerri.BackColor = Color.White
+            pcBUda.Visible = False
         End If
         If txtBLat.Text.Equals("") Then
-            txtBLat.BackColor = Color.Red
+            piBLa.Visible = True
             bal = False
         Else
-            txtBLat.BackColor = Color.White
+            piBLa.Visible = False
         End If
         If txtBLon.Text.Equals("") Then
-            txtBLon.BackColor = Color.Red
+            picBLon.Visible = True
             bal = False
         Else
-            txtBLon.BackColor = Color.White
+            picBLon.Visible = False
         End If
         If RtxtBDesk.Text.Equals("") Then
-            RtxtBDesk.BackColor = Color.Red
+            piBDesk.Visible = True
             bal = False
         Else
-            RtxtBDesk.BackColor = Color.White
+            piBDesk.Visible = False
         End If
         If txtBWeb.Text.Equals("") Then
-            txtBWeb.BackColor = Color.Red
+            piBweb.Visible = True
             bal = False
         Else
-            txtBWeb.BackColor = Color.White
+            piBweb.Visible = False
         End If
         If txtBTelefonoa.Text.Equals("") Or txtBTelefonoa.Text.Length < 9 Then
-            txtBTelefonoa.BackColor = Color.Red
+            piBTel.Visible = True
             bal = False
         Else
-            txtBTelefonoa.BackColor = Color.White
+            piBTel.Visible = False
         End If
         Return bal
     End Function
@@ -130,7 +128,13 @@ Public Class OstatuaSartu
         Hide()
     End Sub
     Private Function balidatuEmail(strEmail As String) As Boolean
-        Return System.Text.RegularExpressions.Regex.IsMatch(strEmail, "^(?("")("".+?""@)|(([0-9a-zA-Z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-zA-Z])@))" & "(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,6}))$")
+        If System.Text.RegularExpressions.Regex.IsMatch(strEmail, "^(?("")("".+?""@)|(([0-9a-zA-Z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-zA-Z])@))" & "(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,6}))$") Then
+            piBem.Visible = False
+            Return True
+        Else
+            piBem.Visible = True
+            Return False
+        End If
     End Function
 
     Private Sub OstatuaSartu_Load(sender As Object, e As EventArgs) Handles MyBase.Load

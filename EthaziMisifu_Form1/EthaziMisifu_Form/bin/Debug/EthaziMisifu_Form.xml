@@ -32,6 +32,11 @@ EthaziMisifu_Form
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:EthaziMisifu_Form.My.Resources.Resources.alert">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:EthaziMisifu_Form.My.Resources.Resources.atras">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

@@ -43,6 +43,24 @@ Partial Class DatuakAldatuOst
         Me.txtBLat = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.piBlon = New System.Windows.Forms.PictureBox()
+        Me.picBWeb = New System.Windows.Forms.PictureBox()
+        Me.piBTel = New System.Windows.Forms.PictureBox()
+        Me.picBProb = New System.Windows.Forms.PictureBox()
+        Me.picBUdal = New System.Windows.Forms.PictureBox()
+        Me.picBEma = New System.Windows.Forms.PictureBox()
+        Me.piBIz = New System.Windows.Forms.PictureBox()
+        Me.picBDesk = New System.Windows.Forms.PictureBox()
+        Me.picBLat = New System.Windows.Forms.PictureBox()
+        CType(Me.piBlon, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picBWeb, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.piBTel, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picBProb, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picBUdal, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picBEma, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.piBIz, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picBDesk, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picBLat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -228,12 +246,129 @@ Partial Class DatuakAldatuOst
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "Longitudea:"
         '
+        'piBlon
+        '
+        Me.piBlon.BackColor = System.Drawing.Color.Transparent
+        Me.piBlon.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
+        Me.piBlon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.piBlon.Location = New System.Drawing.Point(482, 245)
+        Me.piBlon.Name = "piBlon"
+        Me.piBlon.Size = New System.Drawing.Size(23, 20)
+        Me.piBlon.TabIndex = 53
+        Me.piBlon.TabStop = False
+        Me.piBlon.Visible = False
+        '
+        'picBWeb
+        '
+        Me.picBWeb.BackColor = System.Drawing.Color.Transparent
+        Me.picBWeb.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
+        Me.picBWeb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picBWeb.Location = New System.Drawing.Point(917, 174)
+        Me.picBWeb.Name = "picBWeb"
+        Me.picBWeb.Size = New System.Drawing.Size(23, 20)
+        Me.picBWeb.TabIndex = 54
+        Me.picBWeb.TabStop = False
+        Me.picBWeb.Visible = False
+        '
+        'piBTel
+        '
+        Me.piBTel.BackColor = System.Drawing.Color.Transparent
+        Me.piBTel.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
+        Me.piBTel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.piBTel.Location = New System.Drawing.Point(482, 174)
+        Me.piBTel.Name = "piBTel"
+        Me.piBTel.Size = New System.Drawing.Size(23, 20)
+        Me.piBTel.TabIndex = 55
+        Me.piBTel.TabStop = False
+        Me.piBTel.Visible = False
+        '
+        'picBProb
+        '
+        Me.picBProb.BackColor = System.Drawing.Color.Transparent
+        Me.picBProb.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
+        Me.picBProb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picBProb.Location = New System.Drawing.Point(917, 107)
+        Me.picBProb.Name = "picBProb"
+        Me.picBProb.Size = New System.Drawing.Size(23, 20)
+        Me.picBProb.TabIndex = 56
+        Me.picBProb.TabStop = False
+        Me.picBProb.Visible = False
+        '
+        'picBUdal
+        '
+        Me.picBUdal.BackColor = System.Drawing.Color.Transparent
+        Me.picBUdal.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
+        Me.picBUdal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picBUdal.Location = New System.Drawing.Point(482, 105)
+        Me.picBUdal.Name = "picBUdal"
+        Me.picBUdal.Size = New System.Drawing.Size(23, 20)
+        Me.picBUdal.TabIndex = 57
+        Me.picBUdal.TabStop = False
+        Me.picBUdal.Visible = False
+        '
+        'picBEma
+        '
+        Me.picBEma.BackColor = System.Drawing.Color.Transparent
+        Me.picBEma.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
+        Me.picBEma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picBEma.Location = New System.Drawing.Point(917, 37)
+        Me.picBEma.Name = "picBEma"
+        Me.picBEma.Size = New System.Drawing.Size(23, 20)
+        Me.picBEma.TabIndex = 58
+        Me.picBEma.TabStop = False
+        Me.picBEma.Visible = False
+        '
+        'piBIz
+        '
+        Me.piBIz.BackColor = System.Drawing.Color.Transparent
+        Me.piBIz.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
+        Me.piBIz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.piBIz.Location = New System.Drawing.Point(481, 37)
+        Me.piBIz.Name = "piBIz"
+        Me.piBIz.Size = New System.Drawing.Size(23, 20)
+        Me.piBIz.TabIndex = 59
+        Me.piBIz.TabStop = False
+        Me.piBIz.Visible = False
+        '
+        'picBDesk
+        '
+        Me.picBDesk.BackColor = System.Drawing.Color.Transparent
+        Me.picBDesk.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
+        Me.picBDesk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picBDesk.Location = New System.Drawing.Point(917, 348)
+        Me.picBDesk.Name = "picBDesk"
+        Me.picBDesk.Size = New System.Drawing.Size(23, 20)
+        Me.picBDesk.TabIndex = 60
+        Me.picBDesk.TabStop = False
+        Me.picBDesk.Visible = False
+        '
+        'picBLat
+        '
+        Me.picBLat.BackColor = System.Drawing.Color.Transparent
+        Me.picBLat.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
+        Me.picBLat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picBLat.Location = New System.Drawing.Point(917, 245)
+        Me.picBLat.Name = "picBLat"
+        Me.picBLat.Size = New System.Drawing.Size(23, 20)
+        Me.picBLat.TabIndex = 61
+        Me.picBLat.TabStop = False
+        Me.picBLat.Visible = False
+        '
         'DatuakAldatuOst
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
+        Me.Controls.Add(Me.picBLat)
+        Me.Controls.Add(Me.picBDesk)
+        Me.Controls.Add(Me.piBIz)
+        Me.Controls.Add(Me.picBEma)
+        Me.Controls.Add(Me.picBUdal)
+        Me.Controls.Add(Me.picBProb)
+        Me.Controls.Add(Me.piBTel)
+        Me.Controls.Add(Me.picBWeb)
+        Me.Controls.Add(Me.piBlon)
         Me.Controls.Add(Me.txtBLon)
         Me.Controls.Add(Me.txtBLat)
         Me.Controls.Add(Me.Label8)
@@ -258,6 +393,15 @@ Partial Class DatuakAldatuOst
         Me.Name = "DatuakAldatuOst"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DatuakAldatuOst"
+        CType(Me.piBlon, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picBWeb, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.piBTel, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picBProb, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picBUdal, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picBEma, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.piBIz, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picBDesk, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picBLat, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -283,4 +427,13 @@ Partial Class DatuakAldatuOst
     Friend WithEvents txtBLat As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents piBlon As PictureBox
+    Friend WithEvents picBWeb As PictureBox
+    Friend WithEvents piBTel As PictureBox
+    Friend WithEvents picBProb As PictureBox
+    Friend WithEvents picBUdal As PictureBox
+    Friend WithEvents picBEma As PictureBox
+    Friend WithEvents piBIz As PictureBox
+    Friend WithEvents picBDesk As PictureBox
+    Friend WithEvents picBLat As PictureBox
 End Class

@@ -1,5 +1,5 @@
 package lehena;
-// Generated 12-ene-2020 13:29:37 by Hibernate Tools 5.4.7.Final
+// Generated 21-ene-2020 8:49:14 by Hibernate Tools 5.4.7.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,30 +9,27 @@ import java.util.Set;
  */
 public class Erabiltzaileak implements java.io.Serializable {
 
-	private int idBezeroak;
+	private Integer idBezeroak;
 	private String izenAbizena;
 	private String pasahitza;
-	private Set reservases = new HashSet(0);
+	private String erabIzena;
+	private Set erreserbaks = new HashSet(0);
 
 	public Erabiltzaileak() {
 	}
 
-	public Erabiltzaileak(int idBezeroak) {
-		this.idBezeroak = idBezeroak;
-	}
-
-	public Erabiltzaileak(int idBezeroak, String izenAbizena, String pasahitza, Set reservases) {
-		this.idBezeroak = idBezeroak;
+	public Erabiltzaileak(String izenAbizena, String pasahitza, String erabIzena, Set erreserbaks) {
 		this.izenAbizena = izenAbizena;
 		this.pasahitza = pasahitza;
-		this.reservases = reservases;
+		this.erabIzena = erabIzena;
+		this.erreserbaks = erreserbaks;
 	}
 
-	public int getIdBezeroak() {
+	public Integer getIdBezeroak() {
 		return this.idBezeroak;
 	}
 
-	public void setIdBezeroak(int idBezeroak) {
+	public void setIdBezeroak(Integer idBezeroak) {
 		this.idBezeroak = idBezeroak;
 	}
 
@@ -52,12 +49,20 @@ public class Erabiltzaileak implements java.io.Serializable {
 		this.pasahitza = pasahitza;
 	}
 
-	public Set getReservases() {
-		return this.reservases;
+	public String getErabIzena() {
+		return this.erabIzena;
 	}
 
-	public void setReservases(Set reservases) {
-		this.reservases = reservases;
+	public void setErabIzena(String erabIzena) {
+		this.erabIzena = erabIzena;
+	}
+
+	public Set getErreserbaks() {
+		return this.erreserbaks;
+	}
+
+	public void setErreserbaks(Set erreserbaks) {
+		this.erreserbaks = erreserbaks;
 	}
 
 }

@@ -47,14 +47,29 @@ public class XMLManeiatzailea extends DefaultHandler{
 		case "documentname":
 			alojamendu.setIzena(balioa);
 			break;
+		case "signatura":
+			alojamendu.setSinadura(balioa);
+			break;
+		case "phone":
+			alojamendu.setTelefonoa(balioa);
+			break;
 		case "turismdescription":
 			balioa.replaceAll("/","");
 			balioa.replaceAll("<[^>]*>","");
 			balioa.replaceAll("lt;[^gt;]*gt;","");
 			alojamendu.setDeskribapena(balioa);
 			break;
-		case "phonenumber":
-			alojamendu.setTelefonoa(balioa);
+		case "municipality":
+			alojamendu.setUdalerri(balioa);
+			break;
+		case "territory":
+			alojamendu.setProbintzia(balioa);
+			break;
+		case "latwgs84":
+			alojamendu.setLatitudea(Float.parseFloat(balioa));
+			break;
+		case "lonwgs84":
+			alojamendu.setLongitudea(Float.parseFloat(balioa));
 			break;
 		case "tourismemail":			
 			alojamendu.setEmail(balioa);

@@ -17,7 +17,7 @@ Public Class ErreserbaLeihoa
     Private Sub datuakKargatu()
         Try
             'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-            konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")
+            konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
             konn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar al servidor")
@@ -68,7 +68,7 @@ Public Class ErreserbaLeihoa
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar al servidor")
         End Try
-        Dim komand As New MySqlCommand("select izena from ostatuak where sinadura = " & id, konn)
+        Dim komand As New MySqlCommand("select izena from ostatuak where sinadura = '" & id & "'", konn)
         Dim dr As MySqlDataReader
         Dim ost As String
         dr = komand.ExecuteReader

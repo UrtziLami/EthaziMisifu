@@ -138,4 +138,19 @@ Public Class HasiSaioaLeihoa
         Catch ex As Exception
         End Try
     End Function
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+            'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
+            konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")
+            konn.Open()
+        Catch ex As MySqlException
+            MessageBox.Show("No se ha podido conectar al servidor")
+        End Try
+        Dim pshEnc As String = AES_Encrypt(txBPasahitza.Text, kodEncDes)
+        Dim eraIzEnc As String = AES_Encrypt(txtBxErabiltzailea.Text, kodEncDes)
+        Dim myCommand As New MySqlCommand("insert into erabiltzaileak (pasahitza, erabIzena) values ('" & pshEnc & "', '" & eraIzEnc & "')", konn)
+        myCommand.ExecuteNonQuery()
+        konn.Close()
+    End Sub
 End Class

@@ -335,7 +335,7 @@ Partial Class DatuakAldatuOst
         Me.picBDesk.BackColor = System.Drawing.Color.Transparent
         Me.picBDesk.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
         Me.picBDesk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.picBDesk.Location = New System.Drawing.Point(917, 348)
+        Me.picBDesk.Location = New System.Drawing.Point(222, 311)
         Me.picBDesk.Name = "picBDesk"
         Me.picBDesk.Size = New System.Drawing.Size(23, 20)
         Me.picBDesk.TabIndex = 60

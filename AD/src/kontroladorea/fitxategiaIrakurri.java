@@ -47,7 +47,7 @@ public class fitxategiaIrakurri {
 			
 			ArrayList<Ostatuak> a=irakurriFitzategiaXML(new InputStreamReader(ficheroUrl.openStream()));
 			for (Ostatuak elem: a) {
-				HibernateUtil.insertAlojamendu(elem.getIzena(), elem.getDeskribapena(), elem.getUdalerri(), elem.getProbintzia(), elem.getTelefonoa(), elem.getEmail(), elem.getWeb());
+				HibernateUtil.insertAlojamendu(elem.getSinadura(), elem.getIzena(), elem.getDeskribapena(), elem.getUdalerri(), elem.getProbintzia(),  elem.getEmail(),elem.getTelefonoa(), elem.getWeb(),elem.getLongitudea(), elem.getLatitudea() );
 			}
 				
 			
@@ -88,7 +88,7 @@ public class fitxategiaIrakurri {
 			// Badaukagu kargatuta liburuak eta orain inprimatuko ditugu
 
 			for (Ostatuak elem: objetuenLista) {
-				HibernateUtil.insertAlojamendu(elem.getIzena(), elem.getDeskribapena(), elem.getUdalerri(), elem.getProbintzia(), elem.getTelefonoa(), elem.getEmail(), elem.getWeb());
+				HibernateUtil.insertAlojamendu(elem.getSinadura(), elem.getIzena(), elem.getDeskribapena(), elem.getUdalerri(), elem.getProbintzia(), elem.getEmail(), elem.getTelefonoa(), elem.getWeb(),elem.getLongitudea(), elem.getLatitudea());
 			}
 		} catch (SAXException e) {
 			e.printStackTrace();

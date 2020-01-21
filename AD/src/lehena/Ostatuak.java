@@ -1,5 +1,5 @@
 package lehena;
-// Generated 16-ene-2020 8:27:48 by Hibernate Tools 5.4.7.Final
+// Generated 21-ene-2020 8:49:14 by Hibernate Tools 5.4.7.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,7 +9,7 @@ import java.util.Set;
  */
 public class Ostatuak implements java.io.Serializable {
 
-	private Integer idAlojamenduak;
+	private String sinadura;
 	private String izena;
 	private String deskribapena;
 	private String udalerri;
@@ -17,13 +17,20 @@ public class Ostatuak implements java.io.Serializable {
 	private String email;
 	private String telefonoa;
 	private String web;
+	private Float longitudea;
+	private Float latitudea;
 
 
 	public Ostatuak() {
 	}
 
-	public Ostatuak(String izena, String deskribapena, String udalerri, String probintzia, String email,
-			String telefonoa, String web) {
+	public Ostatuak(String sinadura) {
+		this.sinadura = sinadura;
+	}
+
+	public Ostatuak(String sinadura, String izena, String deskribapena, String udalerri, String probintzia,
+			String email, String telefonoa, String web, Float longitudea, Float latitudea) {
+		this.sinadura = sinadura;
 		this.izena = izena;
 		this.deskribapena = deskribapena;
 		this.udalerri = udalerri;
@@ -31,15 +38,16 @@ public class Ostatuak implements java.io.Serializable {
 		this.email = email;
 		this.telefonoa = telefonoa;
 		this.web = web;
-
+		this.longitudea = longitudea;
+		this.latitudea = latitudea;
 	}
 
-	public Integer getIdAlojamenduak() {
-		return this.idAlojamenduak;
+	public String getSinadura() {
+		return this.sinadura;
 	}
 
-	public void setIdAlojamenduak(Integer idAlojamenduak) {
-		this.idAlojamenduak = idAlojamenduak;
+	public void setSinadura(String sinadura) {
+		this.sinadura = sinadura;
 	}
 
 	public String getIzena() {
@@ -97,5 +105,22 @@ public class Ostatuak implements java.io.Serializable {
 	public void setWeb(String web) {
 		this.web = web;
 	}
+
+	public Float getLongitudea() {
+		return this.longitudea;
+	}
+
+	public void setLongitudea(Float longitudea) {
+		this.longitudea = longitudea;
+	}
+
+	public Float getLatitudea() {
+		return this.latitudea;
+	}
+
+	public void setLatitudea(Float latitudea) {
+		this.latitudea = latitudea;
+	}
+
 
 }

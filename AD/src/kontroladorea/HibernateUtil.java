@@ -23,15 +23,15 @@ public class HibernateUtil {
 	        factory = config.buildSessionFactory(serviceRegistry);
 	    }
 	 
-	    public static long insertAlojamendu(String name,String deskribapena,String udalerri,String probintzia,String telefonoa,String email,String web) {
+	    public static String insertAlojamendu(String sinadura, String name,String deskribapena,String udalerri,String probintzia,String email,String telefonoa,String web, Float longitude, Float latitude) {
 	        Session session = factory.openSession();
 	        Transaction tx = null;
-	        Integer stId = null;
+	        String stId = null;
 	        try
 	        {
 	            tx = session.beginTransaction();
 	            Ostatuak al = new Ostatuak();
-	            
+	            al.setSinadura(sinadura);
 	            al.setIzena(name);
 	            al.setDeskribapena(deskribapena);
 	            al.setUdalerri(udalerri);
@@ -39,8 +39,10 @@ public class HibernateUtil {
 	            al.setTelefonoa(telefonoa);
 	            al.setEmail(email);
 	            al.setWeb(web);
+	            al.setLongitudea(longitude);
+	            al.setLatitudea(latitude);
 	             
-	            stId = (Integer) session.save(al);
+	            stId = (String) session.save(al);
 	            tx.commit();
 	        } 
 	        catch (HibernateException ex)

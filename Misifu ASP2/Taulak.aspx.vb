@@ -1,6 +1,6 @@
 ﻿Imports System.Windows
 Imports MySql.Data.MySqlClient
-Public Class WebForm2
+Public Class Taulak
     Inherits System.Web.UI.Page
     Dim conn As MySqlConnection
     Dim ds As New DataSet
@@ -32,21 +32,21 @@ Public Class WebForm2
         da.Fill(ds)
 
         For i = 0 To ds.Tables(0).Columns.Count - 1
-            Table.Columns.Add(ds.Tables(0).Columns(i).ColumnName)
+            table.Columns.Add(ds.Tables(0).Columns(i).ColumnName)
         Next
 
         For i = 0 To ds.Tables(0).Rows.Count - 1
-            Table.Rows.Add()
+            table.Rows.Add()
             For j = 0 To ds.Tables(0).Columns.Count - 1
-                Table.Rows(i)(j) = ds.Tables(0).Rows(i)(j).ToString()
+                table.Rows(i)(j) = ds.Tables(0).Rows(i)(j).ToString()
             Next
         Next
 
-        For i = 0 To Table.Rows.Count - 1
-            Table.Rows(i)("pasahitza") = wf1.AES_Decrypt(Table.Rows(i)("pasahitza"), wf1.kodEnc)
+        For i = 0 To table.Rows.Count - 1
+            table.Rows(i)("pasahitza") = wf1.AES_Decrypt(table.Rows(i)("pasahitza"), wf1.kodEnc)
         Next
 
-        GridView1.DataSource = Table
+        GridView1.DataSource = table
         GridView1.DataBind()
         Label1.Text = "ERABILTZAILEAK"
         btnInsertatu.Visible = True
@@ -84,9 +84,9 @@ Public Class WebForm2
         table.Columns.Add("Alojamendua")
 
         For i = 0 To ds.Tables(0).Rows.Count - 1
-            Table.Rows.Add()
+            table.Rows.Add()
             For j = 0 To ds.Tables(0).Columns.Count - 1
-                Table.Rows(i)(j) = ds.Tables(0).Rows(i)(j).ToString()
+                table.Rows(i)(j) = ds.Tables(0).Rows(i)(j).ToString()
             Next
         Next
 
@@ -116,7 +116,7 @@ Public Class WebForm2
             table.Rows(i)(2) = ds2.Tables(0).Rows(0)(0).ToString
         Next
 
-        GridView1.DataSource = Table
+        GridView1.DataSource = table
         GridView1.DataBind()
         Label1.Text = "ERRESERBAK"
         btnInsertatu.Visible = True
@@ -150,17 +150,17 @@ Public Class WebForm2
         da.Fill(ds)
 
         For i = 0 To ds.Tables(0).Columns.Count - 1
-            Table.Columns.Add(ds.Tables(0).Columns(i).ColumnName)
+            table.Columns.Add(ds.Tables(0).Columns(i).ColumnName)
         Next
 
         For i = 0 To ds.Tables(0).Rows.Count - 1
-            Table.Rows.Add()
+            table.Rows.Add()
             For j = 0 To ds.Tables(0).Columns.Count - 1
-                Table.Rows(i)(j) = ds.Tables(0).Rows(i)(j).ToString()
+                table.Rows(i)(j) = ds.Tables(0).Rows(i)(j).ToString()
             Next
         Next
 
-        GridView1.DataSource = Table
+        GridView1.DataSource = table
         GridView1.DataBind()
         Label1.Text = "OSTATUAK"
         btnInsertatu.Visible = True
@@ -241,10 +241,10 @@ Public Class WebForm2
 
     Protected Sub btnAldatu_Click(sender As Object, e As EventArgs) Handles btnAldatu.Click
         If taula = "erabiltzaileak" Then
-            Response.Redirect("InsertatuErabiltzailea.aspx")
+            Response.Redirect("AldatuErabiltzailea.aspx")
         End If
         If taula = "erreserbak" Then
-            Response.Redirect("InsertatuErreserba.aspx")
+            Response.Redirect("AldatuErreserba.aspx")
         End If
         If taula = "ostatuak" Then
             Response.Redirect("AldatuOstatua.aspx")
@@ -253,10 +253,10 @@ Public Class WebForm2
 
     Protected Sub btnEzabatu_Click(sender As Object, e As EventArgs) Handles btnEzabatu.Click
         If taula = "erabiltzaileak" Then
-            Response.Redirect("InsertatuErabiltzailea.aspx")
+            Response.Redirect("EzabatuErabiltzailea.aspx")
         End If
         If taula = "erreserbak" Then
-            Response.Redirect("InsertatuErreserba.aspx")
+            Response.Redirect("EzabatuErreserba.aspx")
         End If
         If taula = "ostatuak" Then
             Response.Redirect("EzabatuOstatua.aspx")

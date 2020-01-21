@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class WebForm2
+Partial Public Class Taulak
 
     '''<summary>
     '''Control form1.

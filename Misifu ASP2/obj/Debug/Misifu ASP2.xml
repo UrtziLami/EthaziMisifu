@@ -406,6 +406,105 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:Misifu_ASP2.AldatuErreserba._form1">
+<summary>
+Control form1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuErreserba._Label1">
+<summary>
+Control Label1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuErreserba._Label4">
+<summary>
+Control Label4.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuErreserba._DropDownList3">
+<summary>
+Control DropDownList3.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuErreserba._btnBete">
+<summary>
+Control btnBete.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuErreserba._Label2">
+<summary>
+Control Label2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuErreserba._DropDownList1">
+<summary>
+Control DropDownList1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuErreserba._Label3">
+<summary>
+Control Label3.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuErreserba._DropDownList2">
+<summary>
+Control DropDownList2.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuErreserba._btnBueltatu">
+<summary>
+Control btnBueltatu.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.AldatuErreserba._btnAldatu">
+<summary>
+Control btnAldatu.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:Misifu_ASP2.WebForm1._form1">
 <summary>
 Control form1.
@@ -478,7 +577,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._form1">
+<member name="F:Misifu_ASP2.Taulak._form1">
 <summary>
 Control form1.
 </summary>
@@ -487,7 +586,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._Label2">
+<member name="F:Misifu_ASP2.Taulak._Label2">
 <summary>
 Control Label2.
 </summary>
@@ -496,7 +595,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._btnErabiltzaileak">
+<member name="F:Misifu_ASP2.Taulak._btnErabiltzaileak">
 <summary>
 Control btnErabiltzaileak.
 </summary>
@@ -505,7 +604,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._btnErreserbak">
+<member name="F:Misifu_ASP2.Taulak._btnErreserbak">
 <summary>
 Control btnErreserbak.
 </summary>
@@ -514,7 +613,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._btnOstatuak">
+<member name="F:Misifu_ASP2.Taulak._btnOstatuak">
 <summary>
 Control btnOstatuak.
 </summary>
@@ -523,7 +622,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._Label3">
+<member name="F:Misifu_ASP2.Taulak._Label3">
 <summary>
 Control Label3.
 </summary>
@@ -532,7 +631,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._Label4">
+<member name="F:Misifu_ASP2.Taulak._Label4">
 <summary>
 Control Label4.
 </summary>
@@ -541,7 +640,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._TextBox1">
+<member name="F:Misifu_ASP2.Taulak._TextBox1">
 <summary>
 Control TextBox1.
 </summary>
@@ -550,7 +649,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._Label5">
+<member name="F:Misifu_ASP2.Taulak._Label5">
 <summary>
 Control Label5.
 </summary>
@@ -559,7 +658,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._TextBox2">
+<member name="F:Misifu_ASP2.Taulak._TextBox2">
 <summary>
 Control TextBox2.
 </summary>
@@ -568,7 +667,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._btnBilatu">
+<member name="F:Misifu_ASP2.Taulak._btnBilatu">
 <summary>
 Control btnBilatu.
 </summary>
@@ -577,7 +676,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._btnInsertatu">
+<member name="F:Misifu_ASP2.Taulak._btnInsertatu">
 <summary>
 Control btnInsertatu.
 </summary>
@@ -586,7 +685,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._btnEzabatu">
+<member name="F:Misifu_ASP2.Taulak._btnEzabatu">
 <summary>
 Control btnEzabatu.
 </summary>
@@ -595,7 +694,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._btnAldatu">
+<member name="F:Misifu_ASP2.Taulak._btnAldatu">
 <summary>
 Control btnAldatu.
 </summary>
@@ -604,7 +703,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._Label1">
+<member name="F:Misifu_ASP2.Taulak._Label1">
 <summary>
 Control Label1.
 </summary>
@@ -613,7 +712,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.WebForm2._GridView1">
+<member name="F:Misifu_ASP2.Taulak._GridView1">
 <summary>
 Control GridView1.
 </summary>
@@ -850,15 +949,6 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:Misifu_ASP2.WebForm5._btnInsertatu">
 <summary>
 Control btnInsertatu.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:Misifu_ASP2.WebForm5._Button2">
-<summary>
-Control Button2.
 </summary>
 <remarks>
 Campo generado automáticamente.

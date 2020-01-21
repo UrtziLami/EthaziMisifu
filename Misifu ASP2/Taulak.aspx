@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Taulak.aspx.vb" Inherits="Misifu_ASP2.WebForm2" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Taulak.aspx.vb" Inherits="Misifu_ASP2.Taulak" %>
 
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="StyleSheet1.css" />

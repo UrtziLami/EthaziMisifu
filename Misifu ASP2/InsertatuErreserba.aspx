@@ -20,7 +20,7 @@
             <br />
             <br />
             <br />
-            <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="32pt" Text="ERRESERBA"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="32pt" Text="INSERTATU ERRESERBA"></asp:Label>
         </div>
         <div style="margin-left: 40px">
 
@@ -47,9 +47,6 @@
             <asp:Button ID="btnBueltatu" runat="server" Height="35px" Text="Bueltatu" Width="70px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnInsertatu" runat="server" Height="35px" Text="Insertatu" Width="74px" />
-
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button2" runat="server" Height="35px" Text="Aldatu" Width="66px" />
 
         </div>
     </form>

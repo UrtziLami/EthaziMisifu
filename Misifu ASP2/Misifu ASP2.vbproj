@@ -97,10 +97,12 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EzabatuErreserba.aspx" />
     <Content Include="EzabatuOstatua.aspx" />
     <Content Include="InsertatuErabiltzailea.aspx" />
     <Content Include="Free-Background.jpg" />
     <Content Include="Erregistratu.aspx" />
+    <Content Include="AldatuErreserba.aspx" />
     <Content Include="StyleSheet1.css" />
     <Content Include="Web.config" />
     <Content Include="Login.aspx" />
@@ -110,6 +112,13 @@
     <Content Include="AldatuOstatua.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EzabatuErreserba.aspx.designer.vb">
+      <DependentUpon>EzabatuErreserba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EzabatuErreserba.aspx.vb">
+      <DependentUpon>EzabatuErreserba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="EzabatuOstatua.aspx.designer.vb">
       <DependentUpon>EzabatuOstatua.aspx</DependentUpon>
     </Compile>
@@ -130,6 +139,13 @@
     <Compile Include="Erregistratu.aspx.vb">
       <DependentUpon>Erregistratu.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AldatuErreserba.aspx.designer.vb">
+      <DependentUpon>AldatuErreserba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AldatuErreserba.aspx.vb">
+      <DependentUpon>AldatuErreserba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

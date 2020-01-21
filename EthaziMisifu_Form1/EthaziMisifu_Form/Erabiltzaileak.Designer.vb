@@ -28,12 +28,16 @@ Partial Class ErabiltzaileLeihoa
         Me.btnAldatu = New System.Windows.Forms.Button()
         Me.btnKendu = New System.Windows.Forms.Button()
         Me.btnSartu = New System.Windows.Forms.Button()
+        Me.cmBKolumna = New System.Windows.Forms.ComboBox()
+        Me.txbDatua = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'ListView1
         '
         Me.ListView1.FullRowSelect = True
-        Me.ListView1.Location = New System.Drawing.Point(65, 63)
+        Me.ListView1.Location = New System.Drawing.Point(61, 99)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(840, 426)
@@ -95,12 +99,54 @@ Partial Class ErabiltzaileLeihoa
         Me.btnSartu.TabIndex = 6
         Me.btnSartu.UseVisualStyleBackColor = False
         '
+        'cmBKolumna
+        '
+        Me.cmBKolumna.FormattingEnabled = True
+        Me.cmBKolumna.Location = New System.Drawing.Point(222, 41)
+        Me.cmBKolumna.Name = "cmBKolumna"
+        Me.cmBKolumna.Size = New System.Drawing.Size(204, 21)
+        Me.cmBKolumna.TabIndex = 7
+        '
+        'txbDatua
+        '
+        Me.txbDatua.Enabled = False
+        Me.txbDatua.Location = New System.Drawing.Point(664, 41)
+        Me.txbDatua.Name = "txbDatua"
+        Me.txbDatua.Size = New System.Drawing.Size(189, 20)
+        Me.txbDatua.TabIndex = 8
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(102, 36)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(114, 29)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Kolumna:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(568, 36)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(81, 29)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "Datua:"
+        '
         'ErabiltzaileLeihoa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txbDatua)
+        Me.Controls.Add(Me.cmBKolumna)
         Me.Controls.Add(Me.btnSartu)
         Me.Controls.Add(Me.btnKendu)
         Me.Controls.Add(Me.ListView1)
@@ -111,6 +157,7 @@ Partial Class ErabiltzaileLeihoa
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Erabiltzaileak"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnAldatu As Button
@@ -118,4 +165,8 @@ Partial Class ErabiltzaileLeihoa
     Friend WithEvents ListView1 As ListView
     Friend WithEvents btnKendu As Button
     Friend WithEvents btnSartu As Button
+    Friend WithEvents cmBKolumna As ComboBox
+    Friend WithEvents txbDatua As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class

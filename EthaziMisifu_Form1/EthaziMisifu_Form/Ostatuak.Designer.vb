@@ -28,12 +28,16 @@ Partial Class OstatuLeiho
         Me.btnAldatu = New System.Windows.Forms.Button()
         Me.btnKendu = New System.Windows.Forms.Button()
         Me.btnSartu = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txbDatua = New System.Windows.Forms.TextBox()
+        Me.cmBKolumna = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'ListView1
         '
         Me.ListView1.FullRowSelect = True
-        Me.ListView1.Location = New System.Drawing.Point(42, 72)
+        Me.ListView1.Location = New System.Drawing.Point(43, 108)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(890, 413)
         Me.ListView1.TabIndex = 5
@@ -81,12 +85,54 @@ Partial Class OstatuLeiho
         Me.btnSartu.TabIndex = 7
         Me.btnSartu.UseVisualStyleBackColor = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(580, 45)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(81, 29)
+        Me.Label2.TabIndex = 18
+        Me.Label2.Text = "Datua:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(133, 45)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(114, 29)
+        Me.Label1.TabIndex = 17
+        Me.Label1.Text = "Kolumna:"
+        '
+        'txbDatua
+        '
+        Me.txbDatua.Enabled = False
+        Me.txbDatua.Location = New System.Drawing.Point(667, 50)
+        Me.txbDatua.Name = "txbDatua"
+        Me.txbDatua.Size = New System.Drawing.Size(206, 20)
+        Me.txbDatua.TabIndex = 16
+        '
+        'cmBKolumna
+        '
+        Me.cmBKolumna.FormattingEnabled = True
+        Me.cmBKolumna.Location = New System.Drawing.Point(253, 50)
+        Me.cmBKolumna.Name = "cmBKolumna"
+        Me.cmBKolumna.Size = New System.Drawing.Size(204, 21)
+        Me.cmBKolumna.TabIndex = 15
+        '
         'OstatuLeiho
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txbDatua)
+        Me.Controls.Add(Me.cmBKolumna)
         Me.Controls.Add(Me.btnSartu)
         Me.Controls.Add(Me.btnKendu)
         Me.Controls.Add(Me.ListView1)
@@ -96,6 +142,7 @@ Partial Class OstatuLeiho
         Me.Name = "OstatuLeiho"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnAldatu As Button
@@ -103,4 +150,8 @@ Partial Class OstatuLeiho
     Friend WithEvents ListView1 As ListView
     Friend WithEvents btnKendu As Button
     Friend WithEvents btnSartu As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txbDatua As TextBox
+    Friend WithEvents cmBKolumna As ComboBox
 End Class

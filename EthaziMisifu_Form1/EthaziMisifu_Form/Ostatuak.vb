@@ -106,5 +106,13 @@ Public Class OstatuLeiho
         lei.Show()
         Hide()
     End Sub
+
+    Private Sub txbDatua_TextChanged(sender As Object, e As EventArgs) Handles txbDatua.TextChanged
+
+    End Sub
+
+    Private Sub cmBKolumna_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBKolumna.SelectedIndexChanged
+        txbDatua.Enabled = True
+    End Sub
 End Class
 

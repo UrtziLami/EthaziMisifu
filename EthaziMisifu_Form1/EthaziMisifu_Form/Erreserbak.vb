@@ -79,6 +79,11 @@ Public Class ErreserbaLeihoa
         konn.Close()
         Return ost
     End Function
+    Private Sub cmBxKolumnak()
+        cmBKolumna.Items.Add("Erreserbaren Id")
+        cmBKolumna.Items.Add("Bezero Izen Abizena")
+        cmBKolumna.Items.Add("Ostatu Izena")
+    End Sub
 
     Private Sub btnAtzera_Click(sender As Object, e As EventArgs) Handles btnAtzera.Click
         Dim kud As New KudeaketaLeihoa
@@ -91,6 +96,7 @@ Public Class ErreserbaLeihoa
     Private Sub ErreserbaLeihoa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         kolumnakSortu()
         datuakKargatu()
+        cmBxKolumnak()
     End Sub
 
     Private Sub btnAldatu_Click(sender As Object, e As EventArgs) Handles btnAldatu.Click
@@ -126,11 +132,92 @@ Public Class ErreserbaLeihoa
         Dim komand As New MySqlCommand("delete from erreserbak where idErreserba = " & ListView1.SelectedItems(0).SubItems(0).Text, konn)
         komand.ExecuteNonQuery()
         konn.Close()
+        kolumnakSortu()
+        datuakKargatu()
     End Sub
 
     Private Sub btnSartu_Click(sender As Object, e As EventArgs) Handles btnSartu.Click
         Dim lei As New ErreserbaSartu
         lei.Show()
         Hide()
+    End Sub
+    Private Sub filtratuDatuak()
+        kolumnakSortu()
+        If cmBKolumna.SelectedItem.ToString.Equals("Erreserbaren Id") Then
+            Try
+                'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
+                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
+                konn.Open()
+            Catch ex As MySqlException
+                MessageBox.Show("No se ha podido conectar al servidor")
+            End Try
+            Dim myCommand As New MySqlCommand("select * from erreserbak where idErreserba like '%" & txbDatua.Text & "%'", konn)
+            Dim rd As MySqlDataReader
+            rd = myCommand.ExecuteReader
+            While (rd.Read)
+                Dim obj As New ListViewItem(rd(0).ToString, 0)
+                idost = rd(1).ToString
+                idera = rd(2).ToString
+                obj.SubItems.Add(aldatuErab(idera))
+                obj.SubItems.Add(aldatuOst(idost))
+                obj.SubItems.Add(rd(3).ToString)
+                obj.SubItems.Add(rd(4).ToString)
+                ListView1.Items.Add(obj)
+            End While
+            rd.Close()
+            konn.Close()
+        ElseIf cmBKolumna.SelectedItem.ToString.Equals("Bezero Izen Abizena") Then
+            Try
+                'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
+                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
+                konn.Open()
+            Catch ex As MySqlException
+                MessageBox.Show("No se ha podido conectar al servidor")
+            End Try
+            Dim myCommand As New MySqlCommand("select * from erabiltzaileak where izenAbizena like '%" & txbDatua.Text & "%'", konn)
+            Dim rd As MySqlDataReader
+            rd = myCommand.ExecuteReader
+            While (rd.Read)
+                Dim obj As New ListViewItem(rd(0).ToString, 0)
+                obj.SubItems.Add(rd(1).ToString)
+                obj.SubItems.Add(rd(2).ToString)
+                obj.SubItems.Add(rd(3).ToString)
+                ListView1.Items.Add(obj)
+            End While
+            rd.Close()
+            konn.Close()
+        Else
+            Try
+                'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
+                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
+                konn.Open()
+            Catch ex As MySqlException
+                MessageBox.Show("No se ha podido conectar al servidor")
+            End Try
+            Dim myCommand As New MySqlCommand("select * from ostatuak where izena like '%" & txbDatua.Text & "%'", konn)
+            Dim rd As MySqlDataReader
+            rd = myCommand.ExecuteReader
+            While (rd.Read)
+                Dim obj As New ListViewItem(rd(0).ToString, 0)
+                obj.SubItems.Add(rd(1).ToString)
+                obj.SubItems.Add(rd(2).ToString)
+                obj.SubItems.Add(rd(3).ToString)
+                obj.SubItems.Add(rd(4).ToString)
+                obj.SubItems.Add(rd(5).ToString)
+                obj.SubItems.Add(rd(6).ToString)
+                obj.SubItems.Add(rd(7).ToString)
+                ListView1.Items.Add(obj)
+            End While
+            rd.Close()
+            konn.Close()
+        End If
+    End Sub
+
+    Private Sub txbDatua_TextChanged(sender As Object, e As EventArgs) Handles txbDatua.TextChanged
+        filtratuDatuak()
+    End Sub
+
+    Private Sub cmBKolumna_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBKolumna.SelectedIndexChanged
+        txbDatua.Enabled = True
     End Sub
 End Class

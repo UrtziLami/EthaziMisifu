@@ -13,9 +13,11 @@ Public Class ErreserbaSartu
         End Try
         Dim erab As String = cmBErab.SelectedItem.ToString
         Dim ostatu As String = cmBOst.SelectedItem.ToString
+        sartuData = mCSart.SelectionRange.Start.ToShortDateString
+        aterData = mCIrte.SelectionRange.Start.ToShortDateString
         Dim sartData As DateTime = Convert.ToDateTime(sartuData)
         Dim irtData As DateTime = Convert.ToDateTime(aterData)
-        Dim myCommand As New MySqlCommand("insert into erreserbak (Ostatuak_sinadura, Erabiltzaileak_idBezeroak, sartuData, ateraData) values ('" & ostatu & "', '" & erab & "', '" & sartData & "', '" & irtData & "')", konn)
+        Dim myCommand As New MySqlCommand("insert into erreserbak (Ostatuak_sinadura, Erabiltzaileak_idBezeroak, sartuData, ateraData) values ('" & ostatu & "', '" & erab & "', '" & sartuData & "', '" & aterData & "')", konn)
         myCommand.ExecuteNonQuery()
         konn.Close()
     End Sub
@@ -38,12 +40,8 @@ Public Class ErreserbaSartu
 
     Private Sub mCSart_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mCSart.DateChanged
         mCIrte.MinDate = mCSart.SelectionStart
-        sartuData = e.Start.ToShortDateString
     End Sub
 
-    Private Sub mCIrte_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mCIrte.DateChanged
-        aterData = e.Start.ToShortDateString
-    End Sub
 
     Private Sub txtBErab_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If Not IsNumeric(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
@@ -91,18 +89,6 @@ Public Class ErreserbaSartu
         konn.Close()
     End Sub
     Private Sub ErreserbaSartu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        mCIrte.BackColor = System.Drawing.SystemColors.Info
-        mCIrte.ForeColor = System.Drawing.Color.FromArgb(CType(192, System.Byte), CType(0, System.Byte), CType(192, System.Byte))
-        mCIrte.TitleBackColor = System.Drawing.Color.Purple
-        mCIrte.TitleForeColor = System.Drawing.Color.Yellow
-        mCIrte.TrailingForeColor = System.Drawing.Color.FromArgb(CType(192, System.Byte), CType(192, System.Byte), CType(0, System.Byte))
-
-        mCSart.BackColor = System.Drawing.SystemColors.Info
-        mCSart.ForeColor = System.Drawing.Color.FromArgb(CType(192, System.Byte), CType(0, System.Byte), CType(192, System.Byte))
-        mCSart.TitleBackColor = System.Drawing.Color.Purple
-        mCSart.TitleForeColor = System.Drawing.Color.Yellow
-        mCSart.TrailingForeColor = System.Drawing.Color.FromArgb(CType(192, System.Byte), CType(192, System.Byte), CType(0, System.Byte))
-
         erabiltzaileakAtera()
         ostatuakAtera()
         mCIrte.MinDate = mCSart.SelectionStart

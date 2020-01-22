@@ -109,7 +109,6 @@ Partial Class ErabiltzaileLeihoa
         '
         'txbDatua
         '
-        Me.txbDatua.Enabled = False
         Me.txbDatua.Location = New System.Drawing.Point(664, 41)
         Me.txbDatua.Name = "txbDatua"
         Me.txbDatua.Size = New System.Drawing.Size(189, 20)

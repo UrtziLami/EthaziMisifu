@@ -46,7 +46,7 @@ Public Class DatuakAldatuErab
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
             End Try
-            Dim myCommand As New MySqlCommand("update erabiltzaileak set izenAbizena = '" & HasiSaioaLeihoa.AES_Encrypt(txtBIzenAbi.Text, HasiSaioaLeihoa.kodEncDes) & "', pasahitza = '" & HasiSaioaLeihoa.AES_Encrypt(txtBPas1.Text, HasiSaioaLeihoa.kodEncDes) & "', erabIzena = '" & HasiSaioaLeihoa.AES_Encrypt(txtBErabIzena.Text, HasiSaioaLeihoa.kodEncDes) & "' where idBezeroak = " & IDBe, konn)
+            Dim myCommand As New MySqlCommand("update erabiltzaileak set izenAbizena = '" & txtBIzenAbi.Text & "', pasahitza = '" & HasiSaioaLeihoa.AES_Encrypt(txtBPas1.Text, HasiSaioaLeihoa.kodEncDes) & "', erabIzena = '" & txtBErabIzena.Text & "' where idBezeroak = " & IDBe, konn)
             myCommand.ExecuteNonQuery()
             konn.Close()
             Dim lei As New ErabiltzaileLeihoa

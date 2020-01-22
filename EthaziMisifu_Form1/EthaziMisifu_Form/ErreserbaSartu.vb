@@ -15,8 +15,6 @@ Public Class ErreserbaSartu
         Dim ostatu As String = cmBOst.SelectedItem.ToString
         sartuData = mCSart.SelectionRange.Start.ToShortDateString
         aterData = mCIrte.SelectionRange.Start.ToShortDateString
-        Dim sartData As DateTime = Convert.ToDateTime(sartuData)
-        Dim irtData As DateTime = Convert.ToDateTime(aterData)
         Dim myCommand As New MySqlCommand("insert into erreserbak (Ostatuak_sinadura, Erabiltzaileak_idBezeroak, sartuData, ateraData) values ('" & ostatu & "', '" & erab & "', '" & sartuData & "', '" & aterData & "')", konn)
         myCommand.ExecuteNonQuery()
         konn.Close()

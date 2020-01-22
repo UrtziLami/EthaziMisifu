@@ -54,6 +54,8 @@ Partial Class OstatuaSartu
         Me.piBLa = New System.Windows.Forms.PictureBox()
         Me.picBSina = New System.Windows.Forms.PictureBox()
         Me.piBDesk = New System.Windows.Forms.PictureBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.cmBxOstatuMota = New System.Windows.Forms.ComboBox()
         CType(Me.pcBIz, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcBUda, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.piBTel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,14 +73,14 @@ Partial Class OstatuaSartu
         Me.txtBLon.Location = New System.Drawing.Point(189, 250)
         Me.txtBLon.Name = "txtBLon"
         Me.txtBLon.Size = New System.Drawing.Size(289, 20)
-        Me.txtBLon.TabIndex = 40
+        Me.txtBLon.TabIndex = 7
         '
         'txtBLat
         '
         Me.txtBLat.Location = New System.Drawing.Point(620, 250)
         Me.txtBLat.Name = "txtBLat"
         Me.txtBLat.Size = New System.Drawing.Size(289, 20)
-        Me.txtBLat.TabIndex = 39
+        Me.txtBLat.TabIndex = 8
         '
         'Label8
         '
@@ -109,7 +111,7 @@ Partial Class OstatuaSartu
         Me.btnAtzera.Location = New System.Drawing.Point(256, 545)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(95, 88)
-        Me.btnAtzera.TabIndex = 36
+        Me.btnAtzera.TabIndex = 12
         Me.btnAtzera.UseVisualStyleBackColor = True
         '
         'RtxtBDesk
@@ -117,7 +119,7 @@ Partial Class OstatuaSartu
         Me.RtxtBDesk.Location = New System.Drawing.Point(82, 360)
         Me.RtxtBDesk.Name = "RtxtBDesk"
         Me.RtxtBDesk.Size = New System.Drawing.Size(392, 145)
-        Me.RtxtBDesk.TabIndex = 35
+        Me.RtxtBDesk.TabIndex = 9
         Me.RtxtBDesk.Text = ""
         '
         'txtBUdalerri
@@ -126,42 +128,42 @@ Partial Class OstatuaSartu
         Me.txtBUdalerri.Location = New System.Drawing.Point(185, 110)
         Me.txtBUdalerri.Name = "txtBUdalerri"
         Me.txtBUdalerri.Size = New System.Drawing.Size(289, 20)
-        Me.txtBUdalerri.TabIndex = 34
+        Me.txtBUdalerri.TabIndex = 3
         '
         'txtBProbintzia
         '
         Me.txtBProbintzia.Location = New System.Drawing.Point(619, 113)
         Me.txtBProbintzia.Name = "txtBProbintzia"
         Me.txtBProbintzia.Size = New System.Drawing.Size(289, 20)
-        Me.txtBProbintzia.TabIndex = 33
+        Me.txtBProbintzia.TabIndex = 4
         '
         'txtBEmail
         '
         Me.txtBEmail.Location = New System.Drawing.Point(620, 42)
         Me.txtBEmail.Name = "txtBEmail"
         Me.txtBEmail.Size = New System.Drawing.Size(289, 20)
-        Me.txtBEmail.TabIndex = 32
+        Me.txtBEmail.TabIndex = 2
         '
         'txtBTelefonoa
         '
         Me.txtBTelefonoa.Location = New System.Drawing.Point(189, 179)
         Me.txtBTelefonoa.Name = "txtBTelefonoa"
         Me.txtBTelefonoa.Size = New System.Drawing.Size(289, 20)
-        Me.txtBTelefonoa.TabIndex = 31
+        Me.txtBTelefonoa.TabIndex = 5
         '
         'txtBWeb
         '
         Me.txtBWeb.Location = New System.Drawing.Point(620, 179)
         Me.txtBWeb.Name = "txtBWeb"
         Me.txtBWeb.Size = New System.Drawing.Size(289, 20)
-        Me.txtBWeb.TabIndex = 30
+        Me.txtBWeb.TabIndex = 6
         '
         'txtBIzena
         '
         Me.txtBIzena.Location = New System.Drawing.Point(185, 42)
         Me.txtBIzena.Name = "txtBIzena"
         Me.txtBIzena.Size = New System.Drawing.Size(289, 20)
-        Me.txtBIzena.TabIndex = 29
+        Me.txtBIzena.TabIndex = 1
         '
         'btnSartu
         '
@@ -170,7 +172,7 @@ Partial Class OstatuaSartu
         Me.btnSartu.Location = New System.Drawing.Point(620, 545)
         Me.btnSartu.Name = "btnSartu"
         Me.btnSartu.Size = New System.Drawing.Size(95, 88)
-        Me.btnSartu.TabIndex = 28
+        Me.btnSartu.TabIndex = 13
         Me.btnSartu.UseVisualStyleBackColor = True
         '
         'Label7
@@ -255,7 +257,7 @@ Partial Class OstatuaSartu
         Me.txtBSinadura.Location = New System.Drawing.Point(620, 323)
         Me.txtBSinadura.Name = "txtBSinadura"
         Me.txtBSinadura.Size = New System.Drawing.Size(289, 20)
-        Me.txtBSinadura.TabIndex = 42
+        Me.txtBSinadura.TabIndex = 10
         '
         'Label10
         '
@@ -388,12 +390,33 @@ Partial Class OstatuaSartu
         Me.piBDesk.TabStop = False
         Me.piBDesk.Visible = False
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(500, 397)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(125, 25)
+        Me.Label11.TabIndex = 53
+        Me.Label11.Text = "Ostatu Mota:"
+        '
+        'cmBxOstatuMota
+        '
+        Me.cmBxOstatuMota.FormattingEnabled = True
+        Me.cmBxOstatuMota.Location = New System.Drawing.Point(620, 401)
+        Me.cmBxOstatuMota.Name = "cmBxOstatuMota"
+        Me.cmBxOstatuMota.Size = New System.Drawing.Size(288, 21)
+        Me.cmBxOstatuMota.TabIndex = 11
+        '
         'OstatuaSartu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
+        Me.Controls.Add(Me.cmBxOstatuMota)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.piBDesk)
         Me.Controls.Add(Me.picBSina)
         Me.Controls.Add(Me.piBLa)
@@ -476,4 +499,6 @@ Partial Class OstatuaSartu
     Friend WithEvents piBLa As PictureBox
     Friend WithEvents picBSina As PictureBox
     Friend WithEvents piBDesk As PictureBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents cmBxOstatuMota As ComboBox
 End Class

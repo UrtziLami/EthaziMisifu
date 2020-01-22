@@ -109,7 +109,6 @@ Partial Class OstatuLeiho
         '
         'txbDatua
         '
-        Me.txbDatua.Enabled = False
         Me.txbDatua.Location = New System.Drawing.Point(667, 50)
         Me.txbDatua.Name = "txbDatua"
         Me.txbDatua.Size = New System.Drawing.Size(206, 20)

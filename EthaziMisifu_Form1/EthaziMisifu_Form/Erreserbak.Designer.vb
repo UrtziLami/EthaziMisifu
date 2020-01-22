@@ -113,7 +113,6 @@ Partial Class ErreserbaLeihoa
         '
         'txbDatua
         '
-        Me.txbDatua.Enabled = False
         Me.txbDatua.Location = New System.Drawing.Point(670, 53)
         Me.txbDatua.Name = "txbDatua"
         Me.txbDatua.Size = New System.Drawing.Size(206, 20)

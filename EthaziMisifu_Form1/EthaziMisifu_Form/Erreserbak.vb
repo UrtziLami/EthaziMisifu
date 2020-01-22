@@ -53,7 +53,7 @@ Public Class ErreserbaLeihoa
         Dim erab As String
         dr = komand.ExecuteReader
         If dr.Read Then
-            erab = HasiSaioaLeihoa.AES_Decrypt(dr(0).ToString, HasiSaioaLeihoa.kodEncDes)
+            erab = dr(0).ToString
         End If
         dr.Close()
         konn.Close()
@@ -83,6 +83,7 @@ Public Class ErreserbaLeihoa
         cmBKolumna.Items.Add("Erreserbaren Id")
         cmBKolumna.Items.Add("Bezero Izen Abizena")
         cmBKolumna.Items.Add("Ostatu Izena")
+        cmBKolumna.SelectedIndex = 0
     End Sub
 
     Private Sub btnAtzera_Click(sender As Object, e As EventArgs) Handles btnAtzera.Click
@@ -174,14 +175,17 @@ Public Class ErreserbaLeihoa
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
             End Try
-            Dim myCommand As New MySqlCommand("select * from erabiltzaileak where izenAbizena like '%" & txbDatua.Text & "%'", konn)
+            Dim myCommand As New MySqlCommand("SELECT e.* FROM `erabiltzaileak` era, `erreserbak` e WHERE erabIzena like '%" & txbDatua.Text & "%' and era.`idBezeroak` = e.`Erabiltzaileak_idBezeroak", konn)
             Dim rd As MySqlDataReader
             rd = myCommand.ExecuteReader
             While (rd.Read)
                 Dim obj As New ListViewItem(rd(0).ToString, 0)
-                obj.SubItems.Add(rd(1).ToString)
-                obj.SubItems.Add(rd(2).ToString)
+                idost = rd(1).ToString
+                idera = rd(2).ToString
+                obj.SubItems.Add(aldatuErab(idera))
+                obj.SubItems.Add(aldatuOst(idost))
                 obj.SubItems.Add(rd(3).ToString)
+                obj.SubItems.Add(rd(4).ToString)
                 ListView1.Items.Add(obj)
             End While
             rd.Close()
@@ -194,18 +198,17 @@ Public Class ErreserbaLeihoa
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
             End Try
-            Dim myCommand As New MySqlCommand("select * from ostatuak where izena like '%" & txbDatua.Text & "%'", konn)
+            Dim myCommand As New MySqlCommand("SELECT e.* FROM `ostatuak` ost, `erreserbak` e WHERE izena like '%" & txbDatua.Text & "%' and ost.`sinadura` = e.`Ostatuak_sinadura`", konn)
             Dim rd As MySqlDataReader
             rd = myCommand.ExecuteReader
             While (rd.Read)
                 Dim obj As New ListViewItem(rd(0).ToString, 0)
-                obj.SubItems.Add(rd(1).ToString)
-                obj.SubItems.Add(rd(2).ToString)
+                idost = rd(1).ToString
+                idera = rd(2).ToString
+                obj.SubItems.Add(aldatuErab(idera))
+                obj.SubItems.Add(aldatuOst(idost))
                 obj.SubItems.Add(rd(3).ToString)
                 obj.SubItems.Add(rd(4).ToString)
-                obj.SubItems.Add(rd(5).ToString)
-                obj.SubItems.Add(rd(6).ToString)
-                obj.SubItems.Add(rd(7).ToString)
                 ListView1.Items.Add(obj)
             End While
             rd.Close()
@@ -215,9 +218,5 @@ Public Class ErreserbaLeihoa
 
     Private Sub txbDatua_TextChanged(sender As Object, e As EventArgs) Handles txbDatua.TextChanged
         filtratuDatuak()
-    End Sub
-
-    Private Sub cmBKolumna_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBKolumna.SelectedIndexChanged
-        txbDatua.Enabled = True
     End Sub
 End Class

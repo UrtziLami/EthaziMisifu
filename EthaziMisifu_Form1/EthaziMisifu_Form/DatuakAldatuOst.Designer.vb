@@ -52,6 +52,8 @@ Partial Class DatuakAldatuOst
         Me.piBIz = New System.Windows.Forms.PictureBox()
         Me.picBDesk = New System.Windows.Forms.PictureBox()
         Me.picBLat = New System.Windows.Forms.PictureBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.cmBxOstatuMota = New System.Windows.Forms.ComboBox()
         CType(Me.piBlon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picBWeb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.piBTel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,7 +81,7 @@ Partial Class DatuakAldatuOst
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(77, 306)
+        Me.Label2.Location = New System.Drawing.Point(77, 336)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(139, 25)
         Me.Label2.TabIndex = 1
@@ -186,7 +188,7 @@ Partial Class DatuakAldatuOst
         '
         Me.btnGorde.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.gorde
         Me.btnGorde.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnGorde.Location = New System.Drawing.Point(622, 530)
+        Me.btnGorde.Location = New System.Drawing.Point(635, 547)
         Me.btnGorde.Name = "btnGorde"
         Me.btnGorde.Size = New System.Drawing.Size(95, 88)
         Me.btnGorde.TabIndex = 7
@@ -194,7 +196,7 @@ Partial Class DatuakAldatuOst
         '
         'RtxtBDesk
         '
-        Me.RtxtBDesk.Location = New System.Drawing.Point(82, 348)
+        Me.RtxtBDesk.Location = New System.Drawing.Point(82, 381)
         Me.RtxtBDesk.Name = "RtxtBDesk"
         Me.RtxtBDesk.Size = New System.Drawing.Size(828, 145)
         Me.RtxtBDesk.TabIndex = 15
@@ -204,7 +206,7 @@ Partial Class DatuakAldatuOst
         '
         Me.btnAtzera.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.atras
         Me.btnAtzera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnAtzera.Location = New System.Drawing.Point(257, 530)
+        Me.btnAtzera.Location = New System.Drawing.Point(237, 547)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(95, 88)
         Me.btnAtzera.TabIndex = 16
@@ -335,7 +337,7 @@ Partial Class DatuakAldatuOst
         Me.picBDesk.BackColor = System.Drawing.Color.Transparent
         Me.picBDesk.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
         Me.picBDesk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.picBDesk.Location = New System.Drawing.Point(222, 311)
+        Me.picBDesk.Location = New System.Drawing.Point(222, 341)
         Me.picBDesk.Name = "picBDesk"
         Me.picBDesk.Size = New System.Drawing.Size(23, 20)
         Me.picBDesk.TabIndex = 60
@@ -354,12 +356,33 @@ Partial Class DatuakAldatuOst
         Me.picBLat.TabStop = False
         Me.picBLat.Visible = False
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(490, 317)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(125, 25)
+        Me.Label10.TabIndex = 62
+        Me.Label10.Text = "Ostatu Mota:"
+        '
+        'cmBxOstatuMota
+        '
+        Me.cmBxOstatuMota.FormattingEnabled = True
+        Me.cmBxOstatuMota.Location = New System.Drawing.Point(622, 320)
+        Me.cmBxOstatuMota.Name = "cmBxOstatuMota"
+        Me.cmBxOstatuMota.Size = New System.Drawing.Size(288, 21)
+        Me.cmBxOstatuMota.TabIndex = 65
+        '
         'DatuakAldatuOst
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
+        Me.Controls.Add(Me.cmBxOstatuMota)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.picBLat)
         Me.Controls.Add(Me.picBDesk)
         Me.Controls.Add(Me.piBIz)
@@ -436,4 +459,6 @@ Partial Class DatuakAldatuOst
     Friend WithEvents piBIz As PictureBox
     Friend WithEvents picBDesk As PictureBox
     Friend WithEvents picBLat As PictureBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents cmBxOstatuMota As ComboBox
 End Class

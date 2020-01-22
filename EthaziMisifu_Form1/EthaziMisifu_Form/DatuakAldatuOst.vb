@@ -10,6 +10,7 @@ Public Class DatuakAldatuOst
     Dim web As String
     Dim latit As String
     Dim longi As String
+    Dim ostmo As String
     Dim konn As MySqlConnection
     Private Function balidatuHutza() As Boolean
         Dim bal As Boolean = True
@@ -63,7 +64,7 @@ Public Class DatuakAldatuOst
         End If
         Return bal
     End Function
-    Public Sub datuak(iz As String, des As String, ud As String, pro As String, em As String, tel As String, we As String, id As String, lat As String, lon As String)
+    Public Sub datuak(iz As String, des As String, ud As String, pro As String, em As String, tel As String, we As String, id As String, lat As String, lon As String, osm As String)
         izena = iz
         deskb = des
         udalerri = ud
@@ -74,6 +75,7 @@ Public Class DatuakAldatuOst
         idOs = id
         latit = lat
         longi = lon
+        ostmo = osm
     End Sub
     Private Sub btnGorde_Click(sender As Object, e As EventArgs) Handles btnGorde.Click
         datuakAldatu()
@@ -96,7 +98,7 @@ Public Class DatuakAldatuOst
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
             End Try
-            Dim myCommand As New MySqlCommand("update ostatuak set izena = '" & txtBIzena.Text & "', deskribapena = '" & RtxtBDesk.Text & "', udalerri = '" & txtBUdalerri.Text & "', probintzia = '" & txtBProbintzia.Text & "', email = '" & txtBEmail.Text & "', telefonoa = '" & txtBTelefonoa.Text & "', web = '" & txtBWeb.Text & "', longitudea = '" & txtBLon.Text & "', latitudea = '" & txtBLat.Text & "' where sinadura like '" & idOs & "'", konn)
+            Dim myCommand As New MySqlCommand("update ostatuak set izena = '" & txtBIzena.Text & "', deskribapena = '" & RtxtBDesk.Text & "', udalerri = '" & txtBUdalerri.Text & "', probintzia = '" & txtBProbintzia.Text & "', email = '" & txtBEmail.Text & "', telefonoa = '" & txtBTelefonoa.Text & "', web = '" & txtBWeb.Text & "', longitudea = '" & txtBLon.Text & "', latitudea = '" & txtBLat.Text & "', ostatuMota = '" & cmBxOstatuMota.SelectedItem.ToString & "' where sinadura like '" & idOs & "'", konn)
             myCommand.ExecuteNonQuery()
             konn.Close()
             Dim lei As New OstatuLeiho
@@ -105,6 +107,11 @@ Public Class DatuakAldatuOst
         Else
             MessageBox.Show("Datuak txarto daude.")
         End If
+    End Sub
+    Private Sub kargatuOstMota()
+        cmBxOstatuMota.Items.Add("Camping")
+        cmBxOstatuMota.Items.Add("Aterpea")
+        cmBxOstatuMota.Items.Add("Landetxe")
     End Sub
     Private Sub DatuakAldatuOst_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RtxtBDesk.Text = deskb
@@ -117,6 +124,8 @@ Public Class DatuakAldatuOst
         txtBLat.Text = latit
         txtBLon.Text = longi
         txtBTelefonoa.MaxLength = 9
+        kargatuOstMota()
+        cmBxOstatuMota.SelectedItem = ostmo
     End Sub
     Private Sub txtBIzena_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtBIzena.KeyPress
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then

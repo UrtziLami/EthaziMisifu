@@ -20,7 +20,8 @@ Public Class OstatuaSartu
             Dim lat As String = txtBLat.Text
             Dim lon As String = txtBLon.Text
             Dim telf As String = txtBTelefonoa.Text
-            Dim myCommand As New MySqlCommand("insert into ostatuak values ('" & sin & "', '" & ize & "', '" & desk & "', '" & udalerri & "', '" & probintzia & "', '" & email & "', '" & telf & "', '" & web & "', '" & lon & "', '" & lat & "')", konn)
+            Dim ostM As String = cmBxOstatuMota.SelectedItem.ToString
+            Dim myCommand As New MySqlCommand("insert into ostatuak values ('" & sin & "', '" & ize & "', '" & desk & "', '" & udalerri & "', '" & probintzia & "', '" & email & "', '" & telf & "', '" & web & "', '" & lon & "', '" & lat & "', '" & ostM & "')", konn)
             myCommand.ExecuteNonQuery()
             konn.Close()
             Dim lei As New OstatuLeiho
@@ -29,6 +30,13 @@ Public Class OstatuaSartu
         Else
             MessageBox.Show("Datuak txarto daude.")
         End If
+    End Sub
+
+    Private Sub kargatuOstMota()
+        cmBxOstatuMota.Items.Add("Camping")
+        cmBxOstatuMota.Items.Add("Aterpea")
+        cmBxOstatuMota.Items.Add("Landetxe")
+        cmBxOstatuMota.SelectedIndex = 0
     End Sub
     Private Function balidatuHutza() As Boolean
         Dim bal As Boolean = True
@@ -140,5 +148,6 @@ Public Class OstatuaSartu
     Private Sub OstatuaSartu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtBTelefonoa.MaxLength = 9
         txtBSinadura.MaxLength = 8
+        kargatuOstMota()
     End Sub
 End Class

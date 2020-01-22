@@ -58,9 +58,9 @@ Public Class ErabiltzaileaSartu
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
             End Try
-            Dim izAbEnc As String = HasiSaioaLeihoa.AES_Encrypt(txtBIzenAbi.Text, HasiSaioaLeihoa.kodEncDes)
+            Dim izAbEnc As String = txtBIzenAbi.Text
             Dim pshEnc As String = HasiSaioaLeihoa.AES_Encrypt(txtBPas1.Text, HasiSaioaLeihoa.kodEncDes)
-            Dim eraIzEnc As String = HasiSaioaLeihoa.AES_Encrypt(txtBErabIzena.Text, HasiSaioaLeihoa.kodEncDes)
+            Dim eraIzEnc As String = txtBErabIzena.Text
             Dim myCommand As New MySqlCommand("insert into erabiltzaileak (izenAbizena, pasahitza, erabIzena) values ('" & izAbEnc & "', '" & pshEnc & "', '" & eraIzEnc & "')", konn)
             myCommand.ExecuteNonQuery()
             konn.Close()

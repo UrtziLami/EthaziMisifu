@@ -52,12 +52,10 @@ Public Class HasiSaioaLeihoa
         Dim rd As MySqlDataReader
         rd = myCommand.ExecuteReader
         While rd.Read
-            eraBD = rd(3).ToString
+            eraK(i) = rd(3).ToString
             pasBD = rd(2).ToString
             pswDes = AES_Decrypt(pasBD, kodEncDes)
-            eraDes = AES_Decrypt(eraBD, kodEncDes)
             pasK(i) = pswDes
-            eraK(i) = eraDes
             i += 1
         End While
         rd.Close()
@@ -148,7 +146,7 @@ Public Class HasiSaioaLeihoa
             MessageBox.Show("No se ha podido conectar al servidor")
         End Try
         Dim pshEnc As String = AES_Encrypt(txBPasahitza.Text, kodEncDes)
-        Dim eraIzEnc As String = AES_Encrypt(txtBxErabiltzailea.Text, kodEncDes)
+        Dim eraIzEnc As String = txtBxErabiltzailea.Text
         Dim myCommand As New MySqlCommand("insert into erabiltzaileak (pasahitza, erabIzena) values ('" & pshEnc & "', '" & eraIzEnc & "')", konn)
         myCommand.ExecuteNonQuery()
         konn.Close()

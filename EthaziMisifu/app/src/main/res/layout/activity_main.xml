@@ -40,7 +40,6 @@
         android:layout_height="46dp"
         android:layout_marginStart="88dp"
         android:layout_marginTop="440dp"
-        android:onClick="loginBtn"
         android:text="@string/iniciar_sesi_n"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -90,6 +89,6 @@
         android:layout_marginTop="56dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/casa" />
+        app:srcCompat="@drawable/misifu_logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

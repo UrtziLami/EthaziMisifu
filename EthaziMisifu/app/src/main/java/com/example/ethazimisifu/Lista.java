@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -41,6 +42,7 @@ public class Lista extends AppCompatActivity {
     private ListView lista;
     private AdapterView.AdapterContextMenuInfo info;
     private View lastTouchedView;
+    private Button buscar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +52,6 @@ public class Lista extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.13.33/misifu/selectOstuatuak.php", new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.d("ostatua", "hola");
                 ostatuak = Consultas.ostatuLista(response);
                 verTareas(ostatuak);
 
@@ -89,6 +90,56 @@ public class Lista extends AppCompatActivity {
         super.onCreateContextMenu(menu, v, menuInfo);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
+    }
+
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        getMenuInflater().inflate(R.menu.filtro, menu);
+        return true;
+    }
+
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if(id == R.id.albergues){
+            tareas.clear();
+            for(int i = 0; i < ostatuak.size(); i++){
+                Log.d("rural", ostatuak.get(i).getIzena());
+                if(ostatuak.get(i).getOstatuMota().matches("Albergue")){
+                    tareas.add(String.valueOf(ostatuak.get(i).getIzena()));
+                }
+            }
+                lista = (ListView)findViewById(R.id.lista);
+                adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_selectable_list_item, tareas);
+                lista.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+        } else if (id == R.id.rural) {
+            tareas.clear();
+            for(int i = 0; i < ostatuak.size(); i++){
+                if(ostatuak.get(i).getOstatuMota().equals("Rural")){
+                    tareas.add(String.valueOf(ostatuak.get(i).getIzena()));
+                }
+            }
+            lista = (ListView)findViewById(R.id.lista);
+            adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_selectable_list_item, tareas);
+            lista.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
+        } else if (id == R.id.campings) {
+            tareas.clear();
+            for(int i = 0; i < ostatuak.size(); i++){
+                if(ostatuak.get(i).getOstatuMota().equals("Camping")){
+                    tareas.add(String.valueOf(ostatuak.get(i).getIzena()));
+                }
+            }
+            lista = (ListView)findViewById(R.id.lista);
+            adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_selectable_list_item, tareas);
+            lista.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
+        } else if (id == R.id.search) {
+
+        }
+
+        return true;
     }
 
     @Override
@@ -141,6 +192,20 @@ public class Lista extends AppCompatActivity {
     public void volverMenu(View v){
         Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
+        finish();
+    }
+
+    public void buscar(){
+        tareas.clear();
+        for(int i = 0; i < ostatuak.size(); i++){
+            if(ostatuak.get(i).getOstatuMota().equals("Camping")){
+                tareas.add(String.valueOf(ostatuak.get(i).getIzena()));
+            }
+        }
+        lista = (ListView)findViewById(R.id.lista);
+        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_selectable_list_item, tareas);
+        lista.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 
 }

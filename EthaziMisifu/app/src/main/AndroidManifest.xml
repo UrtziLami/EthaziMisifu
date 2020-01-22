@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".LocationComponentActivity"></activity>
+        <activity android:name=".Lista"></activity>
+        <activity android:name=".LocationComponentActivity" />
         <activity android:name=".Menu" />
         <activity android:name=".MainActivity">
             <intent-filter>

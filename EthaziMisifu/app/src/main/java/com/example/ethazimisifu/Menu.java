@@ -47,5 +47,11 @@ public class Menu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void abrirLista(View view){
+        Intent intent = new Intent();
+        intent.setClass(getApplicationContext(), Lista.class);
+        startActivity(intent);
+    }
+
 
 }

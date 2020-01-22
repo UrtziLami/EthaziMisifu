@@ -4,23 +4,24 @@ public class Ostatuak {
 
     private int id;
     private String izena;
+    private String ostatuMota;
     private String deskribapena;
     private String udalerria;
     private String probintzia;
     private int telefonoa;
-    private float longitudea;
-    private float latitudea;
+    private double latitudea;
+    private double longitudea;
 
-    public Ostatuak(int id, String izena, String deskribapena, String udalerria,
-                    String probintzia, int telefonoa, float longitudea, float latitudea) {
+    public Ostatuak(int id, String izena, String ostatuMota, String deskribapena, String udalerria, String probintzia, int telefonoa, double latitudea, double longitudea) {
         this.id = id;
         this.izena = izena;
+        this.ostatuMota = ostatuMota;
         this.deskribapena = deskribapena;
         this.udalerria = udalerria;
         this.probintzia = probintzia;
         this.telefonoa = telefonoa;
-        this.longitudea = longitudea;
         this.latitudea = latitudea;
+        this.longitudea = longitudea;
     }
 
     public int getId() {
@@ -37,6 +38,14 @@ public class Ostatuak {
 
     public void setIzena(String izena) {
         this.izena = izena;
+    }
+
+    public String getOstatuMota() {
+        return ostatuMota;
+    }
+
+    public void setOstatuMota(String ostatuMota) {
+        this.ostatuMota = ostatuMota;
     }
 
     public String getDeskribapena() {
@@ -71,19 +80,19 @@ public class Ostatuak {
         this.telefonoa = telefonoa;
     }
 
-    public float getLongitudea() {
-        return longitudea;
-    }
-
-    public void setLongitudea(float longitudea) {
-        this.longitudea = longitudea;
-    }
-
-    public float getLatitudea() {
+    public double getLatitudea() {
         return latitudea;
     }
 
-    public void setLatitudea(float latitudea) {
+    public void setLatitudea(double latitudea) {
         this.latitudea = latitudea;
+    }
+
+    public double getLongitudea() {
+        return longitudea;
+    }
+
+    public void setLongitudea(double longitudea) {
+        this.longitudea = longitudea;
     }
 }

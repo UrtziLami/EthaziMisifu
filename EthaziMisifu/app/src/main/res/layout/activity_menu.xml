@@ -12,6 +12,7 @@
         android:layout_height="44dp"
         android:layout_marginStart="84dp"
         android:layout_marginTop="424dp"
+        android:onClick="abrirLista"
         android:text="Abrir lista"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

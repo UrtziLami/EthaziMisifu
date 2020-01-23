@@ -54,7 +54,7 @@ public class XMLManeiatzailea extends DefaultHandler{
 			alojamendu.setTelefonoa(balioa);
 			break;
 		case "turismdescription":
-			balioa.replaceAll("/","");
+		
 			balioa.replaceAll("<[^>]*>","");
 			balioa.replaceAll("lt;[^gt;]*gt;","");
 			alojamendu.setDeskribapena(balioa);
@@ -63,6 +63,9 @@ public class XMLManeiatzailea extends DefaultHandler{
 			alojamendu.setUdalerri(balioa);
 			break;
 		case "territory":
+			alojamendu.setProbintzia(balioa);
+			break;
+		case "lodgintype":
 			alojamendu.setProbintzia(balioa);
 			break;
 		case "latwgs84":

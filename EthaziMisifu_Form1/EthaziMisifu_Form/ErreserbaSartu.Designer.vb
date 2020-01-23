@@ -40,14 +40,14 @@ Partial Class ErreserbaSartu
         Me.mCIrte.Location = New System.Drawing.Point(560, 268)
         Me.mCIrte.MaxSelectionCount = 1
         Me.mCIrte.Name = "mCIrte"
-        Me.mCIrte.TabIndex = 4
+        Me.mCIrte.TabIndex = 2
         '
         'mCSart
         '
         Me.mCSart.Location = New System.Drawing.Point(232, 268)
         Me.mCSart.MaxSelectionCount = 1
         Me.mCSart.Name = "mCSart"
-        Me.mCSart.TabIndex = 3
+        Me.mCSart.TabIndex = 1
         '
         'Label4
         '
@@ -78,7 +78,7 @@ Partial Class ErreserbaSartu
         Me.btnAtzera.Location = New System.Drawing.Point(283, 493)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(88, 85)
-        Me.btnAtzera.TabIndex = 6
+        Me.btnAtzera.TabIndex = 4
         Me.btnAtzera.UseVisualStyleBackColor = True
         '
         'btnSartu
@@ -88,7 +88,7 @@ Partial Class ErreserbaSartu
         Me.btnSartu.Location = New System.Drawing.Point(625, 493)
         Me.btnSartu.Name = "btnSartu"
         Me.btnSartu.Size = New System.Drawing.Size(88, 85)
-        Me.btnSartu.TabIndex = 5
+        Me.btnSartu.TabIndex = 3
         Me.btnSartu.UseVisualStyleBackColor = True
         '
         'Label2
@@ -115,19 +115,21 @@ Partial Class ErreserbaSartu
         '
         'cmBErab
         '
+        Me.cmBErab.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmBErab.FormattingEnabled = True
         Me.cmBErab.Location = New System.Drawing.Point(404, 83)
         Me.cmBErab.Name = "cmBErab"
         Me.cmBErab.Size = New System.Drawing.Size(237, 21)
-        Me.cmBErab.TabIndex = 1
+        Me.cmBErab.TabIndex = 45
         '
         'cmBOst
         '
+        Me.cmBOst.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmBOst.FormattingEnabled = True
         Me.cmBOst.Location = New System.Drawing.Point(404, 154)
         Me.cmBOst.Name = "cmBOst"
         Me.cmBOst.Size = New System.Drawing.Size(237, 21)
-        Me.cmBOst.TabIndex = 2
+        Me.cmBOst.TabIndex = 34
         '
         'ErreserbaSartu
         '

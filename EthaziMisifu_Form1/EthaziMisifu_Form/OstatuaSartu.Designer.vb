@@ -112,7 +112,7 @@ Partial Class OstatuaSartu
         Me.btnAtzera.Location = New System.Drawing.Point(256, 545)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(95, 88)
-        Me.btnAtzera.TabIndex = 13
+        Me.btnAtzera.TabIndex = 12
         Me.btnAtzera.UseVisualStyleBackColor = True
         '
         'RtxtBDesk
@@ -173,7 +173,7 @@ Partial Class OstatuaSartu
         Me.btnSartu.Location = New System.Drawing.Point(620, 545)
         Me.btnSartu.Name = "btnSartu"
         Me.btnSartu.Size = New System.Drawing.Size(95, 88)
-        Me.btnSartu.TabIndex = 12
+        Me.btnSartu.TabIndex = 11
         Me.btnSartu.UseVisualStyleBackColor = True
         '
         'Label7
@@ -404,11 +404,12 @@ Partial Class OstatuaSartu
         '
         'cmBxOstatuMota
         '
+        Me.cmBxOstatuMota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmBxOstatuMota.FormattingEnabled = True
         Me.cmBxOstatuMota.Location = New System.Drawing.Point(620, 401)
         Me.cmBxOstatuMota.Name = "cmBxOstatuMota"
         Me.cmBxOstatuMota.Size = New System.Drawing.Size(288, 21)
-        Me.cmBxOstatuMota.TabIndex = 11
+        Me.cmBxOstatuMota.TabIndex = 45
         '
         'OstatuaSartu
         '

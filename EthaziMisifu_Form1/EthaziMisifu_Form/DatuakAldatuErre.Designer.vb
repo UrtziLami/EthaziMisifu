@@ -64,7 +64,7 @@ Partial Class DatuakAldatuErre
         Me.btnGorde.Location = New System.Drawing.Point(658, 470)
         Me.btnGorde.Name = "btnGorde"
         Me.btnGorde.Size = New System.Drawing.Size(88, 85)
-        Me.btnGorde.TabIndex = 5
+        Me.btnGorde.TabIndex = 3
         Me.btnGorde.UseVisualStyleBackColor = True
         '
         'btnAtzera
@@ -74,7 +74,7 @@ Partial Class DatuakAldatuErre
         Me.btnAtzera.Location = New System.Drawing.Point(316, 470)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(88, 85)
-        Me.btnAtzera.TabIndex = 6
+        Me.btnAtzera.TabIndex = 4
         Me.btnAtzera.UseVisualStyleBackColor = True
         '
         'Label3
@@ -104,7 +104,7 @@ Partial Class DatuakAldatuErre
         Me.mCSart.Location = New System.Drawing.Point(265, 245)
         Me.mCSart.MaxSelectionCount = 1
         Me.mCSart.Name = "mCSart"
-        Me.mCSart.TabIndex = 3
+        Me.mCSart.TabIndex = 1
         '
         'mCIrte
         '
@@ -112,10 +112,11 @@ Partial Class DatuakAldatuErre
         Me.mCIrte.Location = New System.Drawing.Point(593, 245)
         Me.mCIrte.MaxSelectionCount = 1
         Me.mCIrte.Name = "mCIrte"
-        Me.mCIrte.TabIndex = 4
+        Me.mCIrte.TabIndex = 2
         '
         'cmbBerab
         '
+        Me.cmbBerab.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbBerab.FormattingEnabled = True
         Me.cmbBerab.Location = New System.Drawing.Point(453, 63)
         Me.cmbBerab.Name = "cmbBerab"
@@ -124,6 +125,7 @@ Partial Class DatuakAldatuErre
         '
         'cmbBOsta
         '
+        Me.cmbBOsta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbBOsta.FormattingEnabled = True
         Me.cmbBOsta.Location = New System.Drawing.Point(453, 137)
         Me.cmbBOsta.Name = "cmbBOsta"

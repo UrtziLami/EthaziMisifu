@@ -116,11 +116,11 @@ Partial Class OstatuLeiho
         '
         'cmBKolumna
         '
-        Me.cmBKolumna.FormattingEnabled = True
+        Me.cmBKolumna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmBKolumna.Location = New System.Drawing.Point(253, 50)
         Me.cmBKolumna.Name = "cmBKolumna"
         Me.cmBKolumna.Size = New System.Drawing.Size(204, 21)
-        Me.cmBKolumna.TabIndex = 1
+        Me.cmBKolumna.TabIndex = 45
         '
         'OstatuLeiho
         '

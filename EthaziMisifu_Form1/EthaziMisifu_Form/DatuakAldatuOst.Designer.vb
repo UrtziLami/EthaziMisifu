@@ -199,7 +199,7 @@ Partial Class DatuakAldatuOst
         Me.RtxtBDesk.Location = New System.Drawing.Point(82, 381)
         Me.RtxtBDesk.Name = "RtxtBDesk"
         Me.RtxtBDesk.Size = New System.Drawing.Size(828, 145)
-        Me.RtxtBDesk.TabIndex = 10
+        Me.RtxtBDesk.TabIndex = 9
         Me.RtxtBDesk.Text = ""
         '
         'btnAtzera
@@ -369,11 +369,12 @@ Partial Class DatuakAldatuOst
         '
         'cmBxOstatuMota
         '
+        Me.cmBxOstatuMota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmBxOstatuMota.FormattingEnabled = True
         Me.cmBxOstatuMota.Location = New System.Drawing.Point(622, 320)
         Me.cmBxOstatuMota.Name = "cmBxOstatuMota"
         Me.cmBxOstatuMota.Size = New System.Drawing.Size(288, 21)
-        Me.cmBxOstatuMota.TabIndex = 9
+        Me.cmBxOstatuMota.TabIndex = 56
         '
         'DatuakAldatuOst
         '

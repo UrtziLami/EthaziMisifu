@@ -27,9 +27,7 @@ Public Class HasiSaioaLeihoa
 
     Private Function konparatuPasahitza() As Boolean
         Dim pasBD As String
-        Dim eraBD As String
         Dim pswDes As String
-        Dim eraDes As String
         Dim pasK As String() = New String(30) {}
         Dim eraK As String() = New String(30) {}
         Dim i As Integer = 0
@@ -135,7 +133,7 @@ Public Class HasiSaioaLeihoa
         End Try
     End Function
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Try
             'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
             konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")

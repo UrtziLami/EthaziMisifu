@@ -40,14 +40,14 @@ Partial Class HasiSaioaLeihoa
         Me.txtBxErabiltzailea.Location = New System.Drawing.Point(368, 205)
         Me.txtBxErabiltzailea.Name = "txtBxErabiltzailea"
         Me.txtBxErabiltzailea.Size = New System.Drawing.Size(369, 20)
-        Me.txtBxErabiltzailea.TabIndex = 2
+        Me.txtBxErabiltzailea.TabIndex = 1
         '
         'txBPasahitza
         '
         Me.txBPasahitza.Location = New System.Drawing.Point(368, 315)
         Me.txBPasahitza.Name = "txBPasahitza"
         Me.txBPasahitza.Size = New System.Drawing.Size(369, 20)
-        Me.txBPasahitza.TabIndex = 3
+        Me.txBPasahitza.TabIndex = 2
         Me.txBPasahitza.UseSystemPasswordChar = True
         '
         'chbErabGog
@@ -58,7 +58,7 @@ Partial Class HasiSaioaLeihoa
         Me.chbErabGog.Location = New System.Drawing.Point(368, 370)
         Me.chbErabGog.Name = "chbErabGog"
         Me.chbErabGog.Size = New System.Drawing.Size(218, 29)
-        Me.chbErabGog.TabIndex = 5
+        Me.chbErabGog.TabIndex = 3
         Me.chbErabGog.Text = "Erabiltzailea gogoratu"
         Me.chbErabGog.UseVisualStyleBackColor = False
         '

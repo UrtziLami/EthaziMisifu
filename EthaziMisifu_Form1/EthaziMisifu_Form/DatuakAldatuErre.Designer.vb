@@ -64,7 +64,7 @@ Partial Class DatuakAldatuErre
         Me.btnGorde.Location = New System.Drawing.Point(658, 470)
         Me.btnGorde.Name = "btnGorde"
         Me.btnGorde.Size = New System.Drawing.Size(88, 85)
-        Me.btnGorde.TabIndex = 2
+        Me.btnGorde.TabIndex = 5
         Me.btnGorde.UseVisualStyleBackColor = True
         '
         'btnAtzera
@@ -74,7 +74,7 @@ Partial Class DatuakAldatuErre
         Me.btnAtzera.Location = New System.Drawing.Point(316, 470)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(88, 85)
-        Me.btnAtzera.TabIndex = 5
+        Me.btnAtzera.TabIndex = 6
         Me.btnAtzera.UseVisualStyleBackColor = True
         '
         'Label3
@@ -104,14 +104,15 @@ Partial Class DatuakAldatuErre
         Me.mCSart.Location = New System.Drawing.Point(265, 245)
         Me.mCSart.MaxSelectionCount = 1
         Me.mCSart.Name = "mCSart"
-        Me.mCSart.TabIndex = 9
+        Me.mCSart.TabIndex = 3
         '
         'mCIrte
         '
+        Me.mCIrte.ForeColor = System.Drawing.SystemColors.WindowText
         Me.mCIrte.Location = New System.Drawing.Point(593, 245)
         Me.mCIrte.MaxSelectionCount = 1
         Me.mCIrte.Name = "mCIrte"
-        Me.mCIrte.TabIndex = 10
+        Me.mCIrte.TabIndex = 4
         '
         'cmbBerab
         '
@@ -119,7 +120,7 @@ Partial Class DatuakAldatuErre
         Me.cmbBerab.Location = New System.Drawing.Point(453, 63)
         Me.cmbBerab.Name = "cmbBerab"
         Me.cmbBerab.Size = New System.Drawing.Size(255, 21)
-        Me.cmbBerab.TabIndex = 11
+        Me.cmbBerab.TabIndex = 1
         '
         'cmbBOsta
         '
@@ -127,7 +128,7 @@ Partial Class DatuakAldatuErre
         Me.cmbBOsta.Location = New System.Drawing.Point(453, 137)
         Me.cmbBOsta.Name = "cmbBOsta"
         Me.cmbBOsta.Size = New System.Drawing.Size(255, 21)
-        Me.cmbBOsta.TabIndex = 12
+        Me.cmbBOsta.TabIndex = 2
         '
         'DatuakAldatuErre
         '

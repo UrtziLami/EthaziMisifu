@@ -22,6 +22,7 @@ Partial Class OstatuaSartu
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OstatuaSartu))
         Me.txtBLon = New System.Windows.Forms.TextBox()
         Me.txtBLat = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -111,7 +112,7 @@ Partial Class OstatuaSartu
         Me.btnAtzera.Location = New System.Drawing.Point(256, 545)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(95, 88)
-        Me.btnAtzera.TabIndex = 12
+        Me.btnAtzera.TabIndex = 13
         Me.btnAtzera.UseVisualStyleBackColor = True
         '
         'RtxtBDesk
@@ -172,7 +173,7 @@ Partial Class OstatuaSartu
         Me.btnSartu.Location = New System.Drawing.Point(620, 545)
         Me.btnSartu.Name = "btnSartu"
         Me.btnSartu.Size = New System.Drawing.Size(95, 88)
-        Me.btnSartu.TabIndex = 13
+        Me.btnSartu.TabIndex = 12
         Me.btnSartu.UseVisualStyleBackColor = True
         '
         'Label7
@@ -449,6 +450,7 @@ Partial Class OstatuaSartu
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "OstatuaSartu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "OstatuaSartu"

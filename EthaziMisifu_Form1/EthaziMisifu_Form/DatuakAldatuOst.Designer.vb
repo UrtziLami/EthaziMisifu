@@ -147,42 +147,42 @@ Partial Class DatuakAldatuOst
         Me.txtBIzena.Location = New System.Drawing.Point(187, 37)
         Me.txtBIzena.Name = "txtBIzena"
         Me.txtBIzena.Size = New System.Drawing.Size(289, 20)
-        Me.txtBIzena.TabIndex = 8
+        Me.txtBIzena.TabIndex = 1
         '
         'txtBWeb
         '
         Me.txtBWeb.Location = New System.Drawing.Point(622, 174)
         Me.txtBWeb.Name = "txtBWeb"
         Me.txtBWeb.Size = New System.Drawing.Size(289, 20)
-        Me.txtBWeb.TabIndex = 10
+        Me.txtBWeb.TabIndex = 6
         '
         'txtBTelefonoa
         '
         Me.txtBTelefonoa.Location = New System.Drawing.Point(191, 174)
         Me.txtBTelefonoa.Name = "txtBTelefonoa"
         Me.txtBTelefonoa.Size = New System.Drawing.Size(289, 20)
-        Me.txtBTelefonoa.TabIndex = 11
+        Me.txtBTelefonoa.TabIndex = 5
         '
         'txtBEmail
         '
         Me.txtBEmail.Location = New System.Drawing.Point(622, 37)
         Me.txtBEmail.Name = "txtBEmail"
         Me.txtBEmail.Size = New System.Drawing.Size(289, 20)
-        Me.txtBEmail.TabIndex = 12
+        Me.txtBEmail.TabIndex = 2
         '
         'txtBProbintzia
         '
         Me.txtBProbintzia.Location = New System.Drawing.Point(621, 108)
         Me.txtBProbintzia.Name = "txtBProbintzia"
         Me.txtBProbintzia.Size = New System.Drawing.Size(289, 20)
-        Me.txtBProbintzia.TabIndex = 13
+        Me.txtBProbintzia.TabIndex = 4
         '
         'txtBUdalerri
         '
         Me.txtBUdalerri.Location = New System.Drawing.Point(187, 105)
         Me.txtBUdalerri.Name = "txtBUdalerri"
         Me.txtBUdalerri.Size = New System.Drawing.Size(289, 20)
-        Me.txtBUdalerri.TabIndex = 14
+        Me.txtBUdalerri.TabIndex = 3
         '
         'btnGorde
         '
@@ -191,7 +191,7 @@ Partial Class DatuakAldatuOst
         Me.btnGorde.Location = New System.Drawing.Point(635, 547)
         Me.btnGorde.Name = "btnGorde"
         Me.btnGorde.Size = New System.Drawing.Size(95, 88)
-        Me.btnGorde.TabIndex = 7
+        Me.btnGorde.TabIndex = 11
         Me.btnGorde.UseVisualStyleBackColor = True
         '
         'RtxtBDesk
@@ -199,7 +199,7 @@ Partial Class DatuakAldatuOst
         Me.RtxtBDesk.Location = New System.Drawing.Point(82, 381)
         Me.RtxtBDesk.Name = "RtxtBDesk"
         Me.RtxtBDesk.Size = New System.Drawing.Size(828, 145)
-        Me.RtxtBDesk.TabIndex = 15
+        Me.RtxtBDesk.TabIndex = 10
         Me.RtxtBDesk.Text = ""
         '
         'btnAtzera
@@ -209,7 +209,7 @@ Partial Class DatuakAldatuOst
         Me.btnAtzera.Location = New System.Drawing.Point(237, 547)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(95, 88)
-        Me.btnAtzera.TabIndex = 16
+        Me.btnAtzera.TabIndex = 12
         Me.btnAtzera.UseVisualStyleBackColor = True
         '
         'txtBLon
@@ -217,14 +217,14 @@ Partial Class DatuakAldatuOst
         Me.txtBLon.Location = New System.Drawing.Point(191, 245)
         Me.txtBLon.Name = "txtBLon"
         Me.txtBLon.Size = New System.Drawing.Size(289, 20)
-        Me.txtBLon.TabIndex = 20
+        Me.txtBLon.TabIndex = 7
         '
         'txtBLat
         '
         Me.txtBLat.Location = New System.Drawing.Point(622, 245)
         Me.txtBLat.Name = "txtBLat"
         Me.txtBLat.Size = New System.Drawing.Size(289, 20)
-        Me.txtBLat.TabIndex = 19
+        Me.txtBLat.TabIndex = 8
         '
         'Label8
         '
@@ -373,7 +373,7 @@ Partial Class DatuakAldatuOst
         Me.cmBxOstatuMota.Location = New System.Drawing.Point(622, 320)
         Me.cmBxOstatuMota.Name = "cmBxOstatuMota"
         Me.cmBxOstatuMota.Size = New System.Drawing.Size(288, 21)
-        Me.cmBxOstatuMota.TabIndex = 65
+        Me.cmBxOstatuMota.TabIndex = 9
         '
         'DatuakAldatuOst
         '

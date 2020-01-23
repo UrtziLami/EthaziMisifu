@@ -50,7 +50,7 @@ Partial Class OstatuLeiho
         Me.btnAtzera.Location = New System.Drawing.Point(162, 558)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(101, 60)
-        Me.btnAtzera.TabIndex = 4
+        Me.btnAtzera.TabIndex = 3
         Me.btnAtzera.UseVisualStyleBackColor = True
         '
         'btnAldatu
@@ -61,7 +61,7 @@ Partial Class OstatuLeiho
         Me.btnAldatu.Location = New System.Drawing.Point(547, 558)
         Me.btnAldatu.Name = "btnAldatu"
         Me.btnAldatu.Size = New System.Drawing.Size(102, 60)
-        Me.btnAldatu.TabIndex = 3
+        Me.btnAldatu.TabIndex = 5
         Me.btnAldatu.UseVisualStyleBackColor = True
         '
         'btnKendu
@@ -82,7 +82,7 @@ Partial Class OstatuLeiho
         Me.btnSartu.Location = New System.Drawing.Point(356, 558)
         Me.btnSartu.Name = "btnSartu"
         Me.btnSartu.Size = New System.Drawing.Size(101, 60)
-        Me.btnSartu.TabIndex = 7
+        Me.btnSartu.TabIndex = 4
         Me.btnSartu.UseVisualStyleBackColor = True
         '
         'Label2
@@ -112,7 +112,7 @@ Partial Class OstatuLeiho
         Me.txbDatua.Location = New System.Drawing.Point(667, 50)
         Me.txbDatua.Name = "txbDatua"
         Me.txbDatua.Size = New System.Drawing.Size(206, 20)
-        Me.txbDatua.TabIndex = 16
+        Me.txbDatua.TabIndex = 2
         '
         'cmBKolumna
         '
@@ -120,7 +120,7 @@ Partial Class OstatuLeiho
         Me.cmBKolumna.Location = New System.Drawing.Point(253, 50)
         Me.cmBKolumna.Name = "cmBKolumna"
         Me.cmBKolumna.Size = New System.Drawing.Size(204, 21)
-        Me.cmBKolumna.TabIndex = 15
+        Me.cmBKolumna.TabIndex = 1
         '
         'OstatuLeiho
         '

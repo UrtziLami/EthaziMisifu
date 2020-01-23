@@ -9,7 +9,6 @@ Public Class HasiSaioaLeihoa
         Hide()
         If chbErabGog.Checked Then
             My.Settings.Erabiltzailea = txtBxErabiltzailea.Text
-            My.Settings.Pasahitza = txBPasahitza.Text
             My.Settings.Save()
         Else
             My.Settings.Reset()
@@ -97,7 +96,6 @@ Public Class HasiSaioaLeihoa
     End Sub
     Private Sub HasiSaioaLeihoa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtBxErabiltzailea.Text = My.Settings.Erabiltzailea
-        txBPasahitza.Text = My.Settings.Pasahitza
     End Sub
     Public Function AES_Encrypt(ByVal input As String, ByVal pass As String) As String
         Dim AES As New System.Security.Cryptography.RijndaelManaged

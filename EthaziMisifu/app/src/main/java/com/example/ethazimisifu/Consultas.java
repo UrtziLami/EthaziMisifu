@@ -1,6 +1,5 @@
 package com.example.ethazimisifu;
 
-import android.system.Os;
 import android.util.Log;
 
 import org.json.JSONArray;

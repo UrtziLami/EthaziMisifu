@@ -1,6 +1,9 @@
 package com.example.ethazimisifu;
 
-public class Ostatuak {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Ostatuak implements Parcelable {
 
     private int id;
     private String izena;
@@ -23,6 +26,30 @@ public class Ostatuak {
         this.latitudea = latitudea;
         this.longitudea = longitudea;
     }
+
+    protected Ostatuak(Parcel in) {
+        id = in.readInt();
+        izena = in.readString();
+        ostatuMota = in.readString();
+        deskribapena = in.readString();
+        udalerria = in.readString();
+        probintzia = in.readString();
+        telefonoa = in.readInt();
+        latitudea = in.readDouble();
+        longitudea = in.readDouble();
+    }
+
+    public static final Creator<Ostatuak> CREATOR = new Creator<Ostatuak>() {
+        @Override
+        public Ostatuak createFromParcel(Parcel in) {
+            return new Ostatuak(in);
+        }
+
+        @Override
+        public Ostatuak[] newArray(int size) {
+            return new Ostatuak[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -94,5 +121,23 @@ public class Ostatuak {
 
     public void setLongitudea(double longitudea) {
         this.longitudea = longitudea;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeString(izena);
+        parcel.writeString(ostatuMota);
+        parcel.writeString(deskribapena);
+        parcel.writeString(udalerria);
+        parcel.writeString(probintzia);
+        parcel.writeInt(telefonoa);
+        parcel.writeDouble(latitudea);
+        parcel.writeDouble(longitudea);
     }
 }

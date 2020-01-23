@@ -19,6 +19,7 @@ import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -92,6 +93,15 @@ public class LocationComponentActivity extends AppCompatActivity implements
         } else {
             permissionsManager = new PermissionsManager(this);
             permissionsManager.requestLocationPermissions(this);
+        }
+    }
+    public void addMarkers(ArrayList<Ostatuak> OstatuenLista) {
+
+        for(Ostatuak os : OstatuenLista) {
+
+            mapboxMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(os.getLatitudea(), os.getLongitudea()))
+                    .title(os.getIzena()));
         }
     }
 

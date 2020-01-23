@@ -9,7 +9,6 @@ Public Class HasiSaioaLeihoa
         Hide()
         If chbErabGog.Checked Then
             My.Settings.Erabiltzailea = txtBxErabiltzailea.Text
-            My.Settings.Pasahitza = txBPasahitza.Text
             My.Settings.Save()
         Else
             My.Settings.Reset()
@@ -28,9 +27,7 @@ Public Class HasiSaioaLeihoa
 
     Private Function konparatuPasahitza() As Boolean
         Dim pasBD As String
-        Dim eraBD As String
         Dim pswDes As String
-        Dim eraDes As String
         Dim pasK As String() = New String(30) {}
         Dim eraK As String() = New String(30) {}
         Dim i As Integer = 0
@@ -97,7 +94,6 @@ Public Class HasiSaioaLeihoa
     End Sub
     Private Sub HasiSaioaLeihoa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtBxErabiltzailea.Text = My.Settings.Erabiltzailea
-        txBPasahitza.Text = My.Settings.Pasahitza
     End Sub
     Public Function AES_Encrypt(ByVal input As String, ByVal pass As String) As String
         Dim AES As New System.Security.Cryptography.RijndaelManaged
@@ -137,7 +133,7 @@ Public Class HasiSaioaLeihoa
         End Try
     End Function
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Try
             'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
             konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")

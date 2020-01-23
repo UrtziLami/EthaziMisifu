@@ -30,7 +30,6 @@ Partial Class HasiSaioaLeihoa
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -40,14 +39,14 @@ Partial Class HasiSaioaLeihoa
         Me.txtBxErabiltzailea.Location = New System.Drawing.Point(368, 205)
         Me.txtBxErabiltzailea.Name = "txtBxErabiltzailea"
         Me.txtBxErabiltzailea.Size = New System.Drawing.Size(369, 20)
-        Me.txtBxErabiltzailea.TabIndex = 2
+        Me.txtBxErabiltzailea.TabIndex = 1
         '
         'txBPasahitza
         '
         Me.txBPasahitza.Location = New System.Drawing.Point(368, 315)
         Me.txBPasahitza.Name = "txBPasahitza"
         Me.txBPasahitza.Size = New System.Drawing.Size(369, 20)
-        Me.txBPasahitza.TabIndex = 3
+        Me.txBPasahitza.TabIndex = 2
         Me.txBPasahitza.UseSystemPasswordChar = True
         '
         'chbErabGog
@@ -58,7 +57,7 @@ Partial Class HasiSaioaLeihoa
         Me.chbErabGog.Location = New System.Drawing.Point(368, 370)
         Me.chbErabGog.Name = "chbErabGog"
         Me.chbErabGog.Size = New System.Drawing.Size(218, 29)
-        Me.chbErabGog.TabIndex = 5
+        Me.chbErabGog.TabIndex = 3
         Me.chbErabGog.Text = "Erabiltzailea gogoratu"
         Me.chbErabGog.UseVisualStyleBackColor = False
         '
@@ -109,22 +108,12 @@ Partial Class HasiSaioaLeihoa
         Me.Label1.Text = "Login"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(151, 464)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "insertar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'HasiSaioaLeihoa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.chbErabGog)
         Me.Controls.Add(Me.btnHasiSaioa)
         Me.Controls.Add(Me.txBPasahitza)
@@ -150,5 +139,4 @@ Partial Class HasiSaioaLeihoa
     Friend WithEvents btnHasiSaioa As Button
     Friend WithEvents chbErabGog As CheckBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
 End Class

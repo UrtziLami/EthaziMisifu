@@ -73,7 +73,7 @@ Partial Class DatuakAldatuErab
         Me.txtBPas1.Location = New System.Drawing.Point(427, 225)
         Me.txtBPas1.Name = "txtBPas1"
         Me.txtBPas1.Size = New System.Drawing.Size(289, 20)
-        Me.txtBPas1.TabIndex = 3
+        Me.txtBPas1.TabIndex = 2
         '
         'btnGorde
         '
@@ -82,7 +82,7 @@ Partial Class DatuakAldatuErab
         Me.btnGorde.Location = New System.Drawing.Point(581, 474)
         Me.btnGorde.Name = "btnGorde"
         Me.btnGorde.Size = New System.Drawing.Size(87, 77)
-        Me.btnGorde.TabIndex = 6
+        Me.btnGorde.TabIndex = 4
         Me.btnGorde.UseVisualStyleBackColor = True
         '
         'btnAtzera
@@ -92,7 +92,7 @@ Partial Class DatuakAldatuErab
         Me.btnAtzera.Location = New System.Drawing.Point(268, 474)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(87, 77)
-        Me.btnAtzera.TabIndex = 7
+        Me.btnAtzera.TabIndex = 5
         Me.btnAtzera.UseVisualStyleBackColor = True
         '
         'txtBErabIzena
@@ -100,7 +100,7 @@ Partial Class DatuakAldatuErab
         Me.txtBErabIzena.Location = New System.Drawing.Point(427, 322)
         Me.txtBErabIzena.Name = "txtBErabIzena"
         Me.txtBErabIzena.Size = New System.Drawing.Size(289, 20)
-        Me.txtBErabIzena.TabIndex = 9
+        Me.txtBErabIzena.TabIndex = 3
         '
         'Label1
         '

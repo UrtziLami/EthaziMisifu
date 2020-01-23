@@ -51,7 +51,7 @@ Partial Class ErreserbaLeihoa
         Me.btnAtzera.Location = New System.Drawing.Point(159, 559)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(100, 58)
-        Me.btnAtzera.TabIndex = 5
+        Me.btnAtzera.TabIndex = 2
         Me.btnAtzera.UseVisualStyleBackColor = False
         '
         'btnAldatu
@@ -63,7 +63,7 @@ Partial Class ErreserbaLeihoa
         Me.btnAldatu.Location = New System.Drawing.Point(555, 559)
         Me.btnAldatu.Name = "btnAldatu"
         Me.btnAldatu.Size = New System.Drawing.Size(98, 58)
-        Me.btnAldatu.TabIndex = 2
+        Me.btnAldatu.TabIndex = 4
         Me.btnAldatu.UseVisualStyleBackColor = False
         '
         'btnKendu
@@ -75,7 +75,7 @@ Partial Class ErreserbaLeihoa
         Me.btnKendu.Location = New System.Drawing.Point(748, 559)
         Me.btnKendu.Name = "btnKendu"
         Me.btnKendu.Size = New System.Drawing.Size(102, 58)
-        Me.btnKendu.TabIndex = 7
+        Me.btnKendu.TabIndex = 5
         Me.btnKendu.UseVisualStyleBackColor = False
         '
         'btnSartu
@@ -86,7 +86,7 @@ Partial Class ErreserbaLeihoa
         Me.btnSartu.Location = New System.Drawing.Point(360, 559)
         Me.btnSartu.Name = "btnSartu"
         Me.btnSartu.Size = New System.Drawing.Size(100, 58)
-        Me.btnSartu.TabIndex = 8
+        Me.btnSartu.TabIndex = 3
         Me.btnSartu.UseVisualStyleBackColor = False
         '
         'Label2
@@ -116,15 +116,16 @@ Partial Class ErreserbaLeihoa
         Me.txbDatua.Location = New System.Drawing.Point(670, 53)
         Me.txbDatua.Name = "txbDatua"
         Me.txbDatua.Size = New System.Drawing.Size(206, 20)
-        Me.txbDatua.TabIndex = 12
+        Me.txbDatua.TabIndex = 1
         '
         'cmBKolumna
         '
+        Me.cmBKolumna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmBKolumna.FormattingEnabled = True
         Me.cmBKolumna.Location = New System.Drawing.Point(256, 53)
         Me.cmBKolumna.Name = "cmBKolumna"
         Me.cmBKolumna.Size = New System.Drawing.Size(204, 21)
-        Me.cmBKolumna.TabIndex = 11
+        Me.cmBKolumna.TabIndex = 456
         '
         'ErreserbaLeihoa
         '

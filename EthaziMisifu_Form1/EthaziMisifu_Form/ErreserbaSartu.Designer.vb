@@ -22,6 +22,7 @@ Partial Class ErreserbaSartu
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ErreserbaSartu))
         Me.mCIrte = New System.Windows.Forms.MonthCalendar()
         Me.mCSart = New System.Windows.Forms.MonthCalendar()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -39,14 +40,14 @@ Partial Class ErreserbaSartu
         Me.mCIrte.Location = New System.Drawing.Point(560, 268)
         Me.mCIrte.MaxSelectionCount = 1
         Me.mCIrte.Name = "mCIrte"
-        Me.mCIrte.TabIndex = 20
+        Me.mCIrte.TabIndex = 2
         '
         'mCSart
         '
         Me.mCSart.Location = New System.Drawing.Point(232, 268)
         Me.mCSart.MaxSelectionCount = 1
         Me.mCSart.Name = "mCSart"
-        Me.mCSart.TabIndex = 19
+        Me.mCSart.TabIndex = 1
         '
         'Label4
         '
@@ -77,7 +78,7 @@ Partial Class ErreserbaSartu
         Me.btnAtzera.Location = New System.Drawing.Point(283, 493)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(88, 85)
-        Me.btnAtzera.TabIndex = 16
+        Me.btnAtzera.TabIndex = 4
         Me.btnAtzera.UseVisualStyleBackColor = True
         '
         'btnSartu
@@ -87,7 +88,7 @@ Partial Class ErreserbaSartu
         Me.btnSartu.Location = New System.Drawing.Point(625, 493)
         Me.btnSartu.Name = "btnSartu"
         Me.btnSartu.Size = New System.Drawing.Size(88, 85)
-        Me.btnSartu.TabIndex = 13
+        Me.btnSartu.TabIndex = 3
         Me.btnSartu.UseVisualStyleBackColor = True
         '
         'Label2
@@ -114,19 +115,21 @@ Partial Class ErreserbaSartu
         '
         'cmBErab
         '
+        Me.cmBErab.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmBErab.FormattingEnabled = True
         Me.cmBErab.Location = New System.Drawing.Point(404, 83)
         Me.cmBErab.Name = "cmBErab"
         Me.cmBErab.Size = New System.Drawing.Size(237, 21)
-        Me.cmBErab.TabIndex = 21
+        Me.cmBErab.TabIndex = 45
         '
         'cmBOst
         '
+        Me.cmBOst.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmBOst.FormattingEnabled = True
         Me.cmBOst.Location = New System.Drawing.Point(404, 154)
         Me.cmBOst.Name = "cmBOst"
         Me.cmBOst.Size = New System.Drawing.Size(237, 21)
-        Me.cmBOst.TabIndex = 22
+        Me.cmBOst.TabIndex = 34
         '
         'ErreserbaSartu
         '
@@ -144,6 +147,7 @@ Partial Class ErreserbaSartu
         Me.Controls.Add(Me.btnSartu)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ErreserbaSartu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ErreserbaSartu"

@@ -3,8 +3,8 @@ Public Class DatuakAldatuErre
     Private Sub DatuakAldatuErre_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         erabiltzaileakAtera()
         ostatuakAtera()
-        cmbBOsta.SelectedText = ostatua
-        cmbBerab.SelectedText = erabiltzailea
+        cmbBOsta.SelectedItem = ostatua
+        cmbBerab.SelectedItem = erabiltzailea
         mCIrte.MinDate = mCSart.SelectionStart
         mCSart.MinDate = Today
         mCSart.SetDate(sartze)

@@ -36,7 +36,7 @@ Partial Class KudeaketaLeihoa
         Me.btnAlojamendu.Location = New System.Drawing.Point(261, 53)
         Me.btnAlojamendu.Name = "btnAlojamendu"
         Me.btnAlojamendu.Size = New System.Drawing.Size(496, 93)
-        Me.btnAlojamendu.TabIndex = 0
+        Me.btnAlojamendu.TabIndex = 1
         Me.btnAlojamendu.UseVisualStyleBackColor = True
         '
         'btnErabiltzaile
@@ -46,7 +46,7 @@ Partial Class KudeaketaLeihoa
         Me.btnErabiltzaile.Location = New System.Drawing.Point(261, 213)
         Me.btnErabiltzaile.Name = "btnErabiltzaile"
         Me.btnErabiltzaile.Size = New System.Drawing.Size(496, 97)
-        Me.btnErabiltzaile.TabIndex = 1
+        Me.btnErabiltzaile.TabIndex = 2
         Me.btnErabiltzaile.UseVisualStyleBackColor = True
         '
         'btnErreserba
@@ -56,7 +56,7 @@ Partial Class KudeaketaLeihoa
         Me.btnErreserba.Location = New System.Drawing.Point(261, 384)
         Me.btnErreserba.Name = "btnErreserba"
         Me.btnErreserba.Size = New System.Drawing.Size(496, 98)
-        Me.btnErreserba.TabIndex = 2
+        Me.btnErreserba.TabIndex = 3
         Me.btnErreserba.UseVisualStyleBackColor = True
         '
         'btnAtzera
@@ -66,7 +66,7 @@ Partial Class KudeaketaLeihoa
         Me.btnAtzera.Location = New System.Drawing.Point(449, 536)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(108, 66)
-        Me.btnAtzera.TabIndex = 3
+        Me.btnAtzera.TabIndex = 4
         Me.btnAtzera.UseVisualStyleBackColor = True
         '
         'KudeaketaLeihoa

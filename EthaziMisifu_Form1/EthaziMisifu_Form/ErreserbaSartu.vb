@@ -91,5 +91,7 @@ Public Class ErreserbaSartu
         ostatuakAtera()
         mCIrte.MinDate = mCSart.SelectionStart
         mCSart.MinDate = Today
+        cmBErab.SelectedIndex = 0
+        cmBOst.SelectedIndex = 0
     End Sub
 End Class

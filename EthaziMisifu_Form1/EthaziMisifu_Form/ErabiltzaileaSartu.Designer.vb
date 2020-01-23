@@ -22,6 +22,7 @@ Partial Class ErabiltzaileaSartu
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ErabiltzaileaSartu))
         Me.txtBErabIzena = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAtzera = New System.Windows.Forms.Button()
@@ -43,7 +44,7 @@ Partial Class ErabiltzaileaSartu
         Me.txtBErabIzena.Location = New System.Drawing.Point(430, 313)
         Me.txtBErabIzena.Name = "txtBErabIzena"
         Me.txtBErabIzena.Size = New System.Drawing.Size(289, 20)
-        Me.txtBErabIzena.TabIndex = 17
+        Me.txtBErabIzena.TabIndex = 3
         '
         'Label1
         '
@@ -63,7 +64,7 @@ Partial Class ErabiltzaileaSartu
         Me.btnAtzera.Location = New System.Drawing.Point(283, 465)
         Me.btnAtzera.Name = "btnAtzera"
         Me.btnAtzera.Size = New System.Drawing.Size(87, 77)
-        Me.btnAtzera.TabIndex = 15
+        Me.btnAtzera.TabIndex = 5
         Me.btnAtzera.UseVisualStyleBackColor = True
         '
         'btnSartu
@@ -73,7 +74,7 @@ Partial Class ErabiltzaileaSartu
         Me.btnSartu.Location = New System.Drawing.Point(604, 465)
         Me.btnSartu.Name = "btnSartu"
         Me.btnSartu.Size = New System.Drawing.Size(87, 77)
-        Me.btnSartu.TabIndex = 14
+        Me.btnSartu.TabIndex = 4
         Me.btnSartu.UseVisualStyleBackColor = True
         '
         'txtBPas1
@@ -81,7 +82,7 @@ Partial Class ErabiltzaileaSartu
         Me.txtBPas1.Location = New System.Drawing.Point(430, 216)
         Me.txtBPas1.Name = "txtBPas1"
         Me.txtBPas1.Size = New System.Drawing.Size(289, 20)
-        Me.txtBPas1.TabIndex = 13
+        Me.txtBPas1.TabIndex = 2
         '
         'lblPasahitza
         '
@@ -99,7 +100,7 @@ Partial Class ErabiltzaileaSartu
         Me.txtBIzenAbi.Location = New System.Drawing.Point(430, 124)
         Me.txtBIzenAbi.Name = "txtBIzenAbi"
         Me.txtBIzenAbi.Size = New System.Drawing.Size(289, 20)
-        Me.txtBIzenAbi.TabIndex = 11
+        Me.txtBIzenAbi.TabIndex = 1
         '
         'lblIzenAb
         '
@@ -165,6 +166,7 @@ Partial Class ErabiltzaileaSartu
         Me.Controls.Add(Me.lblPasahitza)
         Me.Controls.Add(Me.txtBIzenAbi)
         Me.Controls.Add(Me.lblIzenAb)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ErabiltzaileaSartu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ErabiltzaileaSartu"

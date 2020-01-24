@@ -18,46 +18,49 @@
             &nbsp;<asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="38pt" Text="Aukeratu taula" ForeColor="Black"></asp:Label>
             <br />
             <br />
-            &nbsp;<asp:Button ID="btnErabiltzaileak" runat="server" Text="Erabiltzaileak" style="margin-left: 0px" Width="93px" Height="33px" />
+            <asp:Button ID="btnErabiltzaileak" runat="server" Text="Erabiltzaileak" style="margin-left: 0px" Width="100px" Height="39px" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnErreserbak" runat="server" Height="33px" Text="Erreserbak" Width="85px" />
+            <asp:Button ID="btnErreserbak" runat="server" Height="39px" Text="Erreserbak" Width="97px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-            <asp:Button ID="btnOstatuak" runat="server" Height="33px" Text="Ostatuak" Width="73px" />
+            <asp:Button ID="btnOstatuak" runat="server" Height="38px" Text="Ostatuak" Width="96px" />
+            <br />
+            <br />
+            <br />
+            &nbsp;<asp:Button ID="btnIrten" runat="server" Height="32px" Text="Irten" Width="87px" />
             <br />
             <br />
             <br />
             <br />
+            <asp:Label ID="LabelFiltroa" runat="server" Font-Bold="True" Font-Size="32pt" Text="Filtroa" Visible="False"></asp:Label>
             <br />
-            <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Size="32pt" Text="Filtroa" Visible="False"></asp:Label>
             <br />
-            <br />
-            <asp:Label ID="Label4" runat="server" Font-Size="16pt" Text="Zutabea:" Visible="False"></asp:Label>
+            <asp:Label ID="LabelZutabea" runat="server" Font-Size="16pt" Text="Zutabea:" Visible="False"></asp:Label>
 &nbsp;
-            <asp:TextBox ID="TextBox1" runat="server" Visible="False"></asp:TextBox>
+            <asp:TextBox ID="TextBoxZutabea" runat="server" Visible="False"></asp:TextBox>
             <br />
             <br />
-            <asp:Label ID="Label5" runat="server" Font-Size="16pt" Text="Datua:" Visible="False"></asp:Label>
+            <asp:Label ID="LabelDatua" runat="server" Font-Size="16pt" Text="Datua:" Visible="False"></asp:Label>
 &nbsp;
-            <asp:TextBox ID="TextBox2" runat="server" Visible="False"></asp:TextBox>
+            <asp:TextBox ID="TextBoxDatua" runat="server" Visible="False"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="btnBilatu" runat="server" Height="36px" Text="Bilatu" Visible="False" Width="72px" />
-            <br />
-            <br />
-            <br />
+            <asp:Button ID="btnBilatu" runat="server" Height="47px" Text="Bilatu" Visible="False" Width="91px" />
             <br />
             <br />
             <br />
             <br />
-            &nbsp;<asp:Button ID="btnInsertatu" runat="server" Height="38px" Text="Insertatu" Visible="False" Width="85px" />
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:Button ID="btnEzabatu" runat="server" Height="38px" style="margin-bottom: 0px" Text="Ezabatu" Visible="False" Width="81px" />
+            <br />
+            <br />
+            <br />
+            &nbsp;<asp:Button ID="btnInsertatu" runat="server" Height="43px" Text="Insertatu" Visible="False" Width="91px" />
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:Button ID="btnEzabatu" runat="server" Height="44px" style="margin-bottom: 0px" Text="Ezabatu" Visible="False" Width="91px" />
 &nbsp;&nbsp; &nbsp;&nbsp;
-            <asp:Button ID="btnAldatu" runat="server" Height="39px" Text="Aldatu" Visible="False" Width="73px" />
+            <asp:Button ID="btnAldatu" runat="server" Height="43px" Text="Aldatu" Visible="False" Width="87px" />
             <br />
             <br />
             &nbsp;
             <br />
-            <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="20pt"></asp:Label>
+            <asp:Label ID="LabelTaula" runat="server" Font-Bold="True" Font-Size="20pt"></asp:Label>
             <br />
             <br />
             <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="Black" style="margin-left: 0px" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellSpacing="2">
@@ -73,7 +76,6 @@
             </asp:GridView>
             
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
     </form>
 </body>

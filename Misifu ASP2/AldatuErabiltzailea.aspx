@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Erregistratu.aspx.vb" Inherits="Misifu_ASP2.Erregistratu" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AldatuErabiltzailea.aspx.vb" Inherits="Misifu_ASP2.AldatuErabiltzailea" %>
 
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="StyleSheet1.css" />
@@ -20,7 +20,8 @@
             <br />
             <br />
             <br />
-            <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="38pt" Text="ERREGISTRATU"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="38pt" Text="ALDATU ERABILTZAILEA"></asp:Label>
+            <br />
             <br />
             <br />
             <br />
@@ -29,14 +30,14 @@
             <asp:TextBox ID="TextBoxIzenAbizena" runat="server"></asp:TextBox>
             <br />
             <br />
-            <br />
-            <asp:Label ID="Label5" runat="server" Font-Size="16pt" Text="Erabiltzailea:"></asp:Label>
-            &nbsp;
+<br />
+            <asp:Label ID="Label6" runat="server" Font-Size="16pt" Text="Erabiltzailea:"></asp:Label>
+&nbsp;&nbsp;
             <asp:TextBox ID="TextBoxErab" runat="server"></asp:TextBox>
             <br />
             <br />
             <br />
-            <asp:Label ID="Label3" runat="server" Font-Size="16pt" Text="Pasahitza:"></asp:Label>
+            <asp:Label ID="Label3" runat="server" Font-Size="16pt" Text="Pasahitza berria:"></asp:Label>
             &nbsp;
             <asp:TextBox ID="TextBoxPasahitza" runat="server" TextMode="Password" Width="180px"></asp:TextBox>
             <br />
@@ -50,7 +51,7 @@
             <br />
             <asp:Button ID="btnBueltatu" runat="server" Height="36px" Text="Bueltatu" Width="72px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnErregistratu" runat="server" Text="Erregistratu" Height="37px" Width="101px" />
+            <asp:Button ID="btnAldatu" runat="server" Text="Aldatu" Height="37px" Width="101px" Enabled="False" />
         </div>
     </form>
 </body>

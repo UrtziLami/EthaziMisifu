@@ -20,7 +20,7 @@ public class Ostatuak implements java.io.Serializable {
 	private Double longitudea;
 	private Double latitudea;
 	private String ostatuMota;
-	private Set erreserbaks = new HashSet(0);
+
 
 	public Ostatuak() {
 	}
@@ -30,8 +30,8 @@ public class Ostatuak implements java.io.Serializable {
 	}
 
 	public Ostatuak(String sinadura, String izena, String deskribapena, String udalerri, String probintzia,
-			String email, String telefonoa, String web, Double longitudea, Double latitudea, String ostatuMota,
-			Set erreserbaks) {
+			String email, String telefonoa, String web, Double longitudea, Double latitudea, String ostatuMota
+			) {
 		this.sinadura = sinadura;
 		this.izena = izena;
 		this.deskribapena = deskribapena;
@@ -43,7 +43,7 @@ public class Ostatuak implements java.io.Serializable {
 		this.longitudea = longitudea;
 		this.latitudea = latitudea;
 		this.ostatuMota = ostatuMota;
-		this.erreserbaks = erreserbaks;
+	
 	}
 
 	public String getSinadura() {
@@ -134,12 +134,6 @@ public class Ostatuak implements java.io.Serializable {
 		this.ostatuMota = ostatuMota;
 	}
 
-	public Set getErreserbaks() {
-		return this.erreserbaks;
-	}
-
-	public void setErreserbaks(Set erreserbaks) {
-		this.erreserbaks = erreserbaks;
-	}
+	
 
 }

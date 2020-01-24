@@ -36,11 +36,6 @@
         <property generated="never" lazy="false" name="ostatuMota" optimistic-lock="true" type="string" unique="false">
             <column length="45" name="ostatuMota"/>
         </property>
-        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="erreserbaks" optimistic-lock="true" sort="unsorted" table="erreserbak">
-            <key on-delete="noaction">
-                <column length="45" name="Ostatuak_sinadura" not-null="true"/>
-            </key>
-            <one-to-many class="lehena.Erreserbak" embed-xml="true" not-found="exception"/>
-        </set>
+        
     </class>
 </hibernate-mapping>

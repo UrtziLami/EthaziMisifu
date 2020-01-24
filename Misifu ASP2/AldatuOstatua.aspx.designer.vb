@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Taulak
+Partial Public Class AldatuOstatua
 
     '''<summary>
     '''Control form1.
@@ -23,121 +23,211 @@ Partial Public Class Taulak
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''Control Label2.
+    '''Control Label1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control btnErabiltzaileak.
+    '''Control lblID.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnErabiltzaileak As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents lblID As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control btnErreserbak.
+    '''Control DropDownList1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnErreserbak As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control btnOstatuak.
+    '''Control btnBete.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnOstatuak As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnBete As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control btnIrten.
+    '''Control lblIzena.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnIrten As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents lblIzena As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control LabelFiltroa.
+    '''Control TextBoxIzena.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents LabelFiltroa As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents TextBoxIzena As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control LabelZutabea.
+    '''Control lblDeskrib.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents LabelZutabea As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblDeskrib As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBoxZutabea.
+    '''Control TextBoxDeskr.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBoxZutabea As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextBoxDeskr As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control LabelDatua.
+    '''Control lblUdalerri.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents LabelDatua As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblUdalerri As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBoxDatua.
+    '''Control TextBoxUdalerri.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBoxDatua As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextBoxUdalerri As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control btnBilatu.
+    '''Control lblProbintzia.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnBilatu As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents lblProbintzia As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control btnInsertatu.
+    '''Control TextBoxProbint.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnInsertatu As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents TextBoxProbint As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control btnEzabatu.
+    '''Control lblEmail.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnEzabatu As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents lblEmail As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control TextBoxEmail.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TextBoxEmail As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lblTelef.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblTelef As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control TextBoxTelef.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TextBoxTelef As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lblWeb.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblWeb As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control TextBoxWeb.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TextBoxWeb As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lblWeb0.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblWeb0 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control TextBoxLongitudea.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TextBoxLongitudea As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lblWeb1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblWeb1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control TextBoxLatitudea.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TextBoxLatitudea As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control btnBueltatu.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnBueltatu As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Control btnAldatu.
@@ -147,22 +237,4 @@ Partial Public Class Taulak
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnAldatu As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Control LabelTaula.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents LabelTaula As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control GridView1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
 End Class

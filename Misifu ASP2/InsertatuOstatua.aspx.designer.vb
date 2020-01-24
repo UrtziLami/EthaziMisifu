@@ -32,6 +32,24 @@ Partial Public Class InsertatuOstatua
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Control Label11.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label11 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control TextBoxSinadura.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TextBoxSinadura As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''Control Label2.
     '''</summary>
     '''<remarks>
@@ -156,6 +174,42 @@ Partial Public Class InsertatuOstatua
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents TextBoxWeb As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control Label9.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label9 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control TextBoxLongitudea.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TextBoxLongitudea As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control Label10.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control TextBoxLatitudea.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TextBoxLatitudea As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control btnBueltatu.

@@ -65,7 +65,7 @@ public class XMLManeiatzailea extends DefaultHandler{
 		case "territory":
 			alojamendu.setProbintzia(balioa);
 			break;
-		case "lodgintype":
+		case "lodgingtype":
 			alojamendu.setOstatuMota(balioa);
 			break;
 		case "latwgs84":

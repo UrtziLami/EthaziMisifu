@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="InsertatuErreserba.aspx.vb" Inherits="Misifu_ASP2.WebForm5" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AldatuErreserba.aspx.vb" Inherits="Misifu_ASP2.AldatuErreserba" %>
 
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="StyleSheet1.css" />
@@ -20,23 +20,28 @@
             <br />
             <br />
             <br />
-            <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="32pt" Text="INSERTATU ERRESERBA"></asp:Label>
-        </div>
-        <div style="margin-left: 40px">
-
-            <br />
-            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label3" runat="server" Font-Size="16pt" Text="Alojamendu Izena:"></asp:Label>
-&nbsp;&nbsp;
-            <asp:DropDownList ID="DropDownList2" runat="server">
-            </asp:DropDownList>
-            <br />
-
+            <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="32pt" Text="ALDATU ERRESERBA"></asp:Label>
         </div>
         <div align="center">
 
             <br />
-            <asp:Label ID="Label4" runat="server" Font-Size="16pt" Text="Sartu Data"></asp:Label>
+            <br />
+            <asp:Label ID="Label4" runat="server" Font-Size="16pt" Text="ID:"></asp:Label>
+&nbsp;&nbsp;
+            <asp:DropDownList ID="DropDownList3" runat="server">
+            </asp:DropDownList>
+            <br />
+            <br />
+            <br />
+            <asp:Label ID="Label3" runat="server" Font-Size="16pt" Text="Alojamendu Izena:"></asp:Label>
+&nbsp;&nbsp;
+            <asp:DropDownList ID="DropDownList2" runat="server">
+            </asp:DropDownList>
+
+            <br />
+            <br />
+            <br />
+            <asp:Label ID="Label5" runat="server" Font-Size="16pt" Text="Sartu Data"></asp:Label>
             <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
                 <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
                 <NextPrevStyle VerticalAlign="Bottom" />
@@ -48,7 +53,7 @@
                 <WeekendDayStyle BackColor="#FFFFCC" />
             </asp:Calendar>
             <br />
-            <asp:Label ID="Label5" runat="server" Font-Size="16pt" Text="Atera Data"></asp:Label>
+            <asp:Label ID="Label6" runat="server" Font-Size="16pt" Text="Atera Data"></asp:Label>
             <asp:Calendar ID="Calendar2" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
                 <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
                 <NextPrevStyle VerticalAlign="Bottom" />
@@ -59,7 +64,7 @@
                 <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
                 <WeekendDayStyle BackColor="#FFFFCC" />
             </asp:Calendar>
-&nbsp;&nbsp;
+            <br />
 
         </div>
         <div align="center">
@@ -68,7 +73,7 @@
             <br />
             <asp:Button ID="btnBueltatu" runat="server" Height="35px" Text="Bueltatu" Width="70px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnInsertatu" runat="server" Height="35px" Text="Insertatu" Width="74px" />
+            <asp:Button ID="btnAldatu" runat="server" Height="35px" Text="Aldatu" Width="66px" />
 
         </div>
     </form>

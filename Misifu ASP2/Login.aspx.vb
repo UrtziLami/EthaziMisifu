@@ -1,22 +1,25 @@
 ﻿Imports System.Windows
 Imports MySql.Data.MySqlClient
-Public Class WebForm1
+Public Class Login
     Inherits System.Web.UI.Page
     Dim conn As MySqlConnection
     Dim ds As New DataSet
     Public kodEnc As String = "12345"
+    Public bd As String = "ethazi_misifu"
+    Public Shared erabiltzailea As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
     End Sub
 
-    Protected Sub saioaHasi(sender As Object, e As EventArgs) Handles Button2.Click
+    Protected Sub saioaHasi(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim konprobatu As Boolean = False
         Dim izenak As ArrayList
 
-        konprobatu = pasahitzaBalidatu(TextBox1.Text, TextBox2.Text)
+        konprobatu = pasahitzaBalidatu(TextBoxErab.Text, TextBoxPasahitza.Text)
 
         If konprobatu = True Then
+            erabiltzailea = TextBoxErab.Text
             Response.Redirect("Taulak.aspx")
         End If
 
@@ -26,42 +29,41 @@ Public Class WebForm1
         Dim konprobatu As Boolean = False
         Dim izenak(10) As String
         Try
-            conn = New MySqlConnection("server=localhost; database=misifu; user id=root; port=3306")
+            conn = New MySqlConnection("server=localhost; database=" + bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             konprobatu = False
             MessageBox.Show("No se ha podido conectar")
         End Try
-        'Dim cm = New MySqlCommand()
-        Dim query As New MySqlCommand("SELECT pasahitza FROM erabiltzaileak WHERE izenAbizena like '" + izena + "'", conn)
-        Dim da As New MySqlDataAdapter(query)
-        'cm.CommandText = sql
-        'cm.CommandType = CommandType.Text
-        'cm.Connection = conn
-        'Dim da = New MySqlDataAdapter(cm)
+        If konprobatu Then
+            Dim query As New MySqlCommand("SELECT pasahitza FROM erabiltzaileak WHERE erabIzena like '" + izena + "'", conn)
+            Dim da As New MySqlDataAdapter(query)
 
-        ds = New DataSet()
-        da.Fill(ds)
+            ds = New DataSet()
+            da.Fill(ds)
 
-        Dim datu As String
+            Dim datu As String
 
-        For i = 0 To ds.Tables(0).Rows.Count - 1
-            For j = 0 To ds.Tables(0).Columns.Count - 1
-                datu = ds.Tables(0).Rows(i)(j).ToString()
+            For i = 0 To ds.Tables(0).Rows.Count - 1
+                For j = 0 To ds.Tables(0).Columns.Count - 1
+                    datu = ds.Tables(0).Rows(i)(j).ToString()
+                Next
             Next
-        Next
 
-        If AES_Decrypt(datu, kodEnc) = pasahitza And datu <> "" Then
-            konprobatu = True
-        Else
-            konprobatu = False
-            MsgBox("Pasahitza edo erabiltzailea txarto sartuta", vbCritical, "Txarto")
+            If AES_Decrypt(datu, kodEnc) = pasahitza And datu <> "" Then
+                konprobatu = True
+            Else
+                konprobatu = False
+                MsgBox("Pasahitza edo erabiltzailea txarto sartuta", vbCritical, "Txarto")
+            End If
+
         End If
 
+        conn.Close()
         Return konprobatu
     End Function
 
-    Protected Sub erregistratu(sender As Object, e As EventArgs) Handles Button3.Click
+    Protected Sub erregistratu(sender As Object, e As EventArgs) Handles btnErregistratu.Click
         Response.Redirect("Erregistratu.aspx")
     End Sub
 

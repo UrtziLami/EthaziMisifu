@@ -8,8 +8,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-import java.util.Map;
-
 public class Menu extends AppCompatActivity {
 
     @Override

@@ -9,4 +9,23 @@
     <string name="user_location_permission_explanation" />
     <string name="user_location_permission_not_granted" />
     <string name="buscar">Buscar...</string>
+    <string name="volver">Volver</string>
+    <string name="ostatu_motak">Ostatu motak</string>
+    <string name="udalerriak">Udalerriak</string>
+    <string name="probintzia">Probintzia</string>
+
+    <string-array name="Ostatuak">
+        <item>Cualquiera</item>
+        <item>Albergues</item>
+        <item>Campings</item>
+        <item>Casas rurales</item>
+    </string-array>
+
+    <string-array name="Provincias">
+        <item>Cualquiera</item>
+        <item>Bizkaia</item>
+        <item>Araba/Álava</item>
+        <item>Gipuzkoa</item>
+    </string-array>
+
 </resources>

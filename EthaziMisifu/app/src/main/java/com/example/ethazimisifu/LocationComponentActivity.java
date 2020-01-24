@@ -1,10 +1,20 @@
 package com.example.ethazimisifu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.mapboxsdk.Mapbox;
@@ -31,6 +41,7 @@ public class LocationComponentActivity extends AppCompatActivity implements
     private PermissionsManager permissionsManager;
     private MapboxMap mapboxMap;
     private MapView mapView;
+    private ArrayList<Ostatuak> ostatuak = new ArrayList<Ostatuak>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +57,23 @@ public class LocationComponentActivity extends AppCompatActivity implements
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
-        mapView.getMapAsync(new OnMapReadyCallback() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.13.33/misifu/selectOstuatuak.php", new com.android.volley.Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                ostatuak = Consultas.ostatuLista(response);
+
+            }
+
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        addMarkers(ostatuak);
+
+        /*mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
                 mapboxMap.addMarker(new MarkerOptions()
@@ -54,7 +81,7 @@ public class LocationComponentActivity extends AppCompatActivity implements
                         .title("ANGOSTO")
                         .snippet("Camping de primera categoría ubicado en el alavés Valle de Valdegovía, cerca del Parque Natural de Valderejo. Cuenta con parcelas para tiendas y bungalows para 4 o 6 personas. Además el camping ofrece numerosos servicios, entre ellos, parque infantil, piscina "));
             }
-        });
+        });*/
     }
 
     @Override

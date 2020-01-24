@@ -1,17 +1,22 @@
 package com.example.ethazimisifu;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -35,12 +40,15 @@ public class Lista extends AppCompatActivity {
     private ListView lista;
     private AdapterView.AdapterContextMenuInfo info;
     private View lastTouchedView;
-    private Button buscar;
+    private Button btnBuscar;
+    private EditText etBuscar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
+        etBuscar = (EditText) findViewById(R.id.etBuscar);
+        setTitle("Lista");
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.13.33/misifu/selectOstuatuak.php", new com.android.volley.Response.Listener<String>() {
             @Override
@@ -129,7 +137,7 @@ public class Lista extends AppCompatActivity {
             lista.setAdapter(adapter);
             adapter.notifyDataSetChanged();
         } else if (id == R.id.search) {
-
+            dialogoContrasena();
         }
 
         return true;
@@ -188,10 +196,11 @@ public class Lista extends AppCompatActivity {
         finish();
     }
 
-    public void buscar(){
+    public void buscar(View view){
         tareas.clear();
+
         for(int i = 0; i < ostatuak.size(); i++){
-            if(ostatuak.get(i).getOstatuMota().equals("Camping")){
+            if(ostatuak.get(i).getIzena().toLowerCase().contains(etBuscar.getText().toString().toLowerCase())){
                 tareas.add(String.valueOf(ostatuak.get(i).getIzena()));
             }
         }
@@ -199,6 +208,39 @@ public class Lista extends AppCompatActivity {
         adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_selectable_list_item, tareas);
         lista.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+    }
+
+    public void dialogoContrasena() {
+
+        LayoutInflater li = LayoutInflater.from(this);
+        View promptsView = li.inflate(R.layout.custom_dialog, null);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+        alertDialogBuilder.setView(promptsView);
+
+        //final EditText vieja = (EditText) promptsView.findViewById(R.id.editTextResult);
+        //final EditText nueva = (EditText) promptsView.findViewById(R.id.editTextResult2);
+
+        alertDialogBuilder
+                .setCancelable(false)
+                .setPositiveButton("Filtar",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Toast.makeText(getApplicationContext(), "Funciona", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                .setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        alertDialog.show();
+
     }
 
 }

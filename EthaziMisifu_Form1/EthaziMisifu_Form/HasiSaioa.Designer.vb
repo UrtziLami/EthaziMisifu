@@ -30,8 +30,13 @@ Partial Class HasiSaioaLeihoa
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.piBPas = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.picBErab = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.piBPas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picBErab, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtBxErabiltzailea
@@ -108,12 +113,52 @@ Partial Class HasiSaioaLeihoa
         Me.Label1.Text = "Login"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'piBPas
+        '
+        Me.piBPas.BackColor = System.Drawing.Color.Transparent
+        Me.piBPas.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
+        Me.piBPas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.piBPas.Location = New System.Drawing.Point(743, 315)
+        Me.piBPas.Name = "piBPas"
+        Me.piBPas.Size = New System.Drawing.Size(23, 20)
+        Me.piBPas.TabIndex = 48
+        Me.piBPas.TabStop = False
+        Me.piBPas.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(368, 177)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(256, 25)
+        Me.Label2.TabIndex = 49
+        Me.Label2.Text = "Erabiltzailea ez da existitzen"
+        Me.Label2.Visible = False
+        '
+        'picBErab
+        '
+        Me.picBErab.BackColor = System.Drawing.Color.Transparent
+        Me.picBErab.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.alert
+        Me.picBErab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picBErab.Location = New System.Drawing.Point(743, 205)
+        Me.picBErab.Name = "picBErab"
+        Me.picBErab.Size = New System.Drawing.Size(23, 20)
+        Me.picBErab.TabIndex = 50
+        Me.picBErab.TabStop = False
+        Me.picBErab.Visible = False
+        '
         'HasiSaioaLeihoa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
+        Me.Controls.Add(Me.picBErab)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.piBPas)
         Me.Controls.Add(Me.chbErabGog)
         Me.Controls.Add(Me.btnHasiSaioa)
         Me.Controls.Add(Me.txBPasahitza)
@@ -127,6 +172,8 @@ Partial Class HasiSaioaLeihoa
         Me.Text = "HasiSaioa"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.piBPas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picBErab, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -139,4 +186,7 @@ Partial Class HasiSaioaLeihoa
     Friend WithEvents btnHasiSaioa As Button
     Friend WithEvents chbErabGog As CheckBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents piBPas As PictureBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents picBErab As PictureBox
 End Class

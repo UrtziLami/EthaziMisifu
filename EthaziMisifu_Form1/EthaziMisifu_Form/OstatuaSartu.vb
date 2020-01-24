@@ -27,8 +27,6 @@ Public Class OstatuaSartu
             Dim lei As New OstatuLeiho
             lei.Show()
             Hide()
-        Else
-            MessageBox.Show("Datuak txarto daude.")
         End If
     End Sub
 
@@ -41,54 +39,63 @@ Public Class OstatuaSartu
     Private Function balidatuHutza() As Boolean
         Dim bal As Boolean = True
         If txtBIzena.Text.Equals("") Then
+            txtBIzena.Focus()
             pcBIz.Visible = True
             bal = False
         Else
             pcBIz.Visible = False
         End If
         If txtBProbintzia.Text.Equals("") Then
+            txtBProbintzia.Focus()
             piBPro.Visible = True
             bal = False
         Else
             piBPro.Visible = False
         End If
         If txtBSinadura.Text.Equals("") Then
+            txtBSinadura.Focus()
             picBSina.Visible = True
             bal = False
         Else
             picBSina.Visible = True
         End If
         If txtBUdalerri.Text.Equals("") Then
+            txtBUdalerri.Focus()
             pcBUda.Visible = True
             bal = False
         Else
             pcBUda.Visible = False
         End If
         If txtBLat.Text.Equals("") Then
+            txtBLat.Focus()
             piBLa.Visible = True
             bal = False
         Else
             piBLa.Visible = False
         End If
         If txtBLon.Text.Equals("") Then
+            txtBLon.Focus()
             picBLon.Visible = True
             bal = False
         Else
             picBLon.Visible = False
         End If
         If RtxtBDesk.Text.Equals("") Then
+            RtxtBDesk.Focus()
             piBDesk.Visible = True
             bal = False
         Else
             piBDesk.Visible = False
         End If
         If txtBWeb.Text.Equals("") Then
+            txtBWeb.Focus()
             piBweb.Visible = True
             bal = False
         Else
             piBweb.Visible = False
         End If
         If txtBTelefonoa.Text.Equals("") Or txtBTelefonoa.Text.Length < 9 Then
+            txtBTelefonoa.Focus()
             piBTel.Visible = True
             bal = False
         Else

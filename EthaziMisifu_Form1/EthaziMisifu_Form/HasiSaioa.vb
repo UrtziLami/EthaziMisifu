@@ -20,8 +20,6 @@ Public Class HasiSaioaLeihoa
     Private Sub aldaketa()
         If konparatuPasahitza() = True Then
             aldatuLeiho()
-        Else
-            MessageBox.Show("Datuak txarto daude.")
         End If
     End Sub
 
@@ -70,11 +68,35 @@ Public Class HasiSaioaLeihoa
                     Exit For
                 End If
             Next
-            If pas = True And erab = True Then
+            If erab = False And pas = False Then
+                picBErab.Visible = True
+                Label2.Visible = True
+                piBPas.Visible = True
+                txtBxErabiltzailea.Focus()
+            ElseIf erab = False And pas = True Then
+                picBErab.Visible = True
+                Label2.Visible = True
+                piBPas.Visible = False
+                txtBxErabiltzailea.Focus()
+            ElseIf pas = False And erab = True Then
+                piBPas.Visible = True
+                txBPasahitza.Focus()
+                picBErab.Visible = False
+                Label2.Visible = False
+            Else
+                picBErab.Visible = False
+                piBPas.Visible = False
+                Label2.Visible = False
                 ema = True
             End If
+        ElseIf eraT = Nothing And pasT = Nothing Then
+            picBErab.Visible = True
+            piBPas.Visible = True
+        ElseIf eraT = Nothing Then
+            picBErab.Visible = True
+        ElseIf pasT = Nothing Then
+            piBPas.Visible = True
         End If
-
         Return ema
     End Function
     Private Sub Form_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -94,6 +116,11 @@ Public Class HasiSaioaLeihoa
     End Sub
     Private Sub HasiSaioaLeihoa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtBxErabiltzailea.Text = My.Settings.Erabiltzailea
+        If txtBxErabiltzailea.Text.Equals("") Then
+            txtBxErabiltzailea.Focus()
+        Else
+            txBPasahitza.Focus()
+        End If
     End Sub
     Public Function AES_Encrypt(ByVal input As String, ByVal pass As String) As String
         Dim AES As New System.Security.Cryptography.RijndaelManaged
@@ -132,19 +159,4 @@ Public Class HasiSaioaLeihoa
         Catch ex As Exception
         End Try
     End Function
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Try
-            'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-            konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")
-            konn.Open()
-        Catch ex As MySqlException
-            MessageBox.Show("No se ha podido conectar al servidor")
-        End Try
-        Dim pshEnc As String = AES_Encrypt(txBPasahitza.Text, kodEncDes)
-        Dim eraIzEnc As String = txtBxErabiltzailea.Text
-        Dim myCommand As New MySqlCommand("insert into erabiltzaileak (pasahitza, erabIzena) values ('" & pshEnc & "', '" & eraIzEnc & "')", konn)
-        myCommand.ExecuteNonQuery()
-        konn.Close()
-    End Sub
 End Class

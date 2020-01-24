@@ -52,8 +52,6 @@ Public Class DatuakAldatuErab
             Dim lei As New ErabiltzaileLeihoa
             lei.Show()
             Hide()
-        Else
-            MessageBox.Show("Datuak txarto daude.")
         End If
     End Sub
     Private Sub DatuakAldatuErab_Load(sender As Object, e As EventArgs) Handles MyBase.Load

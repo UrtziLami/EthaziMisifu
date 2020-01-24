@@ -6,6 +6,7 @@ Public Class EzabatuErreserba
     Dim conn As MySqlConnection
     Dim ds As New DataSet
     Dim ds2 As New DataSet
+    Dim ds3 As New DataSet
     Dim erabiltzaileak As New ArrayList()
     Dim ostatuak As New ArrayList()
     Shared kont As Integer = 0
@@ -104,10 +105,17 @@ Public Class EzabatuErreserba
         ds2 = New DataSet()
         da2.Fill(ds2)
 
-        'Dim sql3 = "SELECT  FROM ostatuak WHERE sinadura = (SELECT Ostatuak_sinadura FROM erreserbak WHERE idErreserba like '" + DropDownList3.SelectedItem.ToString + "')"
+        Dim sql3 = "SELECT izena FROM ostatuak WHERE sinadura = (SELECT Ostatuak_sinadura FROM erreserbak WHERE idErreserba like '" + DropDownList3.SelectedItem.ToString + "')"
+        Dim cm3 = New MySqlCommand()
+        cm3.CommandText = sql3
+        cm3.CommandType = CommandType.Text
+        cm3.Connection = conn
+        Dim da3 = New MySqlDataAdapter(cm3)
 
+        ds3 = New DataSet()
+        da3.Fill(ds3)
 
-        TextBox2.Text = ds2.Tables(0).Rows(0)(1).ToString
+        TextBox2.Text = ds3.Tables(0).Rows(0)(1).ToString
         TextBox3.Text = ds2.Tables(0).Rows(0)(3).ToString
         TextBox4.Text = ds2.Tables(0).Rows(0)(4).ToString
     End Sub

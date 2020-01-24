@@ -9,6 +9,12 @@ Public Class Taulak
     Shared taula As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Try
+            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
+            conn.Open()
+        Catch ex As MySqlException
+            MessageBox.Show("No se ha podido conectar")
+        End Try
         If taula = "erabiltzaileak" Then
             btnErabiltzaileak_Click1(sender, e)
         ElseIf taula = "erreserbak" Then
@@ -16,17 +22,13 @@ Public Class Taulak
         ElseIf taula = "ostatuak" Then
             btnOstatuak_Click(sender, e)
         End If
+        conn.Close()
     End Sub
 
     Protected Sub btnErabiltzaileak_Click1(sender As Object, e As EventArgs) Handles btnErabiltzaileak.Click
         Dim table As New DataTable
         taula = "erabiltzaileak"
-        Try
-            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
-            conn.Open()
-        Catch ex As MySqlException
-            MessageBox.Show("No se ha podido conectar")
-        End Try
+
         Dim sql = "SELECT * FROM erabiltzaileak WHERE erabIzena = '" + wf1.erabiltzailea.ToString + "'"
         Dim cm = New MySqlCommand()
         cm.CommandText = sql
@@ -70,12 +72,7 @@ Public Class Taulak
     Protected Sub btnErreserbak_Click(sender As Object, e As EventArgs) Handles btnErreserbak.Click
         Dim table As New DataTable
         taula = "erreserbak"
-        Try
-            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
-            conn.Open()
-        Catch ex As MySqlException
-            MessageBox.Show("No se ha podido conectar")
-        End Try
+
         Dim sql = "SELECT * FROM erreserbak WHERE Erabiltzaileak_idBezeroak = (SELECT idBezeroak FROM erabiltzaileak WHERE erabIzena = '" + wf1.erabiltzailea.ToString + "')"
         Dim cm = New MySqlCommand()
         cm.CommandText = sql
@@ -113,7 +110,7 @@ Public Class Taulak
         Next
 
         For i = 0 To ds.Tables(0).Rows.Count - 1
-            Dim sql2 = "SELECT sinadura FROM ostatuak WHERE sinadura = '" + ds.Tables(0).Rows(i)(1).ToString + "'"
+            Dim sql2 = "SELECT izena FROM ostatuak WHERE sinadura = '" + ds.Tables(0).Rows(i)(1).ToString + "'"
             Dim cm2 = New MySqlCommand()
             cm.CommandText = sql2
             cm.CommandType = CommandType.Text
@@ -143,12 +140,7 @@ Public Class Taulak
     Protected Sub btnOstatuak_Click(sender As Object, e As EventArgs) Handles btnOstatuak.Click
         Dim table As New DataTable
         taula = "ostatuak"
-        Try
-            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
-            conn.Open()
-        Catch ex As MySqlException
-            MessageBox.Show("No se ha podido conectar")
-        End Try
+
         Dim sql = "SELECT * FROM ostatuak"
         Dim cm = New MySqlCommand()
         cm.CommandText = sql
@@ -188,12 +180,7 @@ Public Class Taulak
     Protected Sub btnBilatu_Click(sender As Object, e As EventArgs) Handles btnBilatu.Click
         Dim table As New DataTable
         Dim konprobatu As Boolean = True
-        Try
-            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
-            conn.Open()
-        Catch ex As MySqlException
-            MessageBox.Show("No se ha podido conectar")
-        End Try
+
         If TextBoxZutabea.Text <> "" Then
             Try
                 Dim sql = "SELECT * FROM " + taula + " WHERE " + TextBoxZutabea.Text + " like '%" + TextBoxDatua.Text + "%'"
@@ -262,13 +249,6 @@ Public Class Taulak
     Protected Sub btnEzabatu_Click(sender As Object, e As EventArgs) Handles btnEzabatu.Click
         If taula = "erabiltzaileak" Then
             If MsgBox("Erabiltzailea ezabatu nahi duzu?", vbYesNo, "Ezabatu?") = 6 Then
-                Try
-                    conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
-                    conn.Open()
-                Catch ex As MySqlException
-                    MessageBox.Show("No se ha podido conectar")
-                End Try
-
                 Dim cm3 = New MySqlCommand()
                 cm3.CommandText = "DELETE FROM erabiltzailea WHERE erabIzena = '" + wf1.erabiltzailea.ToString + "'"
                 cm3.Connection = conn

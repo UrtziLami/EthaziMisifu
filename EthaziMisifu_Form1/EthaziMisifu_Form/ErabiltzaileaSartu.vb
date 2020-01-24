@@ -64,8 +64,6 @@ Public Class ErabiltzaileaSartu
             Dim myCommand As New MySqlCommand("insert into erabiltzaileak (izenAbizena, pasahitza, erabIzena) values ('" & izAbEnc & "', '" & pshEnc & "', '" & eraIzEnc & "')", konn)
             myCommand.ExecuteNonQuery()
             konn.Close()
-        Else
-            MessageBox.Show("Datuak txarto daude.")
         End If
     End Sub
 End Class

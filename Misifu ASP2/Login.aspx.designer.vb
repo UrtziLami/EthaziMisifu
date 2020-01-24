@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class WebForm1
+Partial Public Class Login
 
     '''<summary>
     '''Control form1.
@@ -41,13 +41,13 @@ Partial Public Class WebForm1
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox1.
+    '''Control TextBoxErab.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextBoxErab As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label2.
@@ -59,29 +59,29 @@ Partial Public Class WebForm1
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox2.
+    '''Control TextBoxPasahitza.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TextBoxPasahitza As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control Button2.
+    '''Control btnLogin.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnLogin As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control Button3.
+    '''Control btnErregistratu.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Button3 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnErregistratu As Global.System.Web.UI.WebControls.Button
 End Class

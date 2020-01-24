@@ -1,5 +1,5 @@
 package lehena;
-// Generated 21-ene-2020 8:49:14 by Hibernate Tools 5.4.7.Final
+// Generated 24-ene-2020 9:43:04 by Hibernate Tools 5.4.7.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -16,6 +16,12 @@ public class Erabiltzaileak implements java.io.Serializable {
 	private Set erreserbaks = new HashSet(0);
 
 	public Erabiltzaileak() {
+	}
+
+	public Erabiltzaileak(String izenAbizena, String pasahitza, String erabIzena) {
+		this.izenAbizena = izenAbizena;
+		this.pasahitza = pasahitza;
+		this.erabIzena = erabIzena;
 	}
 
 	public Erabiltzaileak(String izenAbizena, String pasahitza, String erabIzena, Set erreserbaks) {

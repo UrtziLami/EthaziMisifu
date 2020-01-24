@@ -5,23 +5,29 @@ Public Class Taulak
     Dim conn As MySqlConnection
     Dim ds As New DataSet
     Dim ds2 As New DataSet
-    Dim wf1 As New WebForm1
+    Dim wf1 As New Login
     Shared taula As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        If taula = "erabiltzaileak" Then
+            btnErabiltzaileak_Click1(sender, e)
+        ElseIf taula = "erreserbak" Then
+            btnErreserbak_Click(sender, e)
+        ElseIf taula = "ostatuak" Then
+            btnOstatuak_Click(sender, e)
+        End If
     End Sub
 
     Protected Sub btnErabiltzaileak_Click1(sender As Object, e As EventArgs) Handles btnErabiltzaileak.Click
         Dim table As New DataTable
         taula = "erabiltzaileak"
         Try
-            conn = New MySqlConnection("server=localhost; database=misifu; user id=root; port=3306")
+            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar")
         End Try
-        Dim sql = "SELECT * FROM erabiltzaileak"
+        Dim sql = "SELECT * FROM erabiltzaileak WHERE erabIzena = '" + wf1.erabiltzailea.ToString + "'"
         Dim cm = New MySqlCommand()
         cm.CommandText = sql
         cm.CommandType = CommandType.Text
@@ -48,28 +54,29 @@ Public Class Taulak
 
         GridView1.DataSource = table
         GridView1.DataBind()
-        Label1.Text = "ERABILTZAILEAK"
-        btnInsertatu.Visible = True
+        LabelTaula.Text = "ZURE ERABILTZAILEA"
+        btnInsertatu.Visible = False
         btnEzabatu.Visible = True
         btnAldatu.Visible = True
-        Label3.Visible = True
-        Label4.Visible = True
-        Label5.Visible = True
-        TextBox1.Visible = True
-        TextBox2.Visible = True
+        LabelFiltroa.Visible = True
+        LabelZutabea.Visible = True
+        LabelDatua.Visible = True
+        TextBoxZutabea.Visible = True
+        TextBoxDatua.Visible = True
         btnBilatu.Visible = True
+        conn.Close()
     End Sub
 
     Protected Sub btnErreserbak_Click(sender As Object, e As EventArgs) Handles btnErreserbak.Click
         Dim table As New DataTable
         taula = "erreserbak"
         Try
-            conn = New MySqlConnection("server=localhost; database=misifu; user id=root; port=3306")
+            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar")
         End Try
-        Dim sql = "SELECT * FROM erreserbak"
+        Dim sql = "SELECT * FROM erreserbak WHERE Erabiltzaileak_idBezeroak = (SELECT idBezeroak FROM erabiltzaileak WHERE erabIzena = '" + wf1.erabiltzailea.ToString + "')"
         Dim cm = New MySqlCommand()
         cm.CommandText = sql
         cm.CommandType = CommandType.Text
@@ -82,6 +89,8 @@ Public Class Taulak
         table.Columns.Add(ds.Tables(0).Columns(0).ColumnName)
         table.Columns.Add("Erabiltzailea")
         table.Columns.Add("Alojamendua")
+        table.Columns.Add(ds.Tables(0).Columns(3).ColumnName)
+        table.Columns.Add(ds.Tables(0).Columns(4).ColumnName)
 
         For i = 0 To ds.Tables(0).Rows.Count - 1
             table.Rows.Add()
@@ -91,7 +100,7 @@ Public Class Taulak
         Next
 
         For i = 0 To ds.Tables(0).Rows.Count - 1
-            Dim sql2 = "SELECT izenAbizena FROM erabiltzaileak WHERE idBezeroak = " + ds.Tables(0).Rows(i)(1).ToString
+            Dim sql2 = "SELECT erabIzena FROM erabiltzaileak WHERE idBezeroak = " + ds.Tables(0).Rows(i)(2).ToString
             Dim cm2 = New MySqlCommand()
             cm.CommandText = sql2
             cm.CommandType = CommandType.Text
@@ -104,7 +113,7 @@ Public Class Taulak
         Next
 
         For i = 0 To ds.Tables(0).Rows.Count - 1
-            Dim sql2 = "SELECT izena FROM ostatuak WHERE idAlojamenduak = " + ds.Tables(0).Rows(i)(2).ToString
+            Dim sql2 = "SELECT sinadura FROM ostatuak WHERE sinadura = '" + ds.Tables(0).Rows(i)(1).ToString + "'"
             Dim cm2 = New MySqlCommand()
             cm.CommandText = sql2
             cm.CommandType = CommandType.Text
@@ -118,23 +127,24 @@ Public Class Taulak
 
         GridView1.DataSource = table
         GridView1.DataBind()
-        Label1.Text = "ERRESERBAK"
+        LabelTaula.Text = "ERRESERBAK"
         btnInsertatu.Visible = True
         btnEzabatu.Visible = True
         btnAldatu.Visible = True
-        Label3.Visible = True
-        Label4.Visible = True
-        Label5.Visible = True
-        TextBox1.Visible = True
-        TextBox2.Visible = True
+        LabelFiltroa.Visible = True
+        LabelZutabea.Visible = True
+        LabelDatua.Visible = True
+        TextBoxZutabea.Visible = True
+        TextBoxDatua.Visible = True
         btnBilatu.Visible = True
+        conn.Close()
     End Sub
 
     Protected Sub btnOstatuak_Click(sender As Object, e As EventArgs) Handles btnOstatuak.Click
         Dim table As New DataTable
         taula = "ostatuak"
         Try
-            conn = New MySqlConnection("server=localhost; database=misifu; user id=root; port=3306")
+            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar")
@@ -162,30 +172,31 @@ Public Class Taulak
 
         GridView1.DataSource = table
         GridView1.DataBind()
-        Label1.Text = "OSTATUAK"
-        btnInsertatu.Visible = True
-        btnEzabatu.Visible = True
-        btnAldatu.Visible = True
-        Label3.Visible = True
-        Label4.Visible = True
-        Label5.Visible = True
-        TextBox1.Visible = True
-        TextBox2.Visible = True
+        LabelTaula.Text = "OSTATUAK"
+        btnInsertatu.Visible = False
+        btnEzabatu.Visible = False
+        btnAldatu.Visible = False
+        LabelFiltroa.Visible = True
+        LabelZutabea.Visible = True
+        LabelDatua.Visible = True
+        TextBoxZutabea.Visible = True
+        TextBoxDatua.Visible = True
         btnBilatu.Visible = True
+        conn.Close()
     End Sub
 
     Protected Sub btnBilatu_Click(sender As Object, e As EventArgs) Handles btnBilatu.Click
         Dim table As New DataTable
         Dim konprobatu As Boolean = True
         Try
-            conn = New MySqlConnection("server=localhost; database=misifu; user id=root; port=3306")
+            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar")
         End Try
-        If TextBox1.Text <> "" Then
+        If TextBoxZutabea.Text <> "" Then
             Try
-                Dim sql = "SELECT * FROM " + taula + " WHERE " + TextBox1.Text + " like '%" + TextBox2.Text + "%'"
+                Dim sql = "SELECT * FROM " + taula + " WHERE " + TextBoxZutabea.Text + " like '%" + TextBoxDatua.Text + "%'"
                 Dim cm = New MySqlCommand()
                 cm.CommandText = sql
                 cm.CommandType = CommandType.Text
@@ -224,13 +235,10 @@ Public Class Taulak
         Else
             MsgBox("Zutabea sartu", vbCritical, "Txarto")
         End If
-
+        conn.Close()
     End Sub
 
     Protected Sub btnInsertatu_Click(sender As Object, e As EventArgs) Handles btnInsertatu.Click
-        If taula = "erabiltzaileak" Then
-            Response.Redirect("InsertatuErabiltzailea.aspx")
-        End If
         If taula = "erreserbak" Then
             Response.Redirect("InsertatuErreserba.aspx")
         End If
@@ -253,7 +261,22 @@ Public Class Taulak
 
     Protected Sub btnEzabatu_Click(sender As Object, e As EventArgs) Handles btnEzabatu.Click
         If taula = "erabiltzaileak" Then
-            Response.Redirect("EzabatuErabiltzailea.aspx")
+            If MsgBox("Erabiltzailea ezabatu nahi duzu?", vbYesNo, "Ezabatu?") = 6 Then
+                Try
+                    conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
+                    conn.Open()
+                Catch ex As MySqlException
+                    MessageBox.Show("No se ha podido conectar")
+                End Try
+
+                Dim cm3 = New MySqlCommand()
+                cm3.CommandText = "DELETE FROM erabiltzailea WHERE erabIzena = '" + wf1.erabiltzailea.ToString + "'"
+                cm3.Connection = conn
+                cm3.ExecuteNonQuery()
+                conn.Close()
+                taula = ""
+                Response.Redirect("Login.aspx")
+            End If
         End If
         If taula = "erreserbak" Then
             Response.Redirect("EzabatuErreserba.aspx")
@@ -261,5 +284,10 @@ Public Class Taulak
         If taula = "ostatuak" Then
             Response.Redirect("EzabatuOstatua.aspx")
         End If
+    End Sub
+
+    Protected Sub btnIrten_Click(sender As Object, e As EventArgs) Handles btnIrten.Click
+        taula = ""
+        Response.Redirect("Login.aspx")
     End Sub
 End Class

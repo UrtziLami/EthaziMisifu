@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 21-ene-2020 8:49:14 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-ene-2020 9:43:04 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
     <class catalog="ethazi_misifu" dynamic-insert="false" dynamic-update="false" mutable="true" name="lehena.Erreserbak" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="erreserbak">
         <id name="idErreserba" type="java.lang.Integer">
@@ -10,13 +10,13 @@
             <column name="Erabiltzaileak_idBezeroak" not-null="true"/>
         </many-to-one>
         <many-to-one class="lehena.Ostatuak" embed-xml="true" fetch="select" insert="true" name="ostatuak" not-found="exception" optimistic-lock="true" unique="false" update="true">
-            <column length="10" name="Ostatuak_sinadura" not-null="true"/>
+            <column length="45" name="Ostatuak_sinadura" not-null="true"/>
         </many-to-one>
-        <property generated="never" lazy="false" name="sartuData" optimistic-lock="true" type="date" unique="false">
-            <column length="10" name="sartuData"/>
+        <property generated="never" lazy="false" name="sartuData" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="sartuData"/>
         </property>
-        <property generated="never" lazy="false" name="ateraData" optimistic-lock="true" type="date" unique="false">
-            <column length="10" name="ateraData"/>
+        <property generated="never" lazy="false" name="ateraData" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="ateraData"/>
         </property>
     </class>
 </hibernate-mapping>

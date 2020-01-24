@@ -24,21 +24,27 @@
             <br />
             <br />
             <br />
-            <asp:Label ID="Label2" runat="server" Font-Size="16pt" Text="Erabiltzailea:"></asp:Label>
+            <asp:Label ID="Label2" runat="server" Font-Size="16pt" Text="Izen Abizena:"></asp:Label>
             &nbsp;
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBoxIzenAbizena" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <br />
+            <asp:Label ID="Label5" runat="server" Font-Size="16pt" Text="Erabiltzailea:"></asp:Label>
+            &nbsp;
+            <asp:TextBox ID="TextBoxErab" runat="server"></asp:TextBox>
             <br />
             <br />
             <br />
             <asp:Label ID="Label3" runat="server" Font-Size="16pt" Text="Pasahitza:"></asp:Label>
             &nbsp;
-            <asp:TextBox ID="TextBox2" runat="server" TextMode="Password" Width="180px"></asp:TextBox>
+            <asp:TextBox ID="TextBoxPasahitza" runat="server" TextMode="Password" Width="180px"></asp:TextBox>
             <br />
             <br />
             <br />
             <asp:Label ID="Label4" runat="server" Font-Size="16pt" Text="Pasahitza baieztatu:"></asp:Label>
             &nbsp;
-            <asp:TextBox ID="TextBox3" runat="server" TextMode="Password" Width="180px"></asp:TextBox>
+            <asp:TextBox ID="TextBoxPasahitza2" runat="server" TextMode="Password" Width="180px"></asp:TextBox>
             <br />
             <br />
             <br />

@@ -22,6 +22,11 @@
             <br />
         </div>
         <div style="margin-left: 760px">
+            <asp:Label ID="Label11" runat="server" Text="Sinadura:" Font-Size="16pt"></asp:Label>
+            &nbsp;&nbsp;
+            <asp:TextBox ID="TextBoxSinadura" runat="server" Width="211px"></asp:TextBox>
+            <br />
+            <br />
             <asp:Label ID="Label2" runat="server" Text="Izena:" Font-Size="16pt"></asp:Label>
             &nbsp;&nbsp;
             <asp:TextBox ID="TextBoxIzena" runat="server" Width="211px"></asp:TextBox>
@@ -55,6 +60,21 @@
             <asp:Label ID="Label8" runat="server" Text="Web:" Font-Size="16pt"></asp:Label>
             &nbsp;&nbsp;
             <asp:TextBox ID="TextBoxWeb" runat="server" Width="211px"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Label ID="Label9" runat="server" Text="Longitudea:" Font-Size="16pt"></asp:Label>
+            &nbsp;&nbsp;
+            <asp:TextBox ID="TextBoxLongitudea" runat="server" Width="211px"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Label ID="Label10" runat="server" Text="Latitudea:" Font-Size="16pt"></asp:Label>
+            &nbsp;&nbsp;
+            <asp:TextBox ID="TextBoxLatitudea" runat="server" Width="211px"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Label ID="Label12" runat="server" Text="Ostatu Mota:" Font-Size="16pt"></asp:Label>
+            &nbsp;&nbsp;
+            <asp:TextBox ID="TextBoxOstatuMota" runat="server" Width="211px"></asp:TextBox>
             <br />
 
         </div>

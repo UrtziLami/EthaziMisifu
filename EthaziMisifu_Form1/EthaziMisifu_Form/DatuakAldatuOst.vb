@@ -15,48 +15,56 @@ Public Class DatuakAldatuOst
     Private Function balidatuHutza() As Boolean
         Dim bal As Boolean = True
         If txtBIzena.Text.Equals("") Then
+            txtBIzena.Focus()
             piBIz.Visible = True
             bal = False
         Else
             piBIz.Visible = False
         End If
         If txtBProbintzia.Text.Equals("") Then
+            txtBProbintzia.Focus()
             picBProb.Visible = True
             bal = False
         Else
             picBProb.Visible = False
         End If
         If txtBUdalerri.Text.Equals("") Then
+            txtBUdalerri.Focus()
             picBUdal.Visible = True
             bal = False
         Else
             picBUdal.Visible = False
         End If
         If txtBLat.Text.Equals("") Then
+            txtBLat.Focus()
             picBLat.Visible = True
             bal = False
         Else
             picBLat.Visible = False
         End If
         If txtBLon.Text.Equals("") Then
+            txtBLon.Focus()
             piBlon.Visible = True
             bal = False
         Else
             piBlon.Visible = False
         End If
         If RtxtBDesk.Text.Equals("") Then
+            RtxtBDesk.Focus()
             picBDesk.Visible = True
             bal = False
         Else
             picBDesk.Visible = False
         End If
         If txtBWeb.Text.Equals("") Then
+            txtBWeb.Focus()
             picBWeb.Visible = True
             bal = False
         Else
             picBWeb.Visible = False
         End If
         If txtBTelefonoa.Text.Equals("") Or txtBTelefonoa.Text.Length < 9 Then
+            txtBTelefonoa.Focus()
             piBTel.Visible = True
             bal = False
         Else
@@ -104,8 +112,6 @@ Public Class DatuakAldatuOst
             Dim lei As New OstatuLeiho
             lei.Show()
             Hide()
-        Else
-            MessageBox.Show("Datuak txarto daude.")
         End If
     End Sub
     Private Sub kargatuOstMota()

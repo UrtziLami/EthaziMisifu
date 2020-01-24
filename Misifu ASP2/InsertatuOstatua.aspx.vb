@@ -2,6 +2,7 @@
 Imports MySql.Data.MySqlClient
 Public Class InsertatuOstatua
     Inherits System.Web.UI.Page
+    Dim wf1 As New Login
     Dim conn As MySqlConnection
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
@@ -9,14 +10,14 @@ Public Class InsertatuOstatua
 
     Protected Sub insertatu(sender As Object, e As EventArgs) Handles btnInsertatu.Click
         Try
-            conn = New MySqlConnection("server=localhost; database=misifu; user id=root; port=3306")
+            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar")
         End Try
 
         Dim konprobatu As Boolean = True
-        If TextBoxIzena.Text <> "" And TextBoxDeskr.Text <> "" And TextBoxUdalerri.Text <> "" And TextBoxProbint.Text <> "" And TextBoxEmail.Text <> "" And TextBoxTelef.Text <> "" And TextBoxWeb.Text <> "" Then
+        If TextBoxSinadura.Text <> "" And TextBoxIzena.Text <> "" And TextBoxDeskr.Text <> "" And TextBoxUdalerri.Text <> "" And TextBoxProbint.Text <> "" And TextBoxEmail.Text <> "" And TextBoxTelef.Text <> "" And TextBoxWeb.Text <> "" And TextBoxLongitudea.Text <> "" And TextBoxLatitudea.Text <> "" And TextBoxOstatuMota.Text <> "" Then
             Try
                 Convert.ToInt32(TextBoxIzena.Text)
                 konprobatu = False
@@ -48,7 +49,7 @@ Public Class InsertatuOstatua
 
         If konprobatu = True Then
             Dim cm = New MySqlCommand()
-            cm.CommandText = "INSERT INTO ostatuak (izena,deskribapena,udalerri,probintzia,email,telefonoa,web) VALUES('" + TextBoxIzena.Text + "', '" + TextBoxDeskr.Text + "', '" + TextBoxUdalerri.Text + "', '" + TextBoxProbint.Text + "', '" + TextBoxEmail.Text + "', '" + TextBoxTelef.Text + "', '" + TextBoxWeb.Text + "')"
+            cm.CommandText = "INSERT INTO ostatuak (sinadura,izena,deskribapena,udalerri,probintzia,email,telefonoa,web,longitudea,latitudea,ostatuMota) VALUES('" + TextBoxSinadura.Text + "', '" + TextBoxIzena.Text + "', '" + TextBoxDeskr.Text + "', '" + TextBoxUdalerri.Text + "', '" + TextBoxProbint.Text + "', '" + TextBoxEmail.Text + "', '" + TextBoxTelef.Text + "', '" + TextBoxWeb.Text + "', '" + TextBoxLongitudea.Text + "', '" + TextBoxLatitudea.Text + "', '" + TextBoxOstatuMota.Text + "')"
             cm.Connection = conn
             cm.ExecuteNonQuery()
             Response.Redirect("Taulak.aspx")

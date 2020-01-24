@@ -59,49 +59,58 @@ Partial Public Class Taulak
     Protected WithEvents btnOstatuak As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control Label3.
+    '''Control btnIrten.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents btnIrten As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control Label4.
+    '''Control LabelFiltroa.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LabelFiltroa As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox1.
+    '''Control LabelZutabea.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents LabelZutabea As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label5.
+    '''Control TextBoxZutabea.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents TextBoxZutabea As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control TextBox2.
+    '''Control LabelDatua.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents LabelDatua As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control TextBoxDatua.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TextBoxDatua As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control btnBilatu.
@@ -140,13 +149,13 @@ Partial Public Class Taulak
     Protected WithEvents btnAldatu As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control Label1.
+    '''Control LabelTaula.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LabelTaula As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control GridView1.

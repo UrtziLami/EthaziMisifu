@@ -3,23 +3,23 @@ Imports MySql.Data.MySqlClient
 Public Class InsertatuErabiltzailea
     Inherits System.Web.UI.Page
     Dim conn As MySqlConnection
-    Dim wf1 As New WebForm1
+    Dim wf1 As New Login
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
     End Sub
 
     Protected Sub erregistratu(sender As Object, e As EventArgs) Handles btnInsertatu.Click
         Try
-            conn = New MySqlConnection("server=localhost; database=misifu; user id=root; port=3306")
+            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar")
         End Try
 
         Dim konprobatu As Boolean = True
-        If TextBox1.Text <> "" Then
+        If TextBoxIzenAbizena.Text <> "" And TextBoxErab.Text <> "" Then
             Try
-                Convert.ToInt32(TextBox1.Text)
+                Convert.ToInt32(TextBoxIzenAbizena.Text)
                 konprobatu = False
                 MsgBox("Erabiltzailea ezin du zenbakiak eduki", vbCritical, "Txarto")
             Catch ex As Exception
@@ -27,18 +27,18 @@ Public Class InsertatuErabiltzailea
             End Try
         Else
             konprobatu = False
-            MsgBox("Erabiltzailea sartu", vbCritical, "Txarto")
+            MsgBox("Eremuak falta dira", vbCritical, "Txarto")
         End If
 
         If konprobatu = True Then
-            If TextBox2.Text <> TextBox3.Text Or TextBox2.Text = "" Then
+            If TextBoxPasahitza.Text <> TextBoxPasahitza2.Text Or TextBoxPasahitza.Text = "" Then
                 konprobatu = False
                 MsgBox("Pasahitzak desberdinak dira", vbCritical, "Txarto")
             End If
         End If
         If konprobatu = True Then
             Dim cm = New MySqlCommand()
-            cm.CommandText = "INSERT INTO erabiltzaileak (izenAbizena,pasahitza) VALUES('" + TextBox1.Text + "', '" + AES_Encrypt(TextBox2.Text, wf1.kodEnc) + "')"
+            cm.CommandText = "INSERT INTO erabiltzaileak (izenAbizena,erabIzena,pasahitza) VALUES('" + TextBoxIzenAbizena.Text + "','" + TextBoxErab.Text + "', '" + AES_Encrypt(TextBoxPasahitza.Text, wf1.kodEnc) + "')"
             cm.Connection = conn
             cm.ExecuteNonQuery()
             Response.Redirect("Taulak.aspx")

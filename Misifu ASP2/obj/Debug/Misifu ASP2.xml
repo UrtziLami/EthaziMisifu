@@ -1315,6 +1315,24 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:Misifu_ASP2.InsertatuOstatua._Label12">
+<summary>
+Control Label12.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:Misifu_ASP2.InsertatuOstatua._TextBoxOstatuMota">
+<summary>
+Control TextBoxOstatuMota.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:Misifu_ASP2.InsertatuOstatua._btnBueltatu">
 <summary>
 Control btnBueltatu.

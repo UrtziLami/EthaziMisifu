@@ -212,6 +212,24 @@ Partial Public Class InsertatuOstatua
     Protected WithEvents TextBoxLatitudea As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control Label12.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control TextBoxOstatuMota.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TextBoxOstatuMota As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''Control btnBueltatu.
     '''</summary>
     '''<remarks>

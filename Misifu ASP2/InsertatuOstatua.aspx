@@ -71,6 +71,11 @@
             &nbsp;&nbsp;
             <asp:TextBox ID="TextBoxLatitudea" runat="server" Width="211px"></asp:TextBox>
             <br />
+            <br />
+            <asp:Label ID="Label12" runat="server" Text="Ostatu Mota:" Font-Size="16pt"></asp:Label>
+            &nbsp;&nbsp;
+            <asp:TextBox ID="TextBoxOstatuMota" runat="server" Width="211px"></asp:TextBox>
+            <br />
 
         </div>
             <div align="center">

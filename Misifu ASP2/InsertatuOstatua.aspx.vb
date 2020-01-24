@@ -17,7 +17,7 @@ Public Class InsertatuOstatua
         End Try
 
         Dim konprobatu As Boolean = True
-        If TextBoxSinadura.Text <> "" And TextBoxIzena.Text <> "" And TextBoxDeskr.Text <> "" And TextBoxUdalerri.Text <> "" And TextBoxProbint.Text <> "" And TextBoxEmail.Text <> "" And TextBoxTelef.Text <> "" And TextBoxWeb.Text <> "" And TextBoxLongitudea.Text <> "" And TextBoxLatitudea.Text <> "" Then
+        If TextBoxSinadura.Text <> "" And TextBoxIzena.Text <> "" And TextBoxDeskr.Text <> "" And TextBoxUdalerri.Text <> "" And TextBoxProbint.Text <> "" And TextBoxEmail.Text <> "" And TextBoxTelef.Text <> "" And TextBoxWeb.Text <> "" And TextBoxLongitudea.Text <> "" And TextBoxLatitudea.Text <> "" And TextBoxOstatuMota.Text <> "" Then
             Try
                 Convert.ToInt32(TextBoxIzena.Text)
                 konprobatu = False
@@ -49,7 +49,7 @@ Public Class InsertatuOstatua
 
         If konprobatu = True Then
             Dim cm = New MySqlCommand()
-            cm.CommandText = "INSERT INTO ostatuak (sinadura,izena,deskribapena,udalerri,probintzia,email,telefonoa,web,longitudea,latitudea) VALUES('" + TextBoxSinadura.Text + "', '" + TextBoxIzena.Text + "', '" + TextBoxDeskr.Text + "', '" + TextBoxUdalerri.Text + "', '" + TextBoxProbint.Text + "', '" + TextBoxEmail.Text + "', '" + TextBoxTelef.Text + "', '" + TextBoxWeb.Text + "', '" + TextBoxLongitudea.Text + "', '" + TextBoxLatitudea.Text + "')"
+            cm.CommandText = "INSERT INTO ostatuak (sinadura,izena,deskribapena,udalerri,probintzia,email,telefonoa,web,longitudea,latitudea,ostatuMota) VALUES('" + TextBoxSinadura.Text + "', '" + TextBoxIzena.Text + "', '" + TextBoxDeskr.Text + "', '" + TextBoxUdalerri.Text + "', '" + TextBoxProbint.Text + "', '" + TextBoxEmail.Text + "', '" + TextBoxTelef.Text + "', '" + TextBoxWeb.Text + "', '" + TextBoxLongitudea.Text + "', '" + TextBoxLatitudea.Text + "', '" + TextBoxOstatuMota.Text + "')"
             cm.Connection = conn
             cm.ExecuteNonQuery()
             Response.Redirect("Taulak.aspx")

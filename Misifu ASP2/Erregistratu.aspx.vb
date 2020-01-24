@@ -42,7 +42,7 @@ Public Class Erregistratu
             cm.CommandText = "INSERT INTO erabiltzaileak (izenAbizena,erabIzena,pasahitza) VALUES('" + TextBoxIzenAbizena.Text + "', '" + TextBoxErab.Text + "', '" + AES_Encrypt(TextBoxPasahitza.Text, wf1.kodEnc) + "')"
             cm.Connection = conn
             cm.ExecuteNonQuery()
-            Response.Redirect("Taulak.aspx")
+            Response.Redirect("Login.aspx")
         End If
 
         conn.Close()

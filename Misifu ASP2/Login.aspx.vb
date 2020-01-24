@@ -26,7 +26,7 @@ Public Class Login
     End Sub
 
     Private Function pasahitzaBalidatu(ByVal izena As String, ByVal pasahitza As String) As Boolean
-        Dim konprobatu As Boolean = False
+        Dim konprobatu As Boolean = True
         Dim izenak(10) As String
         Try
             conn = New MySqlConnection("server=localhost; database=" + bd + "; user id=root; port=3306")
@@ -35,6 +35,15 @@ Public Class Login
             konprobatu = False
             MessageBox.Show("No se ha podido conectar")
         End Try
+
+        If izena = "" Then
+            konprobatu = False
+            MsgBox("Erabiltzailea falta da", vbCritical, "Txarto")
+        ElseIf pasahitza = "" Then
+            konprobatu = False
+            MsgBox("Pasahitza falta da", vbCritical, "Txarto")
+        End If
+
         If konprobatu Then
             Dim query As New MySqlCommand("SELECT pasahitza FROM erabiltzaileak WHERE erabIzena like '" + izena + "'", conn)
             Dim da As New MySqlDataAdapter(query)
@@ -50,7 +59,10 @@ Public Class Login
                 Next
             Next
 
-            If AES_Decrypt(datu, kodEnc) = pasahitza And datu <> "" Then
+            If datu = "" Then
+                konprobatu = False
+                MsgBox("Erabiltzailea ez da existitzen", vbCritical, "Txarto")
+            ElseIf AES_Decrypt(datu, kodEnc) = pasahitza And datu <> "" Then
                 konprobatu = True
             Else
                 konprobatu = False
@@ -58,6 +70,7 @@ Public Class Login
             End If
 
         End If
+
 
         conn.Close()
         Return konprobatu

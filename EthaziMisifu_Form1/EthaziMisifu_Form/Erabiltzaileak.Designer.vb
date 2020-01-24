@@ -102,17 +102,19 @@ Partial Class ErabiltzaileLeihoa
         'cmBKolumna
         '
         Me.cmBKolumna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmBKolumna.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmBKolumna.FormattingEnabled = True
-        Me.cmBKolumna.Location = New System.Drawing.Point(222, 41)
+        Me.cmBKolumna.Location = New System.Drawing.Point(222, 29)
         Me.cmBKolumna.Name = "cmBKolumna"
-        Me.cmBKolumna.Size = New System.Drawing.Size(204, 21)
+        Me.cmBKolumna.Size = New System.Drawing.Size(204, 37)
         Me.cmBKolumna.TabIndex = 1
         '
         'txbDatua
         '
-        Me.txbDatua.Location = New System.Drawing.Point(664, 41)
+        Me.txbDatua.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txbDatua.Location = New System.Drawing.Point(664, 33)
         Me.txbDatua.Name = "txbDatua"
-        Me.txbDatua.Size = New System.Drawing.Size(189, 20)
+        Me.txbDatua.Size = New System.Drawing.Size(189, 33)
         Me.txbDatua.TabIndex = 1
         '
         'Label1

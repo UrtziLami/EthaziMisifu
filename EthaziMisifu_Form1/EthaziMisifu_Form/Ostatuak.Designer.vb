@@ -109,17 +109,20 @@ Partial Class OstatuLeiho
         '
         'txbDatua
         '
-        Me.txbDatua.Location = New System.Drawing.Point(667, 50)
+        Me.txbDatua.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txbDatua.Location = New System.Drawing.Point(667, 41)
         Me.txbDatua.Name = "txbDatua"
-        Me.txbDatua.Size = New System.Drawing.Size(206, 20)
+        Me.txbDatua.Size = New System.Drawing.Size(206, 33)
         Me.txbDatua.TabIndex = 2
         '
         'cmBKolumna
         '
         Me.cmBKolumna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmBKolumna.Location = New System.Drawing.Point(253, 50)
+        Me.cmBKolumna.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmBKolumna.IntegralHeight = False
+        Me.cmBKolumna.Location = New System.Drawing.Point(253, 41)
         Me.cmBKolumna.Name = "cmBKolumna"
-        Me.cmBKolumna.Size = New System.Drawing.Size(204, 21)
+        Me.cmBKolumna.Size = New System.Drawing.Size(204, 37)
         Me.cmBKolumna.TabIndex = 45
         '
         'OstatuLeiho

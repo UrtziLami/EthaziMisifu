@@ -150,4 +150,5 @@ Public Class OstatuaSartu
         txtBSinadura.MaxLength = 8
         kargatuOstMota()
     End Sub
+
 End Class

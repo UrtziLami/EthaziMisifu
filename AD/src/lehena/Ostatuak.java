@@ -1,5 +1,5 @@
 package lehena;
-// Generated 21-ene-2020 8:49:14 by Hibernate Tools 5.4.7.Final
+// Generated 24-ene-2020 9:43:04 by Hibernate Tools 5.4.7.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,9 +17,10 @@ public class Ostatuak implements java.io.Serializable {
 	private String email;
 	private String telefonoa;
 	private String web;
-	private Float longitudea;
-	private Float latitudea;
-
+	private Double longitudea;
+	private Double latitudea;
+	private String ostatuMota;
+	private Set erreserbaks = new HashSet(0);
 
 	public Ostatuak() {
 	}
@@ -29,7 +30,8 @@ public class Ostatuak implements java.io.Serializable {
 	}
 
 	public Ostatuak(String sinadura, String izena, String deskribapena, String udalerri, String probintzia,
-			String email, String telefonoa, String web, Float longitudea, Float latitudea) {
+			String email, String telefonoa, String web, Double longitudea, Double latitudea, String ostatuMota,
+			Set erreserbaks) {
 		this.sinadura = sinadura;
 		this.izena = izena;
 		this.deskribapena = deskribapena;
@@ -40,6 +42,8 @@ public class Ostatuak implements java.io.Serializable {
 		this.web = web;
 		this.longitudea = longitudea;
 		this.latitudea = latitudea;
+		this.ostatuMota = ostatuMota;
+		this.erreserbaks = erreserbaks;
 	}
 
 	public String getSinadura() {
@@ -106,21 +110,36 @@ public class Ostatuak implements java.io.Serializable {
 		this.web = web;
 	}
 
-	public Float getLongitudea() {
+	public Double getLongitudea() {
 		return this.longitudea;
 	}
 
-	public void setLongitudea(Float longitudea) {
+	public void setLongitudea(Double longitudea) {
 		this.longitudea = longitudea;
 	}
 
-	public Float getLatitudea() {
+	public Double getLatitudea() {
 		return this.latitudea;
 	}
 
-	public void setLatitudea(Float latitudea) {
+	public void setLatitudea(Double latitudea) {
 		this.latitudea = latitudea;
 	}
 
+	public String getOstatuMota() {
+		return this.ostatuMota;
+	}
+
+	public void setOstatuMota(String ostatuMota) {
+		this.ostatuMota = ostatuMota;
+	}
+
+	public Set getErreserbaks() {
+		return this.erreserbaks;
+	}
+
+	public void setErreserbaks(Set erreserbaks) {
+		this.erreserbaks = erreserbaks;
+	}
 
 }

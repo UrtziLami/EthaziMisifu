@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 21-ene-2020 8:49:14 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-ene-2020 9:43:04 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
     <class catalog="ethazi_misifu" dynamic-insert="false" dynamic-update="false" mutable="true" name="lehena.Ostatuak" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="ostatuak">
         <id name="sinadura" type="string">
-            <column length="10" name="sinadura"/>
+            <column length="45" name="sinadura"/>
             <generator class="assigned"/>
         </id>
         <property generated="never" lazy="false" name="izena" optimistic-lock="true" type="string" unique="false">
@@ -22,17 +22,25 @@
             <column length="45" name="email"/>
         </property>
         <property generated="never" lazy="false" name="telefonoa" optimistic-lock="true" type="string" unique="false">
-            <column length="12" name="telefonoa"/>
+            <column length="15" name="telefonoa"/>
         </property>
         <property generated="never" lazy="false" name="web" optimistic-lock="true" type="string" unique="false">
             <column length="100" name="web"/>
         </property>
-        <property generated="never" lazy="false" name="longitudea" optimistic-lock="true" type="java.lang.Float" unique="false">
-            <column name="longitudea" precision="12" scale="0"/>
+        <property generated="never" lazy="false" name="longitudea" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="longitudea" precision="22" scale="0"/>
         </property>
-        <property generated="never" lazy="false" name="latitudea" optimistic-lock="true" type="java.lang.Float" unique="false">
-            <column name="latitudea" precision="12" scale="0"/>
+        <property generated="never" lazy="false" name="latitudea" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="latitudea" precision="22" scale="0"/>
         </property>
-     
+        <property generated="never" lazy="false" name="ostatuMota" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="ostatuMota"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="erreserbaks" optimistic-lock="true" sort="unsorted" table="erreserbak">
+            <key on-delete="noaction">
+                <column length="45" name="Ostatuak_sinadura" not-null="true"/>
+            </key>
+            <one-to-many class="lehena.Erreserbak" embed-xml="true" not-found="exception"/>
+        </set>
     </class>
 </hibernate-mapping>

@@ -23,7 +23,7 @@ public class HibernateUtil {
 	        factory = config.buildSessionFactory(serviceRegistry);
 	    }
 	 
-	    public static String insertAlojamendu(String sinadura, String name,String deskribapena,String udalerri,String probintzia,String email,String telefonoa,String web, Float longitude, Float latitude) {
+	    public static String insertAlojamendu(String sinadura, String name,String deskribapena,String udalerri,String probintzia,String email,String telefonoa,String web, Double longitude, Double latitude) {
 	        Session session = factory.openSession();
 	        Transaction tx = null;
 	        String stId = null;

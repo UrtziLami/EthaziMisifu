@@ -66,13 +66,13 @@ public class XMLManeiatzailea extends DefaultHandler{
 			alojamendu.setProbintzia(balioa);
 			break;
 		case "lodgintype":
-			alojamendu.setProbintzia(balioa);
+			alojamendu.setOstatuMota(balioa);
 			break;
 		case "latwgs84":
-			alojamendu.setLatitudea(Float.parseFloat(balioa));
+			alojamendu.setLatitudea(Double.parseDouble(balioa));
 			break;
 		case "lonwgs84":
-			alojamendu.setLongitudea(Float.parseFloat(balioa));
+			alojamendu.setLongitudea(Double.parseDouble(balioa));
 			break;
 		case "tourismemail":			
 			alojamendu.setEmail(balioa);

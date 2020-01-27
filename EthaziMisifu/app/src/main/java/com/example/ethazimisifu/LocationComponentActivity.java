@@ -73,7 +73,7 @@ public class LocationComponentActivity extends AppCompatActivity implements
 
         addMarkers(ostatuak);
 
-        /*mapView.getMapAsync(new OnMapReadyCallback() {
+        mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
                 mapboxMap.addMarker(new MarkerOptions()
@@ -81,7 +81,7 @@ public class LocationComponentActivity extends AppCompatActivity implements
                         .title("ANGOSTO")
                         .snippet("Camping de primera categoría ubicado en el alavés Valle de Valdegovía, cerca del Parque Natural de Valderejo. Cuenta con parcelas para tiendas y bungalows para 4 o 6 personas. Además el camping ofrece numerosos servicios, entre ellos, parque infantil, piscina "));
             }
-        });*/
+        });
     }
 
     @Override

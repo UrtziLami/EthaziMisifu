@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -40,8 +41,9 @@ public class Lista extends AppCompatActivity {
     private ListView lista;
     private AdapterView.AdapterContextMenuInfo info;
     private View lastTouchedView;
-    private Button btnBuscar;
+    private Button btnBuscar, btnAlbergue, btnCamping, btnRural;
     private EditText etBuscar;
+    private Spinner spProbintzia, spUdalerria, spMota;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,9 @@ public class Lista extends AppCompatActivity {
         setContentView(R.layout.activity_lista);
         etBuscar = (EditText) findViewById(R.id.etBuscar);
         setTitle("Lista");
+        btnAlbergue = (Button) findViewById(R.id.btnMota1);
+        btnCamping = (Button) findViewById(R.id.btnMota2);
+        btnRural = (Button) findViewById(R.id.btnMota3);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.13.33/misifu/selectOstuatuak.php", new com.android.volley.Response.Listener<String>() {
             @Override
@@ -184,7 +189,6 @@ public class Lista extends AppCompatActivity {
     }
 
     public void verTareas(ArrayList<Ostatuak> ostatuak) {
-
         for(int i = 0; i < ostatuak.size(); i++){
             tareas.add(String.valueOf(ostatuak.get(i).getIzena()));
         }
@@ -212,22 +216,24 @@ public class Lista extends AppCompatActivity {
 
     public void dialogoContrasena() {
 
+        spMota = (Spinner) findViewById(R.id.spMota);
+        spProbintzia = (Spinner) findViewById(R.id.spProbintzia);
+
         LayoutInflater li = LayoutInflater.from(this);
-        View promptsView = li.inflate(R.layout.custom_dialog, null);
+        View promptsView = li.inflate(R.layout.custom_dialogo, null);
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         alertDialogBuilder.setView(promptsView);
 
-        //final EditText vieja = (EditText) promptsView.findViewById(R.id.editTextResult);
-        //final EditText nueva = (EditText) promptsView.findViewById(R.id.editTextResult2);
-
         alertDialogBuilder
                 .setCancelable(false)
-                .setPositiveButton("Filtar",
+                .setPositiveButton("Filtrar",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                Toast.makeText(getApplicationContext(), "Funciona", Toast.LENGTH_SHORT).show();
+
+
+
                             }
                         })
                 .setNegativeButton("Cancel",
@@ -240,6 +246,8 @@ public class Lista extends AppCompatActivity {
         AlertDialog alertDialog = alertDialogBuilder.create();
 
         alertDialog.show();
+
+        alertDialog.setTitle("Busqueda avanzada");
 
     }
 

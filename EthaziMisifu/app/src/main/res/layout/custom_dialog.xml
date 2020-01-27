@@ -47,16 +47,4 @@
         android:layout_width="match_parent"
         android:layout_height="33dp" />
 
-    <TextView
-        android:id="@+id/txtUdalerria"
-        android:layout_width="match_parent"
-        android:layout_height="31dp"
-        android:text="@string/udalerriak"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <Spinner
-        android:id="@+id/spUdalerria"
-        android:layout_width="174dp"
-        android:layout_height="37dp" />
 </LinearLayout>

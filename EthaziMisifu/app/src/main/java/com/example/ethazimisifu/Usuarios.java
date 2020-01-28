@@ -3,13 +3,15 @@ package com.example.ethazimisifu;
 public class Usuarios {
 
     private int id;
-    private String user;
+    private String izenAbizena;
     private String pass;
+    private String user;
 
-    public Usuarios(int id, String user, String pass) {
+    public Usuarios(int id, String izenAbizena, String pass, String user) {
         this.id = id;
-        this.user = user;
+        this.izenAbizena = izenAbizena;
         this.pass = pass;
+        this.user = user;
     }
 
     public int getId() {
@@ -20,12 +22,12 @@ public class Usuarios {
         this.id = id;
     }
 
-    public String getUser() {
-        return user;
+    public String getIzenAbizena() {
+        return izenAbizena;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setIzenAbizena(String izenAbizena) {
+        this.izenAbizena = izenAbizena;
     }
 
     public String getPass() {
@@ -34,5 +36,23 @@ public class Usuarios {
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuarios{" +
+                "id=" + id +
+                ", izenAbizena='" + izenAbizena + '\'' +
+                ", pass='" + pass + '\'' +
+                ", user='" + user + '\'' +
+                '}';
     }
 }

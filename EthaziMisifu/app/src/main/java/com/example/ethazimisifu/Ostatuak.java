@@ -5,38 +5,30 @@ import android.os.Parcelable;
 
 public class Ostatuak implements Parcelable {
 
-    private int id;
+    private String id;
     private String izena;
-    private String ostatuMota;
     private String deskribapena;
     private String udalerria;
     private String probintzia;
-    private int telefonoa;
+    private String email;
+    private String telefonoa;
+    private String web;
     private double latitudea;
     private double longitudea;
-
-    public Ostatuak(int id, String izena, String ostatuMota, String deskribapena, String udalerria, String probintzia, int telefonoa, double latitudea, double longitudea) {
-        this.id = id;
-        this.izena = izena;
-        this.ostatuMota = ostatuMota;
-        this.deskribapena = deskribapena;
-        this.udalerria = udalerria;
-        this.probintzia = probintzia;
-        this.telefonoa = telefonoa;
-        this.latitudea = latitudea;
-        this.longitudea = longitudea;
-    }
+    private String ostatuMota;
 
     protected Ostatuak(Parcel in) {
-        id = in.readInt();
+        id = in.readString();
         izena = in.readString();
-        ostatuMota = in.readString();
         deskribapena = in.readString();
         udalerria = in.readString();
         probintzia = in.readString();
-        telefonoa = in.readInt();
+        email = in.readString();
+        telefonoa = in.readString();
+        web = in.readString();
         latitudea = in.readDouble();
         longitudea = in.readDouble();
+        ostatuMota = in.readString();
     }
 
     public static final Creator<Ostatuak> CREATOR = new Creator<Ostatuak>() {
@@ -51,11 +43,25 @@ public class Ostatuak implements Parcelable {
         }
     };
 
-    public int getId() {
+    public Ostatuak(String id, String izena, String deskribapena, String udalerria, String probintzia, String email, String telefonoa, String web, double latitudea, double longitudea, String ostatuMota) {
+        this.id = id;
+        this.izena = izena;
+        this.deskribapena = deskribapena;
+        this.udalerria = udalerria;
+        this.probintzia = probintzia;
+        this.email = email;
+        this.telefonoa = telefonoa;
+        this.web = web;
+        this.latitudea = latitudea;
+        this.longitudea = longitudea;
+        this.ostatuMota = ostatuMota;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -65,14 +71,6 @@ public class Ostatuak implements Parcelable {
 
     public void setIzena(String izena) {
         this.izena = izena;
-    }
-
-    public String getOstatuMota() {
-        return ostatuMota;
-    }
-
-    public void setOstatuMota(String ostatuMota) {
-        this.ostatuMota = ostatuMota;
     }
 
     public String getDeskribapena() {
@@ -99,12 +97,28 @@ public class Ostatuak implements Parcelable {
         this.probintzia = probintzia;
     }
 
-    public int getTelefonoa() {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefonoa() {
         return telefonoa;
     }
 
-    public void setTelefonoa(int telefonoa) {
+    public void setTelefonoa(String telefonoa) {
         this.telefonoa = telefonoa;
+    }
+
+    public String getWeb() {
+        return web;
+    }
+
+    public void setWeb(String web) {
+        this.web = web;
     }
 
     public double getLatitudea() {
@@ -123,6 +137,14 @@ public class Ostatuak implements Parcelable {
         this.longitudea = longitudea;
     }
 
+    public String getOstatuMota() {
+        return ostatuMota;
+    }
+
+    public void setOstatuMota(String ostatuMota) {
+        this.ostatuMota = ostatuMota;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -130,14 +152,15 @@ public class Ostatuak implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(id);
+        parcel.writeString(id);
         parcel.writeString(izena);
-        parcel.writeString(ostatuMota);
         parcel.writeString(deskribapena);
         parcel.writeString(udalerria);
         parcel.writeString(probintzia);
-        parcel.writeInt(telefonoa);
+        parcel.writeString(telefonoa);
+        parcel.writeString(web);
         parcel.writeDouble(latitudea);
         parcel.writeDouble(longitudea);
+        parcel.writeString(ostatuMota);
     }
 }

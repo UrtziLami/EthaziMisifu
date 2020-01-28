@@ -111,7 +111,7 @@ public class Lista extends AppCompatActivity {
             tareas.clear();
             for(int i = 0; i < ostatuak.size(); i++){
                 Log.d("rural", ostatuak.get(i).getIzena());
-                if(ostatuak.get(i).getOstatuMota().matches("Albergue")){
+                if(ostatuak.get(i).getOstatuMota().matches("Albergues")){
                     tareas.add(String.valueOf(ostatuak.get(i).getIzena()));
                 }
             }
@@ -122,7 +122,7 @@ public class Lista extends AppCompatActivity {
         } else if (id == R.id.rural) {
             tareas.clear();
             for(int i = 0; i < ostatuak.size(); i++){
-                if(ostatuak.get(i).getOstatuMota().equals("Rural")){
+                if(ostatuak.get(i).getOstatuMota().equals("Casas Rurales")){
                     tareas.add(String.valueOf(ostatuak.get(i).getIzena()));
                 }
             }
@@ -133,7 +133,7 @@ public class Lista extends AppCompatActivity {
         } else if (id == R.id.campings) {
             tareas.clear();
             for(int i = 0; i < ostatuak.size(); i++){
-                if(ostatuak.get(i).getOstatuMota().equals("Camping")){
+                if(ostatuak.get(i).getOstatuMota().equals("Campings")){
                     tareas.add(String.valueOf(ostatuak.get(i).getIzena()));
                 }
             }

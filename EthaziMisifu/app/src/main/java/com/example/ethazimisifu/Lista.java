@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -41,9 +42,11 @@ public class Lista extends AppCompatActivity {
     private ListView lista;
     private AdapterView.AdapterContextMenuInfo info;
     private View lastTouchedView;
-    private Button btnBuscar, btnAlbergue, btnCamping, btnRural;
+    private Button btnBuscar, btnAlbergue, btnCamping, btnRural, btnAgro;
     private EditText etBuscar;
     private Spinner spProbintzia, spUdalerria, spMota;
+    private String mota;
+    private TextView aukera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,9 @@ public class Lista extends AppCompatActivity {
         btnAlbergue = (Button) findViewById(R.id.btnMota1);
         btnCamping = (Button) findViewById(R.id.btnMota2);
         btnRural = (Button) findViewById(R.id.btnMota3);
+        btnAgro = (Button) findViewById(R.id.btnMota4);
+        aukera = (TextView) findViewById(R.id.txtAukeraMota);
+
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.13.33/misifu/selectOstuatuak.php", new com.android.volley.Response.Listener<String>() {
             @Override
@@ -71,7 +77,7 @@ public class Lista extends AppCompatActivity {
                                                  @Override
                                                  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                                                     Intent intent = new Intent(getApplicationContext(), Menu.class);
+                                                     Intent intent = new Intent(getApplicationContext(), Reserva.class);
                                                      //intent.putExtra("KEY", tareas.get(position));
                                                      startActivity(intent);
                                                  }
@@ -134,6 +140,17 @@ public class Lista extends AppCompatActivity {
             tareas.clear();
             for(int i = 0; i < ostatuak.size(); i++){
                 if(ostatuak.get(i).getOstatuMota().equals("Campings")){
+                    tareas.add(String.valueOf(ostatuak.get(i).getIzena()));
+                }
+            }
+            lista = (ListView)findViewById(R.id.lista);
+            adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_selectable_list_item, tareas);
+            lista.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
+        } else if (id == R.id.Agroturismos) {
+            tareas.clear();
+            for(int i = 0; i < ostatuak.size(); i++){
+                if(ostatuak.get(i).getOstatuMota().equals("Agroturismos")){
                     tareas.add(String.valueOf(ostatuak.get(i).getIzena()));
                 }
             }
@@ -250,5 +267,44 @@ public class Lista extends AppCompatActivity {
         alertDialog.setTitle("Busqueda avanzada");
 
     }
+
+    public void mota1(View view){
+
+        aukera.setText("Albergues");
+
+        mota = "Albergues";
+
+    }
+
+    public void mota2(View view){
+
+        aukera = (TextView) findViewById(R.id.txtAukeraMota);
+
+        aukera.setText("Campings");
+
+        mota = "Campings";
+
+    }
+
+    public void mota3(View view){
+
+        aukera = (TextView) findViewById(R.id.txtAukeraMota);
+
+        aukera.setText("Casas Rurales");
+
+        mota = "Casas Rurales";
+
+    }
+
+    public void mota4(View view){
+
+        aukera = (TextView) findViewById(R.id.txtAukeraMota);
+
+        aukera.setText("Agroturismos");
+
+        mota = "Agroturismos";
+
+    }
+
 
 }

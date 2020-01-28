@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Lista"></activity>
+        <activity android:name=".Reserva"></activity>
+        <activity android:name=".Registro" />
+        <activity android:name=".Lista" />
         <activity android:name=".LocationComponentActivity" />
         <activity android:name=".Menu" />
         <activity android:name=".MainActivity">

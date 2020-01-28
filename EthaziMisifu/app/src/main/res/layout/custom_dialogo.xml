@@ -10,32 +10,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/txtProbintzia"
+        <Button
+            android:id="@+id/btnMota4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="148dp"
-            android:text="@string/probintzia"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/btnProbintzia3"
-            android:layout_width="109dp"
-            android:layout_height="52dp"
-            android:layout_marginStart="240dp"
-            android:layout_marginTop="172dp"
-            android:text="Araba"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="144dp"
+            android:onClick="mota4"
+            android:text="Agroturismo"
+            app:layout_constraintStart_toEndOf="@+id/btnMota1"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btnMota3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="116dp"
+            android:layout_marginStart="148dp"
             android:layout_marginTop="84dp"
+            android:onClick="mota3"
             android:text="Casa rural"
             app:layout_constraintStart_toEndOf="@+id/btnMota1"
             app:layout_constraintTop_toTopOf="parent" />
@@ -44,9 +36,9 @@
             android:id="@+id/btnMota1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="84dp"
-            android:onClick="onClick"
+            android:onClick="mota1"
             android:text="Albergues"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -55,8 +47,9 @@
             android:id="@+id/btnMota2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="28dp"
             android:layout_marginTop="84dp"
+            android:onClick="mota2"
             android:text="Campings"
             app:layout_constraintStart_toEndOf="@+id/btnMota1"
             app:layout_constraintTop_toTopOf="parent" />
@@ -67,29 +60,9 @@
             android:layout_height="30dp"
             android:layout_marginStart="108dp"
             android:layout_marginTop="16dp"
-            android:text="Filtro avanzado"
+            android:text="@string/filtro_avanzado"
             android:textSize="22sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/btnProbintzia1"
-            android:layout_width="102dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="172dp"
-            android:text="Bizkaia"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/btnProbintzia2"
-            android:layout_width="98dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="132dp"
-            android:layout_marginTop="172dp"
-            android:text="Gipuzkoa"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -107,9 +80,49 @@
             android:id="@+id/linea2"
             android:layout_width="378dp"
             android:layout_height="17dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="152dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="204dp"
             android:text="⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtProbintzia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="200dp"
+            android:text="@string/probintzia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnProbintzia1"
+            android:layout_width="102dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="224dp"
+            android:text="Bizkaia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnProbintzia2"
+            android:layout_width="98dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="224dp"
+            android:text="Gipuzkoa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnProbintzia3"
+            android:layout_width="109dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="236dp"
+            android:layout_marginTop="224dp"
+            android:text="Araba"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -122,5 +135,18 @@
             android:text="@string/ostatu_motak"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtAukeraMota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="60dp"
+            android:text="Elige una"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

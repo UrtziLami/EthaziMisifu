@@ -6,6 +6,10 @@
         android:title="Mostrar casas rurales"/>
 
     <item
+        android:id="@+id/Agroturismos"
+        android:title="Mostrar groturismos"/>
+
+    <item
         android:id="@+id/albergues"
         android:title="Mostrar albergues"/>
 

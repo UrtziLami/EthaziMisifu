@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -30,8 +31,18 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.KeySpec;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.crypto.Cipher;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.PBEKeySpec;
+import javax.crypto.spec.SecretKeySpec;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -74,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                GetData();
-
-                InsertData(user, pass);
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(), Registro.class);
+                startActivity(intent);
 
             }
         });
@@ -93,8 +104,6 @@ public class MainActivity extends AppCompatActivity {
                 pass = etPasswd.getText().toString();
                 int i = 0;
                 boolean check = false;
-
-                Log.d("España", response);
 
                 if(!user.equals("") && !pass.equals("")){
                     do{
@@ -125,70 +134,6 @@ public class MainActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
-
-    }
-
-    public void GetData(){
-        user = etUser.getText().toString();
-        pass = etPasswd.getText().toString();
-    }
-
-    public void InsertData(final String user, final String pass){
-        if (!user.equals("") && !pass.equals("")) {
-        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
-            @Override
-            protected String doInBackground(String... params) {
-
-
-
-                    String NameHolder = user;
-                    String EmailHolder = pass;
-
-                    List<BasicNameValuePair> nameValuePairs = new ArrayList<>();
-
-                    nameValuePairs.add(new BasicNameValuePair("id", null));
-                    nameValuePairs.add(new BasicNameValuePair("erabiltzailea", NameHolder));
-                    nameValuePairs.add(new BasicNameValuePair("pasahitza", EmailHolder));
-
-                    try {
-                        HttpClient httpClient = new DefaultHttpClient();
-
-                        HttpPost httpPost = new HttpPost("http://192.168.13.33/misifu/insertUsuario.php");
-
-                        httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-
-                        HttpResponse httpResponse = httpClient.execute(httpPost);
-
-                        HttpEntity httpEntity = httpResponse.getEntity();
-
-
-                    } catch (ClientProtocolException e) {
-
-                    } catch (IOException e) {
-
-                    }
-                return "Data Inserted Successfully";
-            }
-
-
-
-            @Override
-            protected void onPostExecute(String result) {
-
-                super.onPostExecute(result);
-
-                Toast.makeText(MainActivity.this, "Se ha registrado el nuevo usuario con exito", Toast.LENGTH_LONG).show();
-
-            }
-        }
-
-        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
-
-        sendPostReqAsyncTask.execute(null, user, pass);
-
-        } else {
-            Toast.makeText(MainActivity.this, "No se permiten campos vacios", Toast.LENGTH_LONG).show();
-        }
 
     }
 

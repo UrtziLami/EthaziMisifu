@@ -18,6 +18,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.location.LocationComponent;
@@ -42,7 +43,7 @@ public class LocationComponentActivity extends AppCompatActivity implements
     private MapboxMap mapboxMap;
     private MapView mapView;
     private ArrayList<Ostatuak> ostatuak = new ArrayList<Ostatuak>();
-
+    private ArrayList<MarkerOptions> allMarker = new ArrayList<MarkerOptions>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +58,7 @@ public class LocationComponentActivity extends AppCompatActivity implements
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.13.33/misifu/selectOstuatuak.php", new com.android.volley.Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.13.33/misifu/selectOstuatuak.php", new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 ostatuak = Consultas.ostatuLista(response);
@@ -71,11 +72,10 @@ public class LocationComponentActivity extends AppCompatActivity implements
             }
         });
 
-        addMarkers(ostatuak);
-
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
+                addMarkers(ostatuak);
                 mapboxMap.addMarker(new MarkerOptions()
                         .position(new LatLng(42.84247662, -3.06868228))
                         .title("ANGOSTO")
@@ -123,14 +123,18 @@ public class LocationComponentActivity extends AppCompatActivity implements
         }
     }
     public void addMarkers(ArrayList<Ostatuak> OstatuenLista) {
-
+        allMarker.clear();
         for(Ostatuak os : OstatuenLista) {
-
-            mapboxMap.addMarker(new MarkerOptions()
+            MarkerOptions marker = new MarkerOptions()
                     .position(new LatLng(os.getLatitudea(), os.getLongitudea()))
-                    .title(os.getIzena()));
+                    .title(os.getIzena())
+                    .snippet(os.getDeskribapena());
+            mapboxMap.addMarker(marker);
+            allMarker.add(marker);
         }
+
     }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

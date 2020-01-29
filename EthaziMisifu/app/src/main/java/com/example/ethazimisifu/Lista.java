@@ -77,8 +77,9 @@ public class Lista extends AppCompatActivity {
                                                  @Override
                                                  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                                                     Intent intent = new Intent(getApplicationContext(), Reserva.class);
-                                                     //intent.putExtra("KEY", tareas.get(position));
+                                                     Intent intent = new Intent(getApplicationContext(), VerOstatu.class);
+                                                     intent.putExtra("KEY", tareas.get(position));
+                                                     Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_LONG).show();
                                                      startActivity(intent);
                                                  }
                                              }
@@ -169,12 +170,12 @@ public class Lista extends AppCompatActivity {
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
-            case R.id.modificar:
+            case R.id.mapa:
                 Intent intent = new Intent(this, Menu.class);
                 //intent.putExtra("KEY", tareas.get(info.position));
                 startActivity(intent);
                 return true;
-            case R.id.borrar:
+            case R.id.reserva:
                 DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

@@ -12,9 +12,11 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.mapboxsdk.Mapbox;
@@ -58,10 +60,11 @@ public class LocationComponentActivity extends AppCompatActivity implements
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.13.33/misifu/selectOstuatuak.php", new com.android.volley.Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.13.33/misifu/selectOstuatuak.php", new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 ostatuak = Consultas.ostatuLista(response);
+                addMarkers(ostatuak);
 
             }
 
@@ -71,18 +74,10 @@ public class LocationComponentActivity extends AppCompatActivity implements
 
             }
         });
-
-        mapView.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(MapboxMap mapboxMap) {
-                addMarkers(ostatuak);
-                mapboxMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(42.84247662, -3.06868228))
-                        .title("ANGOSTO")
-                        .snippet("Camping de primera categoría ubicado en el alavés Valle de Valdegovía, cerca del Parque Natural de Valderejo. Cuenta con parcelas para tiendas y bungalows para 4 o 6 personas. Además el camping ofrece numerosos servicios, entre ellos, parque infantil, piscina "));
-            }
-        });
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
+
 
     @Override
     public void onMapReady(@NonNull final MapboxMap mapboxMap) {
@@ -126,7 +121,7 @@ public class LocationComponentActivity extends AppCompatActivity implements
         allMarker.clear();
         for(Ostatuak os : OstatuenLista) {
             MarkerOptions marker = new MarkerOptions()
-                    .position(new LatLng(os.getLatitudea(), os.getLongitudea()))
+                    .position(new LatLng(os.getLongitudea(), os.getLatitudea()))
                     .title(os.getIzena())
                     .snippet(os.getDeskribapena());
             mapboxMap.addMarker(marker);

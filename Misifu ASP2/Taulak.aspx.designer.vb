@@ -86,13 +86,13 @@ Partial Public Class Taulak
     Protected WithEvents LabelZutabea As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBoxZutabea.
+    '''Control DropDownList1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBoxZutabea As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control LabelDatua.

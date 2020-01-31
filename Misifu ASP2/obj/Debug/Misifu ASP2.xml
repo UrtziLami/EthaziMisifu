@@ -1036,9 +1036,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:Misifu_ASP2.Taulak._TextBoxZutabea">
+<member name="F:Misifu_ASP2.Taulak._DropDownList1">
 <summary>
-Control TextBoxZutabea.
+Control DropDownList1.
 </summary>
 <remarks>
 Campo generado automáticamente.

@@ -66,6 +66,29 @@ public class LocationComponentActivity extends AppCompatActivity implements
                 ostatuak = Consultas.ostatuLista(response);
                 addMarkers(ostatuak);
 
+
+                mapboxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
+                    @Override
+                    public boolean onMarkerClick(@NonNull Marker marker) {
+                        LatLng point= marker.getPosition();
+                        Ostatuak ostatu;
+                        double Latitude= point.getLatitude();
+                        double longitude= point.getLongitude();
+                        for(Ostatuak os : ostatuak) {
+                            if(os.getLongitudea()==Latitude && os.getLatitudea()== longitude) {
+                                ostatu = os;
+                                Intent intent = new Intent();
+                                intent.setClass(getApplicationContext(), VerOstatu.class);
+                                intent.putExtra("KEY",ostatu);
+                                startActivity(intent);
+                                break;
+                            }
+                        }
+                        return true;
+                    }
+                });
+
+
             }
 
         }, new Response.ErrorListener() {

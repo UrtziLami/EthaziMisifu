@@ -36,7 +36,8 @@
             <br />
             <asp:Label ID="LabelZutabea" runat="server" Font-Size="16pt" Text="Zutabea:" Visible="False"></asp:Label>
 &nbsp;
-            <asp:TextBox ID="TextBoxZutabea" runat="server" Visible="False"></asp:TextBox>
+            <asp:DropDownList ID="DropDownList1" runat="server" Visible="False">
+            </asp:DropDownList>
             <br />
             <br />
             <asp:Label ID="LabelDatua" runat="server" Font-Size="16pt" Text="Datua:" Visible="False"></asp:Label>

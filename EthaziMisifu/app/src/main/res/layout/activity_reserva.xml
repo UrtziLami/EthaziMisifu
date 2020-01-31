@@ -12,7 +12,7 @@
         android:layout_height="44dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="440dp"
-        android:onClick="abrirCalendar"
+        android:onClick="abrirCalendar2"
         android:text="@string/fecha_salida"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,11 +30,11 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="133dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="264dp"
+        android:layout_width="141dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="252dp"
         android:layout_marginBottom="40dp"
-        android:text="Agregar"
+        android:text="@string/hacer_reserva"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -71,23 +71,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtPrice"
-        android:layout_width="105dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="272dp"
-        android:text="Coste"
+        android:id="@+id/txtPrecio"
+        android:layout_width="177dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="220dp"
+        android:text="GRATIS"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtPrecio"
-        android:layout_width="177dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="272dp"
-        android:text="GRATIS"
+        android:id="@+id/txtPrice"
+        android:layout_width="105dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="220dp"
+        android:text="Coste"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -97,24 +97,11 @@
         android:layout_width="391dp"
         android:layout_height="68dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="52dp"
         android:text="TextView"
-        android:textSize="25sp"
+        android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ScrollView
-        android:layout_width="390dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="116dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

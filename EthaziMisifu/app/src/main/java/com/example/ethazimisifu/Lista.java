@@ -47,13 +47,14 @@ public class Lista extends AppCompatActivity {
     private Spinner spProbintzia, spUdalerria, spMota;
     private String mota;
     private TextView aukera;
+    private ArrayList<String> ostatuArray = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
-        etBuscar = (EditText) findViewById(R.id.etBuscar);
         setTitle("Lista");
+        etBuscar = (EditText) findViewById(R.id.etBuscar);
         btnAlbergue = (Button) findViewById(R.id.btnMota1);
         btnCamping = (Button) findViewById(R.id.btnMota2);
         btnRural = (Button) findViewById(R.id.btnMota3);
@@ -77,9 +78,23 @@ public class Lista extends AppCompatActivity {
                                                  @Override
                                                  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                                                     for(int i = 0; i < ostatuak.size(); i++){
+                                                         if(ostatuak.get(i).getIzena().equals(tareas.get(position))){
+
+                                                             ostatuArray.add(ostatuak.get(i).getIzena());
+                                                             ostatuArray.add(ostatuak.get(i).getOstatuMota());
+                                                             ostatuArray.add(ostatuak.get(i).getUdalerria() + ", " + ostatuak.get(i).getProbintzia());
+                                                             ostatuArray.add(ostatuak.get(i).getDeskribapena());
+                                                             ostatuArray.add(ostatuak.get(i).getTelefonoa());
+                                                             ostatuArray.add(ostatuak.get(i).getWeb());
+                                                             ostatuArray.add(ostatuak.get(i).getId());
+                                                             ostatuArray.add(ostatuak.get(i).getEmail());
+
+                                                         }
+                                                     }
+
                                                      Intent intent = new Intent(getApplicationContext(), VerOstatu.class);
-                                                     intent.putExtra("KEY", tareas.get(position));
-                                                     Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_LONG).show();
+                                                     intent.putExtra("KEY", ostatuArray);
                                                      startActivity(intent);
                                                  }
                                              }

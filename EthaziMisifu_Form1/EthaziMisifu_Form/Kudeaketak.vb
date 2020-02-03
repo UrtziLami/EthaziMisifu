@@ -25,5 +25,4 @@
     Private Sub Form_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         Process.GetCurrentProcess.Kill()
     End Sub
-
 End Class

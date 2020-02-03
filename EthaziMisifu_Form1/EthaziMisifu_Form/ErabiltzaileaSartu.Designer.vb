@@ -34,6 +34,7 @@ Partial Class ErabiltzaileaSartu
         Me.picBIzAb = New System.Windows.Forms.PictureBox()
         Me.picBErabIzn = New System.Windows.Forms.PictureBox()
         Me.picBPas = New System.Windows.Forms.PictureBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         CType(Me.picBIzAb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picBErabIzn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picBPas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,6 +84,7 @@ Partial Class ErabiltzaileaSartu
         Me.txtBPas1.Name = "txtBPas1"
         Me.txtBPas1.Size = New System.Drawing.Size(289, 20)
         Me.txtBPas1.TabIndex = 2
+        Me.txtBPas1.UseSystemPasswordChar = True
         '
         'lblPasahitza
         '
@@ -149,12 +151,25 @@ Partial Class ErabiltzaileaSartu
         Me.picBPas.TabStop = False
         Me.picBPas.Visible = False
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.BackColor = System.Drawing.Color.Transparent
+        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox1.Location = New System.Drawing.Point(430, 242)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(162, 29)
+        Me.CheckBox1.TabIndex = 46
+        Me.CheckBox1.Text = "Ikusi Pasahitza"
+        Me.CheckBox1.UseVisualStyleBackColor = False
+        '
         'ErabiltzaileaSartu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.EthaziMisifu_Form.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(984, 661)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.picBPas)
         Me.Controls.Add(Me.picBErabIzn)
         Me.Controls.Add(Me.picBIzAb)
@@ -189,4 +204,5 @@ Partial Class ErabiltzaileaSartu
     Friend WithEvents picBIzAb As PictureBox
     Friend WithEvents picBErabIzn As PictureBox
     Friend WithEvents picBPas As PictureBox
+    Friend WithEvents CheckBox1 As CheckBox
 End Class

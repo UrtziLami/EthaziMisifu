@@ -5,7 +5,7 @@ Public Class OstatuLeiho
         ListView1.View = View.Details
         ListView1.Clear()
         ListView1.Columns.Add("Sinadura", 80, HorizontalAlignment.Center)
-        ListView1.Columns.Add("Izena", 100, HorizontalAlignment.Center)
+        ListView1.Columns.Add("Izena", 120, HorizontalAlignment.Center)
         ListView1.Columns.Add("Deskribapena", 150, HorizontalAlignment.Center)
         ListView1.Columns.Add("Udalerria", 100, HorizontalAlignment.Center)
         ListView1.Columns.Add("Probintzia", 100, HorizontalAlignment.Center)
@@ -19,7 +19,7 @@ Public Class OstatuLeiho
     Private Sub datuakKargatu()
         Try
             'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-            konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")
+            konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306")
             konn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar al servidor")
@@ -107,7 +107,7 @@ Public Class OstatuLeiho
     Private Sub btnKendu_Click(sender As Object, e As EventArgs) Handles btnKendu.Click
         Try
             'konn = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-            konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")
+            konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306")
             konn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar al servidor")
@@ -129,7 +129,7 @@ Public Class OstatuLeiho
         If cmBKolumna.SelectedItem.ToString.Equals("Sinadura") Then
             Try
                 'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
+                konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
                 konn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
@@ -156,7 +156,7 @@ Public Class OstatuLeiho
         ElseIf cmBKolumna.SelectedItem.ToString.Equals("Ostatu Izena") Then
             Try
                 'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
+                konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
                 konn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
@@ -183,7 +183,7 @@ Public Class OstatuLeiho
         ElseIf cmBKolumna.SelectedItem.ToString.Equals("Deskribapena") Then
             Try
                 'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
+                konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
                 konn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
@@ -210,7 +210,7 @@ Public Class OstatuLeiho
         ElseIf cmBKolumna.SelectedItem.ToString.Equals("Udalerri") Then
             Try
                 'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
+                konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
                 konn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
@@ -237,7 +237,7 @@ Public Class OstatuLeiho
         ElseIf cmBKolumna.SelectedItem.ToString.Equals("Probintzia") Then
             Try
                 'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
+                konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
                 konn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
@@ -264,7 +264,7 @@ Public Class OstatuLeiho
         ElseIf cmBKolumna.SelectedItem.ToString.Equals("Email") Then
             Try
                 'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
+                konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
                 konn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
@@ -291,7 +291,7 @@ Public Class OstatuLeiho
         ElseIf cmBKolumna.SelectedItem.ToString.Equals("Telefonoa") Then
             Try
                 'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
+                konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
                 konn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
@@ -318,7 +318,7 @@ Public Class OstatuLeiho
         ElseIf cmBKolumna.SelectedItem.ToString.Equals("Web") Then
             Try
                 'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
+                konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
                 konn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
@@ -345,7 +345,7 @@ Public Class OstatuLeiho
         ElseIf cmBKolumna.SelectedItem.ToString.Equals("Longitud") Then
             Try
                 'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
+                konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
                 konn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
@@ -372,7 +372,7 @@ Public Class OstatuLeiho
         ElseIf cmBKolumna.SelectedItem.ToString.Equals("Latitud") Then
             Try
                 'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
+                konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
                 konn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
@@ -399,7 +399,7 @@ Public Class OstatuLeiho
         ElseIf cmBKolumna.SelectedItem.ToString.Equals("Ostatu Mota") Then
             Try
                 'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
+                konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306; convert zero datetime = true")
                 konn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")

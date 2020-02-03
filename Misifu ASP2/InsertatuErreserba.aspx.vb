@@ -18,7 +18,7 @@ Public Class WebForm5
                 MessageBox.Show("No se ha podido conectar")
             End Try
 
-            Dim sql2 = "SELECT sinadura FROM ostatuak"
+            Dim sql2 = "SELECT izena FROM ostatuak"
             Dim cm2 = New MySqlCommand()
             cm2.CommandText = sql2
             cm2.CommandType = CommandType.Text

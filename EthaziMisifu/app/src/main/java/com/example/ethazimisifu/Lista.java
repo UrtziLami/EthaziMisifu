@@ -47,13 +47,14 @@ public class Lista extends AppCompatActivity {
     private Spinner spProbintzia, spUdalerria, spMota;
     private String mota;
     private TextView aukera;
+    private ArrayList<String> ostatuArray = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
-        etBuscar = (EditText) findViewById(R.id.etBuscar);
         setTitle("Lista");
+        etBuscar = (EditText) findViewById(R.id.etBuscar);
         btnAlbergue = (Button) findViewById(R.id.btnMota1);
         btnCamping = (Button) findViewById(R.id.btnMota2);
         btnRural = (Button) findViewById(R.id.btnMota3);
@@ -77,8 +78,25 @@ public class Lista extends AppCompatActivity {
                                                  @Override
                                                  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                                                     Intent intent = new Intent(getApplicationContext(), Reserva.class);
-                                                     //intent.putExtra("KEY", tareas.get(position));
+                                                     for(int i = 0; i < ostatuak.size(); i++){
+                                                         if(ostatuak.get(i).getIzena().equals(tareas.get(position))){
+
+                                                             ostatuArray.add(ostatuak.get(i).getIzena());
+                                                             ostatuArray.add(ostatuak.get(i).getOstatuMota());
+                                                             ostatuArray.add(ostatuak.get(i).getUdalerria() + ", " + ostatuak.get(i).getProbintzia());
+                                                             ostatuArray.add(ostatuak.get(i).getDeskribapena());
+                                                             ostatuArray.add(ostatuak.get(i).getTelefonoa());
+                                                             ostatuArray.add(ostatuak.get(i).getWeb());
+                                                             ostatuArray.add(ostatuak.get(i).getId());
+                                                             ostatuArray.add(ostatuak.get(i).getEmail());
+                                                             ostatuArray.add(ostatuak.get(i).getEmail());
+
+                                                         }
+                                                     }
+
+                                                     Intent intent = new Intent(getApplicationContext(), VerOstatu.class);
+                                                     intent.putExtra("KEY", ostatuArray);
+                                                     intent.putExtra("KEY2", ostatuArray);
                                                      startActivity(intent);
                                                  }
                                              }
@@ -169,12 +187,12 @@ public class Lista extends AppCompatActivity {
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
-            case R.id.modificar:
+            case R.id.mapa:
                 Intent intent = new Intent(this, Menu.class);
                 //intent.putExtra("KEY", tareas.get(info.position));
                 startActivity(intent);
                 return true;
-            case R.id.borrar:
+            case R.id.reserva:
                 DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

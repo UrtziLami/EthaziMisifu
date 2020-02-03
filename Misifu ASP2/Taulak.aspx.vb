@@ -5,28 +5,56 @@ Public Class Taulak
     Dim conn As MySqlConnection
     Dim ds As New DataSet
     Dim ds2 As New DataSet
+    Dim ds3 As New DataSet
     Dim wf1 As New Login
+    Shared kont As Integer
     Shared taula As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim konprobatu As Boolean = True
+        Dim i As Integer = 0
+
         Try
             conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
+            konprobatu = False
             MessageBox.Show("No se ha podido conectar")
         End Try
-        If taula = "erabiltzaileak" Then
-            btnErabiltzaileak_Click1(sender, e)
-        ElseIf taula = "erreserbak" Then
-            btnErreserbak_Click(sender, e)
-        ElseIf taula = "ostatuak" Then
-            btnOstatuak_Click(sender, e)
+        If kont = 0 Then
+            If konprobatu = True Then
+                'Dim sql = "SELECT * FROM " + taula
+                'Dim cm = New MySqlCommand()
+                'cm.CommandText = sql
+                'cm.CommandType = CommandType.Text
+                'cm.Connection = conn
+                'Dim da = New MySqlDataAdapter(cm)
+
+                'ds3 = New DataSet()
+                'da.Fill(ds3)
+
+                'For i = 0 To ds.Tables(0).Columns.Count - 1
+                'DropDownList1.Items.Insert(i, ds.Tables(0).Columns(i).ColumnName)
+                'i = i + 1
+
+                If taula = "erabiltzaileak" Then
+                    btnErabiltzaileak_Click1(sender, e)
+                ElseIf taula = "erreserbak" Then
+                    btnErreserbak_Click(sender, e)
+                ElseIf taula = "ostatuak" Then
+                    btnOstatuak_Click(sender, e)
+                End If
+
+            End If
         End If
+        kont = kont + 1
+
         conn.Close()
     End Sub
 
     Protected Sub btnErabiltzaileak_Click1(sender As Object, e As EventArgs) Handles btnErabiltzaileak.Click
         Dim table As New DataTable
+        DropDownList1.Items.Clear()
         taula = "erabiltzaileak"
 
         Dim sql = "SELECT * FROM erabiltzaileak WHERE erabIzena = '" + wf1.erabiltzailea.ToString + "'"
@@ -40,6 +68,7 @@ Public Class Taulak
         da.Fill(ds)
 
         For i = 0 To ds.Tables(0).Columns.Count - 1
+            DropDownList1.Items.Insert(i, ds.Tables(0).Columns(i).ColumnName)
             table.Columns.Add(ds.Tables(0).Columns(i).ColumnName)
         Next
 
@@ -63,7 +92,7 @@ Public Class Taulak
         LabelFiltroa.Visible = True
         LabelZutabea.Visible = True
         LabelDatua.Visible = True
-        TextBoxZutabea.Visible = True
+        DropDownList1.Visible = True
         TextBoxDatua.Visible = True
         btnBilatu.Visible = True
         conn.Close()
@@ -71,9 +100,10 @@ Public Class Taulak
 
     Protected Sub btnErreserbak_Click(sender As Object, e As EventArgs) Handles btnErreserbak.Click
         Dim table As New DataTable
+        DropDownList1.Items.Clear()
         taula = "erreserbak"
 
-        Dim sql = "SELECT * FROM erreserbak WHERE Erabiltzaileak_idBezeroak = (SELECT idBezeroak FROM erabiltzaileak WHERE erabIzena = '" + wf1.erabiltzailea.ToString + "')"
+        Dim sql = "SELECT idErreserba, Ostatuak_sinadura, sartuData, ateraData FROM erreserbak WHERE Erabiltzaileak_idBezeroak = (SELECT idBezeroak FROM erabiltzaileak WHERE erabIzena = '" + wf1.erabiltzailea.ToString + "')"
         Dim cm = New MySqlCommand()
         cm.CommandText = sql
         cm.CommandType = CommandType.Text
@@ -83,30 +113,21 @@ Public Class Taulak
         ds = New DataSet()
         da.Fill(ds)
 
+        DropDownList1.Items.Insert(0, ds.Tables(0).Columns(0).ColumnName)
+        DropDownList1.Items.Insert(1, "Alojamendua")
+        DropDownList1.Items.Insert(2, ds.Tables(0).Columns(2).ColumnName)
+        DropDownList1.Items.Insert(3, ds.Tables(0).Columns(3).ColumnName)
+
         table.Columns.Add(ds.Tables(0).Columns(0).ColumnName)
-        table.Columns.Add("Erabiltzailea")
         table.Columns.Add("Alojamendua")
+        table.Columns.Add(ds.Tables(0).Columns(2).ColumnName)
         table.Columns.Add(ds.Tables(0).Columns(3).ColumnName)
-        table.Columns.Add(ds.Tables(0).Columns(4).ColumnName)
 
         For i = 0 To ds.Tables(0).Rows.Count - 1
             table.Rows.Add()
             For j = 0 To ds.Tables(0).Columns.Count - 1
                 table.Rows(i)(j) = ds.Tables(0).Rows(i)(j).ToString()
             Next
-        Next
-
-        For i = 0 To ds.Tables(0).Rows.Count - 1
-            Dim sql2 = "SELECT erabIzena FROM erabiltzaileak WHERE idBezeroak = " + ds.Tables(0).Rows(i)(2).ToString
-            Dim cm2 = New MySqlCommand()
-            cm.CommandText = sql2
-            cm.CommandType = CommandType.Text
-            cm.Connection = conn
-            Dim da2 = New MySqlDataAdapter(cm)
-
-            ds2 = New DataSet()
-            da2.Fill(ds2)
-            table.Rows(i)(1) = ds2.Tables(0).Rows(0)(0).ToString
         Next
 
         For i = 0 To ds.Tables(0).Rows.Count - 1
@@ -119,8 +140,9 @@ Public Class Taulak
 
             ds2 = New DataSet()
             da2.Fill(ds2)
-            table.Rows(i)(2) = ds2.Tables(0).Rows(0)(0).ToString
+            table.Rows(i)(1) = ds2.Tables(0).Rows(0)(0).ToString
         Next
+
 
         GridView1.DataSource = table
         GridView1.DataBind()
@@ -131,7 +153,7 @@ Public Class Taulak
         LabelFiltroa.Visible = True
         LabelZutabea.Visible = True
         LabelDatua.Visible = True
-        TextBoxZutabea.Visible = True
+        DropDownList1.Visible = True
         TextBoxDatua.Visible = True
         btnBilatu.Visible = True
         conn.Close()
@@ -139,6 +161,7 @@ Public Class Taulak
 
     Protected Sub btnOstatuak_Click(sender As Object, e As EventArgs) Handles btnOstatuak.Click
         Dim table As New DataTable
+        DropDownList1.Items.Clear()
         taula = "ostatuak"
 
         Dim sql = "SELECT * FROM ostatuak"
@@ -152,6 +175,7 @@ Public Class Taulak
         da.Fill(ds)
 
         For i = 0 To ds.Tables(0).Columns.Count - 1
+            DropDownList1.Items.Insert(i, ds.Tables(0).Columns(i).ColumnName)
             table.Columns.Add(ds.Tables(0).Columns(i).ColumnName)
         Next
 
@@ -171,7 +195,7 @@ Public Class Taulak
         LabelFiltroa.Visible = True
         LabelZutabea.Visible = True
         LabelDatua.Visible = True
-        TextBoxZutabea.Visible = True
+        DropDownList1.Visible = True
         TextBoxDatua.Visible = True
         btnBilatu.Visible = True
         conn.Close()
@@ -180,10 +204,17 @@ Public Class Taulak
     Protected Sub btnBilatu_Click(sender As Object, e As EventArgs) Handles btnBilatu.Click
         Dim table As New DataTable
         Dim konprobatu As Boolean = True
+        Dim zutabea As String
+        zutabea = DropDownList1.SelectedItem.ToString()
 
-        If TextBoxZutabea.Text <> "" Then
-            Try
-                Dim sql = "SELECT * FROM " + taula + " WHERE " + TextBoxZutabea.Text + " like '%" + TextBoxDatua.Text + "%'"
+        If taula = "erreserbak" Then
+            If DropDownList1.SelectedItem.ToString = "Alojamendua" Then
+                zutabea = "Ostatuak_sinadura"
+            End If
+            If TextBoxDatua.Text = "" Then
+                btnErreserbak_Click(sender, e)
+            Else
+                Dim sql = "SELECT idErreserba, Ostatuak_sinadura, sartuData, ateraData FROM " + taula + " WHERE " + zutabea + " = (SELECT sinadura FROM ostatuak WHERE izena like '%" + TextBoxDatua.Text + "%')"
                 Dim cm = New MySqlCommand()
                 cm.CommandText = sql
                 cm.CommandType = CommandType.Text
@@ -192,15 +223,11 @@ Public Class Taulak
 
                 ds = New DataSet()
                 da.Fill(ds)
-            Catch ex As Exception
-                MsgBox("Zutabea txarto sartuta", vbCritical, "Txarto")
-                konprobatu = False
-            End Try
 
-            If konprobatu = True Then
-                For i = 0 To ds.Tables(0).Columns.Count - 1
-                    table.Columns.Add(ds.Tables(0).Columns(i).ColumnName)
-                Next
+                table.Columns.Add(ds.Tables(0).Columns(0).ColumnName)
+                table.Columns.Add("Alojamendua")
+                table.Columns.Add(ds.Tables(0).Columns(2).ColumnName)
+                table.Columns.Add(ds.Tables(0).Columns(3).ColumnName)
 
                 For i = 0 To ds.Tables(0).Rows.Count - 1
                     table.Rows.Add()
@@ -209,19 +236,55 @@ Public Class Taulak
                     Next
                 Next
 
-                If taula = "erabiltzaileak" Then
-                    For i = 0 To table.Rows.Count - 1
-                        table.Rows(i)("pasahitza") = wf1.AES_Decrypt(table.Rows(i)("pasahitza"), wf1.kodEnc)
-                    Next
-                End If
+                For i = 0 To ds.Tables(0).Rows.Count - 1
+                    Dim sql2 = "SELECT izena FROM ostatuak WHERE sinadura = '" + ds.Tables(0).Rows(i)(1).ToString + "'"
+                    Dim cm2 = New MySqlCommand()
+                    cm.CommandText = sql2
+                    cm.CommandType = CommandType.Text
+                    cm.Connection = conn
+                    Dim da2 = New MySqlDataAdapter(cm)
 
+                    ds2 = New DataSet()
+                    da2.Fill(ds2)
+                    table.Rows(i)(1) = ds2.Tables(0).Rows(0)(0).ToString
+                Next
                 GridView1.DataSource = table
                 GridView1.DataBind()
             End If
 
         Else
-            MsgBox("Zutabea sartu", vbCritical, "Txarto")
+            Dim sql = "SELECT * FROM " + taula + " WHERE " + zutabea + " like '%" + TextBoxDatua.Text + "%'"
+            Dim cm = New MySqlCommand()
+            cm.CommandText = sql
+            cm.CommandType = CommandType.Text
+            cm.Connection = conn
+            Dim da = New MySqlDataAdapter(cm)
+
+            ds = New DataSet()
+            da.Fill(ds)
+
+            For i = 0 To ds.Tables(0).Columns.Count - 1
+                table.Columns.Add(ds.Tables(0).Columns(i).ColumnName)
+            Next
+
+            For i = 0 To ds.Tables(0).Rows.Count - 1
+                table.Rows.Add()
+                For j = 0 To ds.Tables(0).Columns.Count - 1
+                    table.Rows(i)(j) = ds.Tables(0).Rows(i)(j).ToString()
+                Next
+            Next
+
+            If taula = "erabiltzaileak" Then
+                For i = 0 To table.Rows.Count - 1
+                    table.Rows(i)("pasahitza") = wf1.AES_Decrypt(table.Rows(i)("pasahitza"), wf1.kodEnc)
+                Next
+            End If
+
+            GridView1.DataSource = table
+            GridView1.DataBind()
         End If
+
+
         conn.Close()
     End Sub
 
@@ -270,4 +333,5 @@ Public Class Taulak
         taula = ""
         Response.Redirect("Login.aspx")
     End Sub
+
 End Class

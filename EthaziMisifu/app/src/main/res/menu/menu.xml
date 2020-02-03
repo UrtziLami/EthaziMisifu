@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/modificar"
-        android:title="Modificar tarea"/>
+        android:id="@+id/mapa"
+        android:title="@string/ver_en_el_mapa"/>
 
     <item
-        android:id="@+id/borrar"
-        android:title="Borrar tarea"/>
+        android:id="@+id/reserva"
+        android:title="@string/hacer_reserva"/>
 
 </menu>

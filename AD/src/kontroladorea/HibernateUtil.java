@@ -42,7 +42,7 @@ public class HibernateUtil {
 	            al.setLongitudea(longitude);
 	            al.setLatitudea(latitude);
 	            al.setOstatuMota(ostatuMota);
-	            stId = (String) session.save(al);
+	            session.saveOrUpdate(al);
 	            tx.commit();
 	        } 
 	        catch (HibernateException ex)

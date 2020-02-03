@@ -1,6 +1,7 @@
 package com.example.ethazimisifu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import cz.msebera.android.httpclient.HttpEntity;
 import cz.msebera.android.httpclient.HttpResponse;
 import cz.msebera.android.httpclient.client.ClientProtocolException;
@@ -10,10 +11,12 @@ import cz.msebera.android.httpclient.client.methods.HttpPost;
 import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
 import cz.msebera.android.httpclient.message.BasicNameValuePair;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -71,6 +74,11 @@ public class Registro extends AppCompatActivity {
                 pass = etPasswd.getText().toString();
                 user = etUser.getText().toString();
                 InsertData(nombre, user, pass);
+
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+
             }
         });
 
@@ -111,6 +119,11 @@ public class Registro extends AppCompatActivity {
                         nameValuePairs.add(new BasicNameValuePair("izenAbizena", nombre));
                         nameValuePairs.add(new BasicNameValuePair("pasahitza", encrypt(pass)));
                         nameValuePairs.add(new BasicNameValuePair("erabIzena", user));
+
+                        Log.d("MyApp",nombre);
+                        Log.d("MyApp",encrypt(pass));
+                        Log.d("MyApp",user);
+
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

@@ -27,12 +27,12 @@ Public Class DatuakAldatuErre
     Private Sub datuakAldatu()
         Try
             'konn = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-            konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")
+            konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306")
             konn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar al servidor")
         End Try
-        Dim myCommand As New MySqlCommand("update erreserbak set Erabiltzaileak_idBezeroak = '" & cmbBerab.SelectedText & "', Ostatuak_sinadura = '" & cmbBOsta.SelectedText & "', sartuData = '" & mCSart.SelectionStart & "', ateraData = '" & mCIrte.SelectionStart & "' where idErreserba = " & IDErre, konn)
+        Dim myCommand As New MySqlCommand("update erreserbak set Ostatuak_sinadura = '" & cmbBOsta.SelectedItem.ToString & "', Erabiltzaileak_idBezeroak = '" & cmbBerab.SelectedItem.ToString & "', sartuData = '" & mCSart.SelectionStart & "', ateraData = '" & mCIrte.SelectionStart & "' where idErreserba = '" & IDErre & "'", konn)
         myCommand.ExecuteNonQuery()
         konn.Close()
     End Sub
@@ -42,7 +42,7 @@ Public Class DatuakAldatuErre
     Private Sub ostatuakAtera()
         Try
             'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-            konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")
+            konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306")
             konn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar al servidor")
@@ -59,7 +59,7 @@ Public Class DatuakAldatuErre
     Private Sub erabiltzaileakAtera()
         Try
             'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-            konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")
+            konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306")
             konn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar al servidor")
@@ -76,7 +76,7 @@ Public Class DatuakAldatuErre
 
     Private Sub btnGorde_Click(sender As Object, e As EventArgs) Handles btnGorde.Click
         datuakAldatu()
-        Dim lei As New ErabiltzaileLeihoa
+        Dim lei As New ErreserbaLeihoa
         lei.Show()
         Hide()
     End Sub

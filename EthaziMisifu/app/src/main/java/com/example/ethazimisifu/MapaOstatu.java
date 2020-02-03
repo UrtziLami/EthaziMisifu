@@ -38,7 +38,7 @@ import java.util.List;
 /**
  * Use the LocationComponent to easily add a device location "puck" to a Mapbox map.
  */
-public class LocationComponentActivity extends AppCompatActivity implements
+public class MapaOstatu extends AppCompatActivity implements
         OnMapReadyCallback, PermissionsListener {
 
     private PermissionsManager permissionsManager;
@@ -46,6 +46,8 @@ public class LocationComponentActivity extends AppCompatActivity implements
     private MapView mapView;
     private ArrayList<Ostatuak> ostatuak = new ArrayList<Ostatuak>();
     private ArrayList<MarkerOptions> allMarker = new ArrayList<MarkerOptions>();
+    private ArrayList<String> ostatuArray = new ArrayList<String>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,51 +62,24 @@ public class LocationComponentActivity extends AppCompatActivity implements
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.13.33/misifu/selectOstuatuak.php", new com.android.volley.Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                ostatuak = Consultas.ostatuLista(response);
-                addMarkers(ostatuak);
+        Bundle extras = getIntent().getExtras();
+        if(extras !=null) {
+            ostatuArray = extras.getStringArrayList("KEY");
+        }
 
+        /*MarkerOptions marker = new MarkerOptions()
+                .position(new LatLng(os.getLongitudea(), os.getLatitudea()))
+                .title(os.getIzena())
+                .snippet(os.getDeskribapena());
+        mapboxMap.addMarker(marker);
+        allMarker.add(marker);*/
 
-                mapboxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
-                    @Override
-                    public boolean onMarkerClick(@NonNull Marker marker) {
-                        LatLng point= marker.getPosition();
-                        Ostatuak ostatu;
-                        double Latitude= point.getLatitude();
-                        double longitude= point.getLongitude();
-                        for(Ostatuak os : ostatuak) {
-                            if(os.getLongitudea()==Latitude && os.getLatitudea()== longitude) {
-                                ostatu = os;
-                                Intent intent = new Intent();
-                                intent.setClass(getApplicationContext(), VerOstatu.class);
-                                intent.putExtra("KEY",ostatu);
-                                startActivity(intent);
-                                break;
-                            }
-                        }
-                        return true;
-                    }
-                });
-
-
-            }
-
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        });
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
     }
 
 
     @Override
     public void onMapReady(@NonNull final MapboxMap mapboxMap) {
-        LocationComponentActivity.this.mapboxMap = mapboxMap;
+        MapaOstatu.this.mapboxMap = mapboxMap;
 
         mapboxMap.setStyle(new Style.Builder().fromUri("mapbox://styles/mapbox/cjerxnqt3cgvp2rmyuxbeqme7"),
                 new Style.OnStyleLoaded() {
@@ -139,18 +114,6 @@ public class LocationComponentActivity extends AppCompatActivity implements
             permissionsManager = new PermissionsManager(this);
             permissionsManager.requestLocationPermissions(this);
         }
-    }
-    public void addMarkers(ArrayList<Ostatuak> OstatuenLista) {
-        allMarker.clear();
-        for(Ostatuak os : OstatuenLista) {
-            MarkerOptions marker = new MarkerOptions()
-                    .position(new LatLng(os.getLongitudea(), os.getLatitudea()))
-                    .title(os.getIzena())
-                    .snippet(os.getDeskribapena());
-            mapboxMap.addMarker(marker);
-            allMarker.add(marker);
-        }
-
     }
 
 

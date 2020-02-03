@@ -50,7 +50,7 @@ public class Registro extends AppCompatActivity {
     private static final int keySize = 128;
     private static final String cypherInstance = "AES/CBC/PKCS5Padding";
     private static final String secretKeyInstance = "PBKDF2WithHmacSHA1";
-    private static final String plainText = "sampleText";
+    private static final String plainText = "12345";
     private static final String AESSalt = "exampleSalt";
     private static final String initializationVector = "8119745113154120";
 

@@ -2,17 +2,25 @@ package com.example.ethazimisifu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
+import android.view.View;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class VerOstatu extends AppCompatActivity {
 
-    private TextView nombre, mota, ubicacion, telefono, web;
-    private ScrollView descripcion;
-    private String value, provincia, municipio;
+    private TextView nombre, mota, descripcion, ubicacion, telefono, web, email;
+    private ArrayList<String> ostatuArray = new ArrayList<String>();
+    private String izena, id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,53 +28,46 @@ public class VerOstatu extends AppCompatActivity {
         setContentView(R.layout.activity_ver_ostatu);
 
         nombre = (TextView) findViewById(R.id.txtNombre);
-        descripcion = (ScrollView) findViewById(R.id.scDescripcion);
+        descripcion = (TextView) findViewById(R.id.txtDescripcion);
+
         mota = (TextView) findViewById(R.id.txtOstatuMota);
         ubicacion = (TextView) findViewById(R.id.txtUbicacion);
         telefono = (TextView) findViewById(R.id.txtTelefono);
         web = (TextView) findViewById(R.id.txtWeb);
+        email = (TextView) findViewById(R.id.txtEmail);
 
         Bundle extras = getIntent().getExtras();
         if(extras !=null) {
-            value = extras.getString("KEY");
+            ostatuArray = extras.getStringArrayList("KEY");
         }
 
-        //rellenarTextos(value);
+        nombre.setText(ostatuArray.get(0));
+        izena = ostatuArray.get(0);
+        id = ostatuArray.get(6);
+        mota.setText(ostatuArray.get(1));
+        ubicacion.setText(ostatuArray.get(2));
+        telefono.setText(ostatuArray.get(4));
+        web.setText(Html.fromHtml(ostatuArray.get(5)));
+        descripcion.setText(ostatuArray.get(3));
+        email.setText(ostatuArray.get(7));
 
     }
 
-    /*public void rellenarTextos(String value){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                "administracion", null, 1);
+    public void volver(View v){
+        Intent intent = new Intent(this, Lista.class);
+        startActivity(intent);
+        finish();
+    }
 
-        SQLiteDatabase bd = admin.getWritableDatabase();
-        Cursor fila = bd.rawQuery("Select * from tareas where nombre like '" + value + "'", null);
+    public void reserva(View v){
 
-        nombre.setText(value);
-        if(fila != null && fila.moveToFirst()){
-            descripcion.setText(String.valueOf(fila.getString(1)));
-            fecha.setText(String.valueOf(fila.getString(2)));
-            prioridad.setText(String.valueOf(fila.getString(3)));
-            switch(String.valueOf(fila.getString(2))) {
-                case "Urgente":
-                    fecha.setTextColor(0xffff0000);
-                    break;
-                case "Alta":
-                    fecha.setTextColor(0xFFFF631C);
-                    break;
-                case "Media":
-                    fecha.setTextColor(0xFFFFE135);
-                    break;
-                case "Baja":
-                    fecha.setTextColor(0xFF006B3C);
-                    break;
-                default:
-                    break;
-            }
+        Toast.makeText(getApplicationContext(), izena, Toast.LENGTH_SHORT).show();
 
-            coste.setText(String.valueOf(fila.getString(4)));
-        }
+        Intent intent = new Intent(this, Reserva.class);
+        intent.putExtra("KEY", izena);
+        intent.putExtra("KEY2", ostatuArray.get(6));
+        startActivity(intent);
 
-    }*/
+    }
 
 }

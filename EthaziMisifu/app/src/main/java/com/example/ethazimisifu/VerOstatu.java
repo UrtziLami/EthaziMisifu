@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,6 +20,7 @@ public class VerOstatu extends AppCompatActivity {
 
     private TextView nombre, mota, descripcion, ubicacion, telefono, web, email;
     private ArrayList<String> ostatuArray = new ArrayList<String>();
+    private String izena, id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,8 @@ public class VerOstatu extends AppCompatActivity {
         }
 
         nombre.setText(ostatuArray.get(0));
+        izena = ostatuArray.get(0);
+        id = ostatuArray.get(6);
         mota.setText(ostatuArray.get(1));
         ubicacion.setText(ostatuArray.get(2));
         telefono.setText(ostatuArray.get(4));
@@ -57,10 +61,12 @@ public class VerOstatu extends AppCompatActivity {
 
     public void reserva(View v){
 
+        Toast.makeText(getApplicationContext(), izena, Toast.LENGTH_SHORT).show();
+
         Intent intent = new Intent(this, Reserva.class);
-        startActivity(intent);
-        intent.putExtra("KEY", ostatuArray.get(0));
+        intent.putExtra("KEY", izena);
         intent.putExtra("KEY2", ostatuArray.get(6));
+        startActivity(intent);
 
     }
 

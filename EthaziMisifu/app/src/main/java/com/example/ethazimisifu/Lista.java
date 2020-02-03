@@ -89,12 +89,14 @@ public class Lista extends AppCompatActivity {
                                                              ostatuArray.add(ostatuak.get(i).getWeb());
                                                              ostatuArray.add(ostatuak.get(i).getId());
                                                              ostatuArray.add(ostatuak.get(i).getEmail());
+                                                             ostatuArray.add(ostatuak.get(i).getEmail());
 
                                                          }
                                                      }
 
                                                      Intent intent = new Intent(getApplicationContext(), VerOstatu.class);
                                                      intent.putExtra("KEY", ostatuArray);
+                                                     intent.putExtra("KEY2", ostatuArray);
                                                      startActivity(intent);
                                                  }
                                              }

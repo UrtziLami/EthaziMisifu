@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".VerOstatu"></activity>
+        <activity android:name=".MapaOstatu"></activity>
+        <activity android:name=".VerOstatu" />
         <activity android:name=".Reserva" />
         <activity android:name=".Registro" />
         <activity android:name=".Lista" />

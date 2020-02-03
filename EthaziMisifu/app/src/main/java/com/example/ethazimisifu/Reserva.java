@@ -1,16 +1,31 @@
 package com.example.ethazimisifu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import cz.msebera.android.httpclient.HttpEntity;
+import cz.msebera.android.httpclient.HttpResponse;
+import cz.msebera.android.httpclient.client.ClientProtocolException;
+import cz.msebera.android.httpclient.client.HttpClient;
+import cz.msebera.android.httpclient.client.entity.UrlEncodedFormEntity;
+import cz.msebera.android.httpclient.client.methods.HttpPost;
+import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
+import cz.msebera.android.httpclient.message.BasicNameValuePair;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class Reserva extends AppCompatActivity {
 
@@ -21,6 +36,8 @@ public class Reserva extends AppCompatActivity {
     private EditText txtDate, txtDate2;
 
     private String izena, id;
+
+    private Button btnReserva;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +63,19 @@ public class Reserva extends AppCompatActivity {
         }
 
         nombre.setText(izena);
+        btnReserva = (Button) findViewById(R.id.btnReserva);
+        btnReserva.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                InsertData(izena, 2, txtDate.getText().toString(), txtDate2.getText().toString());
+
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
     }
 
@@ -71,6 +101,8 @@ public class Reserva extends AppCompatActivity {
         datePickerDialog.show();
     }
 
+
+
     public void abrirCalendar2(View v){
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
@@ -85,12 +117,75 @@ public class Reserva extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
 
-                        txtDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                        txtDate2.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
 
                     }
                 }, mYear, mMonth, mDay);
         datePickerDialog.getDatePicker().setMinDate(Calendar.getInstance().getTime().getTime());
         datePickerDialog.show();
     }
+
+    public void InsertData(final String nombre, final int user, final String sartu, final String atera){
+        if (!sartu.equals("") && !atera.equals("")) {
+            class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+                @Override
+                protected String doInBackground(String... params) {
+
+                    List<BasicNameValuePair> nameValuePairs = new ArrayList<>();
+
+                    nameValuePairs.add(new BasicNameValuePair("idErreserba", null));
+
+                    try {
+                        nameValuePairs.add(new BasicNameValuePair("Ostatuak_sinadura", nombre));
+                        nameValuePairs.add(new BasicNameValuePair("Erabiltzaileak_idBezeroak", Integer.toString(2)));
+                        nameValuePairs.add(new BasicNameValuePair("sartuData", sartu));
+                        nameValuePairs.add(new BasicNameValuePair("ateraData", atera));
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    try {
+                        HttpClient httpClient = new DefaultHttpClient();
+
+                        HttpPost httpPost = new HttpPost("http://192.168.13.33/misifu/insertReserva.php");
+
+                        httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                        HttpResponse httpResponse = httpClient.execute(httpPost);
+
+                        HttpEntity httpEntity = httpResponse.getEntity();
+
+
+                    } catch (ClientProtocolException e) {
+
+                    } catch (IOException e) {
+
+                    }
+                    return "Data Inserted Successfully";
+                }
+
+
+
+                @Override
+                protected void onPostExecute(String result) {
+
+                    super.onPostExecute(result);
+
+                    Toast.makeText(getApplicationContext(), "Se ha hecho la reserva con exito", Toast.LENGTH_LONG).show();
+
+                }
+            }
+
+            SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+
+            sendPostReqAsyncTask.execute(null, nombre, Integer.toString(2), sartu, atera);
+
+        } else {
+            Toast.makeText(getApplicationContext(), "No se permiten campos vacios", Toast.LENGTH_LONG).show();
+        }
+
+    }
+
 
 }

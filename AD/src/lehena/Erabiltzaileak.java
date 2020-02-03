@@ -1,5 +1,5 @@
 package lehena;
-// Generated 24-ene-2020 9:43:04 by Hibernate Tools 5.4.7.Final
+// Generated 03-feb-2020 9:22:48 by Hibernate Tools 5.4.7.Final
 
 import java.util.HashSet;
 import java.util.Set;

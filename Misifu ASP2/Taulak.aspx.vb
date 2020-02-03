@@ -15,7 +15,7 @@ Public Class Taulak
         Dim i As Integer = 0
 
         Try
-            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
+            conn = New MySqlConnection("server=192.168.13.33; database=" + wf1.bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             konprobatu = False
@@ -289,6 +289,7 @@ Public Class Taulak
     End Sub
 
     Protected Sub btnInsertatu_Click(sender As Object, e As EventArgs) Handles btnInsertatu.Click
+        kont = 0
         If taula = "erreserbak" Then
             Response.Redirect("InsertatuErreserba.aspx")
         End If
@@ -298,6 +299,7 @@ Public Class Taulak
     End Sub
 
     Protected Sub btnAldatu_Click(sender As Object, e As EventArgs) Handles btnAldatu.Click
+        kont = 0
         If taula = "erabiltzaileak" Then
             Response.Redirect("AldatuErabiltzailea.aspx")
         End If
@@ -310,6 +312,7 @@ Public Class Taulak
     End Sub
 
     Protected Sub btnEzabatu_Click(sender As Object, e As EventArgs) Handles btnEzabatu.Click
+        kont = 0
         If taula = "erabiltzaileak" Then
             If MsgBox("Erabiltzailea ezabatu nahi duzu?", vbYesNo, "Ezabatu?") = 6 Then
                 Dim cm3 = New MySqlCommand()

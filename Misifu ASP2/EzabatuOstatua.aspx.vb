@@ -11,7 +11,7 @@ Public Class EzabatuOstatua
         Dim id As New ArrayList()
         If kont = 0 Then
             Try
-                conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
+                conn = New MySqlConnection("server=192.168.13.33; database=" + wf1.bd + "; user id=root; port=3306")
                 conn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar")
@@ -38,7 +38,7 @@ Public Class EzabatuOstatua
     Protected Sub aldatu(sender As Object, e As EventArgs) Handles btnEzabatu.Click
         Dim konprobatu As Boolean = True
         Try
-            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
+            conn = New MySqlConnection("server=192.168.13.33; database=" + wf1.bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar")
@@ -56,7 +56,7 @@ Public Class EzabatuOstatua
     End Sub
     Protected Sub btnBete_Click(sender As Object, e As EventArgs) Handles btnBete.Click
         Try
-            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
+            conn = New MySqlConnection("server=192.168.13.33; database=" + wf1.bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar")

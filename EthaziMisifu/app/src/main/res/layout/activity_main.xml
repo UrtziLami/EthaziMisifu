@@ -12,7 +12,7 @@
         android:layout_width="327dp"
         android:layout_height="46dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="252dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/usuario"
@@ -22,24 +22,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textMostrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="356dp"
-        android:text="@string/mostrar_contrase_a"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="195dp"
         android:layout_height="46dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="472dp"
         android:text="@string/iniciar_sesi_n"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,8 +36,8 @@
         android:id="@+id/btnRegistrar"
         android:layout_width="195dp"
         android:layout_height="46dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="520dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="552dp"
         android:text="@string/registrar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -59,11 +47,23 @@
         android:layout_width="329dp"
         android:layout_height="45dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="312dp"
+        android:layout_marginTop="340dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/contrase_a"
         android:inputType="textPassword"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textMostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="384dp"
+        android:text="@string/mostrar_contrase_a"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -73,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="356dp"
+        android:layout_marginTop="384dp"
         android:checked="false"
         android:switchTextAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textAlignment="center"

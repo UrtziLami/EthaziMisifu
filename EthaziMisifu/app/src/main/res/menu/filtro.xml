@@ -7,7 +7,7 @@
 
     <item
         android:id="@+id/Agroturismos"
-        android:title="Mostrar groturismos"/>
+        android:title="Mostrar agroturismos"/>
 
     <item
         android:id="@+id/albergues"

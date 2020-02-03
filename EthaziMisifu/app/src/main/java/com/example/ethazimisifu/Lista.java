@@ -45,7 +45,7 @@ public class Lista extends AppCompatActivity {
     private Button btnBuscar, btnAlbergue, btnCamping, btnRural, btnAgro;
     private EditText etBuscar;
     private Spinner spProbintzia, spUdalerria, spMota;
-    private String mota;
+    private String mota, izena, kodea;
     private TextView aukera;
     private ArrayList<String> ostatuArray = new ArrayList<String>();
 
@@ -96,7 +96,6 @@ public class Lista extends AppCompatActivity {
 
                                                      Intent intent = new Intent(getApplicationContext(), VerOstatu.class);
                                                      intent.putExtra("KEY", ostatuArray);
-                                                     intent.putExtra("KEY2", ostatuArray);
                                                      startActivity(intent);
                                                  }
                                              }
@@ -193,29 +192,20 @@ public class Lista extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.reserva:
-                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        switch (which){
-                            case DialogInterface.BUTTON_POSITIVE:
-                                /*SQLiteDatabase bd = admin.getWritableDatabase();
-                                String nombre = (String) lista.getItemAtPosition(info.position);
-                                bd.delete("tareas", "nombre like '" + nombre + "'", null);
-                                bd.close();
-                                tareas.remove(info.position);
-                                adapter.notifyDataSetChanged();*/
-                                Toast.makeText(getApplicationContext(), "Borrado", Toast.LENGTH_SHORT).show();
-                                break;
 
-                            case DialogInterface.BUTTON_NEGATIVE:
-                                //No button clicked
-                                break;
-                        }
+                for(int i = 0; i < ostatuak.size(); i++){
+                    if(ostatuak.get(i).getIzena().equals(tareas.get(info.position))){
+
+                        izena = ostatuak.get(i).getIzena();
+                        kodea = ostatuak.get(i).getId();
+
                     }
-                };
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("¿Estas seguro que quieres borrar la tarea seleccionada?").setPositiveButton("Si", dialogClickListener)
-                        .setNegativeButton("No", dialogClickListener).show();
+                }
+
+                Intent reserva = new Intent(getApplicationContext(), Reserva.class);
+                reserva.putExtra("KEY", izena);
+                reserva.putExtra("KEY2", kodea);
+                startActivity(reserva);
                 return true;
             default:
                 return super.onContextItemSelected(item);

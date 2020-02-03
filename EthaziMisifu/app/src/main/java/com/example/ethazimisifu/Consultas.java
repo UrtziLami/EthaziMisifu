@@ -71,7 +71,7 @@ public class Consultas {
             try {
                 JSONArray ja = new JSONArray(response);
 
-                for(int i=0;i<ja.length();i+=9) {
+                for(int i=0;i<ja.length();i+=11) {
 
                     try {
                         Ostatuak ost = new Ostatuak(ja.getString(i), ja.getString(i + 1), ja.getString(i + 2), ja.getString(i + 3), ja.getString(i + 4), ja.getString(i + 5), ja.getString(i + 6), ja.getString(i + 7), ja.getDouble(i + 8), ja.getDouble(i + 9), ja.getString(i + 10));
@@ -111,36 +111,6 @@ public class Consultas {
             e.printStackTrace();
         }
         return new byte[0];
-    }
-
-    public static ArrayList<Ostatuak> probintziak_atera(String response) {
-        ArrayList<Ostatuak> lista = new ArrayList<Ostatuak>();
-
-        Log.d("DRAGON", response);
-
-        response = response.replace("][",",");
-        if (response.length()>0){
-            try {
-                JSONArray ja = new JSONArray(response);
-
-                for(int i=0;i<ja.length();i+=9) {
-
-                    try {
-                        Ostatuak ost = new Ostatuak(ja.getString(i), ja.getString(i + 1), ja.getString(i + 2), ja.getString(i + 3), ja.getString(i + 4), ja.getString(i + 5), ja.getString(i + 6), ja.getString(i + 7), ja.getDouble(i + 8), ja.getDouble(i + 9), ja.getString(i + 10));
-                        Log.d("españa", ost.toString());
-                        lista.add(ost);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-        }
-
-        return lista;
     }
 
 }

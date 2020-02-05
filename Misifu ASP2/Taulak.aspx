@@ -34,15 +34,15 @@
             <asp:Label ID="LabelFiltroa" runat="server" Font-Bold="True" Font-Size="32pt" Text="Filtroa" Visible="False"></asp:Label>
             <br />
             <br />
-            <asp:Label ID="LabelZutabea" runat="server" Font-Size="16pt" Text="Zutabea:" Visible="False"></asp:Label>
+            <asp:Label ID="LabelZutabea" runat="server" Font-Size="20pt" Text="Zutabea:" Visible="False"></asp:Label>
 &nbsp;
-            <asp:DropDownList ID="DropDownList1" runat="server" Visible="False">
+            <asp:DropDownList ID="DropDownList1" runat="server" Visible="False" Height="32px" Width="94px">
             </asp:DropDownList>
             <br />
             <br />
-            <asp:Label ID="LabelDatua" runat="server" Font-Size="16pt" Text="Datua:" Visible="False"></asp:Label>
+            <asp:Label ID="LabelDatua" runat="server" Font-Size="20pt" Text="Datua:" Visible="False"></asp:Label>
 &nbsp;
-            <asp:TextBox ID="TextBoxDatua" runat="server" Visible="False"></asp:TextBox>
+            <asp:TextBox ID="TextBoxDatua" runat="server" Visible="False" Height="16px" Width="128px"></asp:TextBox>
             <br />
             <br />
             <asp:Button ID="btnBilatu" runat="server" Height="47px" Text="Bilatu" Visible="False" Width="91px" />

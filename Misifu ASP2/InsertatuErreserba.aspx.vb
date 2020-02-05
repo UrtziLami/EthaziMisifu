@@ -12,7 +12,7 @@ Public Class WebForm5
             Dim erabiltzaileak As New ArrayList()
             Dim ostatuak As New ArrayList()
             Try
-                conn = New MySqlConnection("server=192.168.13.33; database=" + wf1.bd + "; user id=root; port=3306")
+                conn = New MySqlConnection("server=" + wf1.server_ip + "; database=" + wf1.bd + "; user id=root; port=3306")
                 conn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar")
@@ -44,13 +44,12 @@ Public Class WebForm5
     Protected Sub insertatu(sender As Object, e As EventArgs) Handles btnInsertatu.Click
         Dim konprobatu As Boolean = False
         Try
-            conn = New MySqlConnection("server=192.168.13.33; database=" + wf1.bd + "; user id=root; port=3306")
+            conn = New MySqlConnection("server=" + wf1.server_ip + "; database=" + wf1.bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar")
         End Try
         Dim sql = wf1.select_query("idbezeroak", "erabiltzaileak", "erabIzena", wf1.erabiltzailea.ToString)
-        'Dim sql = "SELECT idBezeroak FROM erabiltzaileak WHERE erabIzena like '" + wf1.erabiltzailea.ToString + "'"
         Dim cm = New MySqlCommand()
         cm.CommandText = sql
         cm.CommandType = CommandType.Text
@@ -60,7 +59,7 @@ Public Class WebForm5
         ds = New DataSet()
         da.Fill(ds)
 
-        Dim sql2 = "SELECT sinadura FROM ostatuak WHERE sinadura like '" + DropDownList2.SelectedItem.ToString + "'"
+        Dim sql2 = wf1.select_query("sinadura", "ostatuak", "izena", DropDownList2.SelectedItem.ToString)
         Dim cm2 = New MySqlCommand()
         cm2.CommandText = sql2
         cm2.CommandType = CommandType.Text
@@ -69,6 +68,9 @@ Public Class WebForm5
 
         ds2 = New DataSet()
         da2.Fill(ds2)
+
+        MessageBox.Show(ds.Tables(0).Rows(0)(0).ToString())
+        MessageBox.Show(ds2.Tables(0).Rows(0)(0).ToString())
 
         Dim cm3 = New MySqlCommand()
         cm3.CommandText = "INSERT INTO erreserbak (Erabiltzaileak_idBezeroak,Ostatuak_sinadura,sartuData,ateraData) VALUES('" + ds.Tables(0).Rows(0)(0).ToString + "', '" + ds2.Tables(0).Rows(0)(0).ToString + "', '" + Calendar1.SelectedDate.ToShortDateString() + "', '" + Calendar2.SelectedDate.ToShortDateString() + "')"

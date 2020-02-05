@@ -7,6 +7,7 @@ Public Class Login
     Public kodEnc As String = "12345"
     Public bd As String = "ethazi_misifu"
     Public Shared erabiltzailea As String
+    Public server_ip As String = "192.168.13.33"
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
@@ -29,7 +30,7 @@ Public Class Login
         Dim konprobatu As Boolean = True
         Dim izenak(10) As String
         Try
-            conn = New MySqlConnection("server=192.168.13.33; database=" + bd + "; user id=root; port=3306")
+            conn = New MySqlConnection("server=" + server_ip + "; database=" + bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             konprobatu = False

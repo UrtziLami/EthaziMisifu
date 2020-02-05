@@ -68,6 +68,15 @@ Partial Public Class AldatuErreserba
     Protected WithEvents DropDownList2 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''Control btnBete.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnBete As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Control Label5.
     '''</summary>
     '''<remarks>

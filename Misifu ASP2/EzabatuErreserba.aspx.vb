@@ -14,7 +14,7 @@ Public Class EzabatuErreserba
         If kont = 0 Then
             Dim id As New ArrayList()
             Try
-                conn = New MySqlConnection("server=192.168.13.33; database=" + wf1.bd + "; user id=root; port=3306")
+                conn = New MySqlConnection("server=" + wf1.server_ip + "; database=" + wf1.bd + "; user id=root; port=3306")
                 conn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar")
@@ -60,7 +60,7 @@ Public Class EzabatuErreserba
 
     Protected Sub ezabatu(sender As Object, e As EventArgs) Handles btnEzabatu.Click
         Try
-            conn = New MySqlConnection("server=192.168.13.33; database=" + wf1.bd + "; user id=root; port=3306")
+            conn = New MySqlConnection("server=" + wf1.server_ip + "; database=" + wf1.bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar")
@@ -80,7 +80,7 @@ Public Class EzabatuErreserba
 
     Protected Sub btnBete_Click(sender As Object, e As EventArgs) Handles btnBete.Click
         Try
-            conn = New MySqlConnection("server=192.168.13.33; database=" + wf1.bd + "; user id=root; port=3306")
+            conn = New MySqlConnection("server=" + wf1.server_ip + "; database=" + wf1.bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar")
@@ -115,7 +115,7 @@ Public Class EzabatuErreserba
         ds3 = New DataSet()
         da3.Fill(ds3)
 
-        TextBox2.Text = ds3.Tables(0).Rows(0)(1).ToString
+        TextBox2.Text = ds3.Tables(0).Rows(0)(0).ToString
         TextBox3.Text = ds2.Tables(0).Rows(0)(3).ToString
         TextBox4.Text = ds2.Tables(0).Rows(0)(4).ToString
     End Sub

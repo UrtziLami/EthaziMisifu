@@ -38,6 +38,9 @@
             <asp:DropDownList ID="DropDownList2" runat="server">
             </asp:DropDownList>
 
+            &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnBete" runat="server" Height="29px" Text="Bete" Width="62px" />
+
             <br />
             <br />
             <br />

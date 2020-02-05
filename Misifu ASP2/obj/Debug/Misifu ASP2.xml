@@ -838,6 +838,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:Misifu_ASP2.AldatuErreserba._btnBete">
+<summary>
+Control btnBete.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:Misifu_ASP2.AldatuErreserba._Label5">
 <summary>
 Control Label5.

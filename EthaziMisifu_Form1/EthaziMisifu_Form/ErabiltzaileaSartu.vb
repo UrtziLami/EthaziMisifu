@@ -6,10 +6,11 @@ Public Class ErabiltzaileaSartu
     End Sub
 
     Private Sub btnSartu_Click(sender As Object, e As EventArgs) Handles btnSartu.Click
-        datuakSartu()
-        Dim lei As New ErabiltzaileLeihoa
-        lei.Show()
-        Hide()
+        If datuakSartu() Then
+            Dim lei As New ErabiltzaileLeihoa
+            lei.Show()
+            Hide()
+        End If
     End Sub
 
     Private Sub btnAtzera_Click(sender As Object, e As EventArgs) Handles btnAtzera.Click
@@ -49,7 +50,8 @@ Public Class ErabiltzaileaSartu
         Return bal
     End Function
 
-    Private Sub datuakSartu()
+    Private Function datuakSartu() As Boolean
+        Dim bal As Boolean = False
         If balidatuHutza() Then
             Try
                 'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
@@ -64,8 +66,9 @@ Public Class ErabiltzaileaSartu
             Dim myCommand As New MySqlCommand("insert into erabiltzaileak (izenAbizena, pasahitza, erabIzena) values ('" & izAbEnc & "', '" & pshEnc & "', '" & eraIzEnc & "')", konn)
             myCommand.ExecuteNonQuery()
             konn.Close()
+            bal = True
         End If
-    End Sub
+    End Function
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked Then

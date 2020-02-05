@@ -22,7 +22,10 @@ import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
+import com.mapbox.mapboxsdk.camera.CameraPosition;
+import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
+import com.mapbox.mapboxsdk.geometry.LatLngBounds;
 import com.mapbox.mapboxsdk.location.LocationComponent;
 import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions;
 import com.mapbox.mapboxsdk.location.modes.CameraMode;
@@ -67,12 +70,40 @@ public class MapaOstatu extends AppCompatActivity implements
             ostatuArray = extras.getStringArrayList("KEY");
         }
 
-        /*MarkerOptions marker = new MarkerOptions()
-                .position(new LatLng(os.getLongitudea(), os.getLatitudea()))
-                .title(os.getIzena())
-                .snippet(os.getDeskribapena());
-        mapboxMap.addMarker(marker);
-        allMarker.add(marker);*/
+        mapView.getMapAsync(new OnMapReadyCallback() {
+                                @Override
+                                public void onMapReady(@NonNull MapboxMap mapboxMap) {
+                                    allMarker.clear();
+                                    MarkerOptions marker = new MarkerOptions()
+                                            .position(new LatLng(Double.parseDouble(ostatuArray.get(2)), Double.parseDouble(ostatuArray.get(3))))
+                                            .title(ostatuArray.get(0))
+                                            .snippet(ostatuArray.get(1));
+                                    mapboxMap.addMarker(marker);
+
+
+
+                                    /*LatLngBounds latLngBounds = new LatLngBounds.Builder()
+                                            .include(new LatLng(Double.parseDouble(ostatuArray.get(2)), Double.parseDouble(ostatuArray.get(3))))
+                                            .include(mapboxMap.getLocationComponent())
+                                            .build();
+
+                                    mapboxMap.animateCamera(CameraUpdateFactory.newLatLngBounds(latLngBounds, 10));*/
+
+                                    CameraPosition position = new CameraPosition.Builder()
+                                            .target(new LatLng(Double.parseDouble(ostatuArray.get(2)), Double.parseDouble(ostatuArray.get(3))))
+                                            .zoom(10)
+                                            .tilt(20)
+                                            .build();
+
+                                    mapboxMap.animateCamera(CameraUpdateFactory
+                                            .newCameraPosition(position), 7000);
+
+                                }
+                            });
+
+
+
+
 
     }
 
@@ -115,7 +146,6 @@ public class MapaOstatu extends AppCompatActivity implements
             permissionsManager.requestLocationPermissions(this);
         }
     }
-
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

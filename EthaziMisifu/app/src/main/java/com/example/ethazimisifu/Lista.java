@@ -37,6 +37,7 @@ public class Lista extends AppCompatActivity {
 
     private ArrayList<String> tareas = new ArrayList<String>();
     private ArrayList<Ostatuak> ostatuak = new ArrayList<Ostatuak>();
+    private ArrayList<Ostatuak> mapaOstatuak = new ArrayList<Ostatuak>();
     private ArrayAdapter adapter;
     private ListView lista;
     private AdapterView.AdapterContextMenuInfo info;
@@ -79,6 +80,8 @@ public class Lista extends AppCompatActivity {
                                                              ostatuArray.add(ostatuak.get(i).getId());
                                                              ostatuArray.add(ostatuak.get(i).getEmail());
                                                              ostatuArray.add(ostatuak.get(i).getEmail());
+                                                             ostatuArray.add(Double.toString(ostatuak.get(i).getLongitudea()));
+                                                             ostatuArray.add(Double.toString(ostatuak.get(i).getLatitudea()));
 
                                                          }
                                                      }
@@ -175,8 +178,19 @@ public class Lista extends AppCompatActivity {
         info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.mapa:
-                Intent intent = new Intent(this, Menu.class);
-                //intent.putExtra("KEY", tareas.get(info.position));
+                for(int i = 0; i < ostatuak.size(); i++){
+                    if(ostatuak.get(i).getIzena().equals(tareas.get(info.position))){
+
+                        ostatuArray.add(ostatuak.get(i).getIzena());
+                        ostatuArray.add(ostatuak.get(i).getDeskribapena());
+                        ostatuArray.add(Double.toString(ostatuak.get(i).getLongitudea()));
+                        ostatuArray.add(Double.toString(ostatuak.get(i).getLatitudea()));
+
+                    }
+                }
+
+                Intent intent = new Intent(getApplicationContext(), MapaOstatu.class);
+                intent.putExtra("KEY", ostatuArray);
                 startActivity(intent);
                 return true;
             case R.id.reserva:

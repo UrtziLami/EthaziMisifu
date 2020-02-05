@@ -17,6 +17,8 @@ public class Ostatuak implements Parcelable {
     private double longitudea;
     private String ostatuMota;
 
+
+
     protected Ostatuak(Parcel in) {
         id = in.readString();
         izena = in.readString();

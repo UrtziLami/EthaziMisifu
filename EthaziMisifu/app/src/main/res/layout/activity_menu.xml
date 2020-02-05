@@ -13,7 +13,7 @@
         android:layout_marginStart="84dp"
         android:layout_marginTop="424dp"
         android:onClick="abrirLista"
-        android:text="Abrir lista"
+        android:text="@string/abrir_lista"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,7 +24,7 @@
         android:layout_marginStart="84dp"
         android:layout_marginTop="300dp"
         android:onClick="abrirMapa"
-        android:text="Abrir mapa"
+        android:text="@string/abrir_mapa"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

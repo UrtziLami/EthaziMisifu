@@ -17,8 +17,4 @@
         android:id="@+id/campings"
         android:title="Mostrar campings"/>
 
-    <item
-        android:id="@+id/search"
-        android:title="Busqueda avanzada"/>
-
 </menu>

@@ -27,7 +27,7 @@
         android:layout_width="195dp"
         android:layout_height="46dp"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="472dp"
+        android:layout_marginTop="444dp"
         android:text="@string/iniciar_sesi_n"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +37,7 @@
         android:layout_width="195dp"
         android:layout_height="46dp"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="552dp"
+        android:layout_marginTop="524dp"
         android:text="@string/registrar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

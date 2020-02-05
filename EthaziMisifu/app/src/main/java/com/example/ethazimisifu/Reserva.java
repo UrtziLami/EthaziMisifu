@@ -103,7 +103,7 @@ public class Reserva extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
 
-                        txtDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                        txtDate.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
 
                     }
                 }, mYear, mMonth, mDay);
@@ -128,7 +128,7 @@ public class Reserva extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
 
-                        txtDate2.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                        txtDate2.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
 
                     }
                 }, mYear, mMonth, mDay);
@@ -198,6 +198,12 @@ public class Reserva extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "No se permiten campos vacios", Toast.LENGTH_LONG).show();
         }
 
+    }
+
+    public void volver(View v){
+        Intent intent = new Intent(this, Lista.class);
+        startActivity(intent);
+        finish();
     }
 
 }

@@ -32,6 +32,7 @@ import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +46,7 @@ public class LocationComponentActivity extends AppCompatActivity implements
     private MapboxMap mapboxMap;
     private MapView mapView;
     private ArrayList<Ostatuak> ostatuak = new ArrayList<Ostatuak>();
+    private ArrayList<String> ostatuArray = new ArrayList<String>();
     private ArrayList<MarkerOptions> allMarker = new ArrayList<MarkerOptions>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,16 +76,39 @@ public class LocationComponentActivity extends AppCompatActivity implements
                         Ostatuak ostatu;
                         double Latitude= point.getLatitude();
                         double longitude= point.getLongitude();
-                        for(Ostatuak os : ostatuak) {
+                        /*for(Ostatuak os : ostatuak) {
                             if(os.getLongitudea()==Latitude && os.getLatitudea()== longitude) {
                                 ostatu = os;
                                 Intent intent = new Intent();
                                 intent.setClass(getApplicationContext(), VerOstatu.class);
-                                intent.putExtra("KEY",ostatu);
+                                intent.putExtra("KEY", (Serializable) ostatu);
                                 startActivity(intent);
                                 break;
                             }
+                        }*/
+
+                        for(int i = 0; i < ostatuak.size(); i++){
+                            if(ostatuak.get(i).getLongitudea() == Latitude && ostatuak.get(i).getLatitudea()== longitude){
+
+                                ostatuArray.add(ostatuak.get(i).getIzena());
+                                ostatuArray.add(ostatuak.get(i).getOstatuMota());
+                                ostatuArray.add(ostatuak.get(i).getUdalerria() + ", " + ostatuak.get(i).getProbintzia());
+                                ostatuArray.add(ostatuak.get(i).getDeskribapena());
+                                ostatuArray.add(ostatuak.get(i).getTelefonoa());
+                                ostatuArray.add(ostatuak.get(i).getWeb());
+                                ostatuArray.add(ostatuak.get(i).getId());
+                                ostatuArray.add(ostatuak.get(i).getEmail());
+                                ostatuArray.add(ostatuak.get(i).getEmail());
+
+                                Intent intent = new Intent();
+                                intent.setClass(getApplicationContext(), VerOstatu.class);
+                                intent.putExtra("KEY", ostatuArray);
+                                startActivity(intent);
+                                break;
+
+                            }
                         }
+
                         return true;
                     }
                 });

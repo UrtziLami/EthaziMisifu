@@ -31,7 +31,6 @@ import com.android.volley.toolbox.Volley;
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Lista extends AppCompatActivity {
@@ -41,13 +40,9 @@ public class Lista extends AppCompatActivity {
     private ArrayAdapter adapter;
     private ListView lista;
     private AdapterView.AdapterContextMenuInfo info;
-    private View lastTouchedView;
-    private Button btnBuscar, btnAlbergue, btnCamping, btnRural, btnAgro;
     private EditText etBuscar;
-    private Spinner spProbintzia, spUdalerria, spMota;
-    private String mota, izena, kodea;
-    private TextView aukera;
     private ArrayList<String> ostatuArray = new ArrayList<String>();
+    private String izena, kodea;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,12 +50,6 @@ public class Lista extends AppCompatActivity {
         setContentView(R.layout.activity_lista);
         setTitle("Lista");
         etBuscar = (EditText) findViewById(R.id.etBuscar);
-        btnAlbergue = (Button) findViewById(R.id.btnMota1);
-        btnCamping = (Button) findViewById(R.id.btnMota2);
-        btnRural = (Button) findViewById(R.id.btnMota3);
-        btnAgro = (Button) findViewById(R.id.btnMota4);
-        aukera = (TextView) findViewById(R.id.txtAukeraMota);
-
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.13.33/misifu/selectOstuatuak.php", new com.android.volley.Response.Listener<String>() {
             @Override
@@ -96,6 +85,7 @@ public class Lista extends AppCompatActivity {
 
                                                      Intent intent = new Intent(getApplicationContext(), VerOstatu.class);
                                                      intent.putExtra("KEY", ostatuArray);
+                                                     intent.putExtra("KEY2", ostatuArray);
                                                      startActivity(intent);
                                                  }
                                              }
@@ -138,10 +128,10 @@ public class Lista extends AppCompatActivity {
                     tareas.add(String.valueOf(ostatuak.get(i).getIzena()));
                 }
             }
-                lista = (ListView)findViewById(R.id.lista);
-                adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_selectable_list_item, tareas);
-                lista.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
+            lista = (ListView)findViewById(R.id.lista);
+            adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_selectable_list_item, tareas);
+            lista.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
         } else if (id == R.id.rural) {
             tareas.clear();
             for(int i = 0; i < ostatuak.size(); i++){
@@ -175,8 +165,6 @@ public class Lista extends AppCompatActivity {
             adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_selectable_list_item, tareas);
             lista.setAdapter(adapter);
             adapter.notifyDataSetChanged();
-        } else if (id == R.id.search) {
-            dialogoContrasena();
         }
 
         return true;
@@ -238,81 +226,5 @@ public class Lista extends AppCompatActivity {
         lista.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
-
-    public void dialogoContrasena() {
-
-        spMota = (Spinner) findViewById(R.id.spMota);
-        spProbintzia = (Spinner) findViewById(R.id.spProbintzia);
-
-        LayoutInflater li = LayoutInflater.from(this);
-        View promptsView = li.inflate(R.layout.custom_dialogo, null);
-
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-
-        alertDialogBuilder.setView(promptsView);
-
-        alertDialogBuilder
-                .setCancelable(false)
-                .setPositiveButton("Filtrar",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-
-
-
-                            }
-                        })
-                .setNegativeButton("Cancel",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,int id) {
-                                dialog.cancel();
-                            }
-                        });
-
-        AlertDialog alertDialog = alertDialogBuilder.create();
-
-        alertDialog.show();
-
-        alertDialog.setTitle("Busqueda avanzada");
-
-    }
-
-    public void mota1(View view){
-
-        aukera.setText("Albergues");
-
-        mota = "Albergues";
-
-    }
-
-    public void mota2(View view){
-
-        aukera = (TextView) findViewById(R.id.txtAukeraMota);
-
-        aukera.setText("Campings");
-
-        mota = "Campings";
-
-    }
-
-    public void mota3(View view){
-
-        aukera = (TextView) findViewById(R.id.txtAukeraMota);
-
-        aukera.setText("Casas Rurales");
-
-        mota = "Casas Rurales";
-
-    }
-
-    public void mota4(View view){
-
-        aukera = (TextView) findViewById(R.id.txtAukeraMota);
-
-        aukera.setText("Agroturismos");
-
-        mota = "Agroturismos";
-
-    }
-
 
 }

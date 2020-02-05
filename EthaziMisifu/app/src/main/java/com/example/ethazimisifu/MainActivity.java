@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                Log.d("Kaixo",response);
                 ArrayList<Usuarios> columnas = Consultas.userSartu(response);
                 user = etUser.getText().toString();
                 pass = etPasswd.getText().toString();

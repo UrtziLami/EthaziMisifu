@@ -20,13 +20,23 @@ import java.util.Arrays;
 import java.util.Base64;
 
 import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
+
 
 public class Consultas {
 
-    private int id = 0;
-    private String user = "";
-    private static String pass = "12345";
+    private static final int pswdIterations = 10;
+    private static final int keySize = 128;
+    private static final String cypherInstance = "AES/CBC/PKCS5Padding";
+    private static final String secretKeyInstance = "PBKDF2WithHmacSHA1";
+    private static final String plainText = "sampleText";
+    private static final String AESSalt = "exampleSalt";
+    private static final String initializationVector = "8119745113154120";
 
 
 
@@ -41,9 +51,9 @@ public class Consultas {
                 for(int i=0;i<ja.length();i+=4) {
 
                     try {
-                        Usuarios ost = new Usuarios(ja.getInt(i), ja.getString(i + 1), decrypt(ja.getString(i + 2), pass), ja.getString(i + 3));
-                        Log.d("kaixo", decrypt(ja.getString(i + 2), pass));
+                        Usuarios ost = new Usuarios(ja.getInt(i), ja.getString(i + 1), decrypt(ja.getString(i + 2)), ja.getString(i + 3));
                         lista.add(ost);
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     } catch (Exception e) {
@@ -58,6 +68,28 @@ public class Consultas {
         }
 
         return lista;
+    }
+
+    public static String decrypt(String textToDecrypt) throws Exception {
+        byte[] encryted_bytes = android.util.Base64.decode(textToDecrypt, android.util.Base64.DEFAULT);
+        SecretKeySpec skeySpec = new SecretKeySpec(getRaw(plainText, AESSalt), "AES");
+        Cipher cipher = Cipher.getInstance(cypherInstance);
+        cipher.init(Cipher.DECRYPT_MODE, skeySpec, new IvParameterSpec(initializationVector.getBytes()));
+        byte[] decrypted = cipher.doFinal(encryted_bytes);
+        return new String(decrypted, "UTF-8");
+    }
+
+    private static byte[] getRaw(String plainText, String salt) {
+        try {
+            SecretKeyFactory factory = SecretKeyFactory.getInstance(secretKeyInstance);
+            KeySpec spec = new PBEKeySpec(plainText.toCharArray(), salt.getBytes(), pswdIterations, keySize);
+            return factory.generateSecret(spec).getEncoded();
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return new byte[0];
     }
 
     public static ArrayList<Ostatuak> ostatuLista(String response) {

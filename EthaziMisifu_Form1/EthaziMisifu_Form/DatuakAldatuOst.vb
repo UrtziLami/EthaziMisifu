@@ -101,7 +101,7 @@ Public Class DatuakAldatuOst
         If balidatuEmail(txtBEmail.Text) And balidatuHutza() Then
             Try
                 'konn = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")
+                konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306")
                 konn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
@@ -115,9 +115,10 @@ Public Class DatuakAldatuOst
         End If
     End Sub
     Private Sub kargatuOstMota()
-        cmBxOstatuMota.Items.Add("Camping")
-        cmBxOstatuMota.Items.Add("Aterpea")
-        cmBxOstatuMota.Items.Add("Landetxe")
+        cmBxOstatuMota.Items.Add("Albergues")
+        cmBxOstatuMota.Items.Add("Agroturismos")
+        cmBxOstatuMota.Items.Add("Campings")
+        cmBxOstatuMota.Items.Add("Casas Rurales")
     End Sub
     Private Sub DatuakAldatuOst_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RtxtBDesk.Text = deskb

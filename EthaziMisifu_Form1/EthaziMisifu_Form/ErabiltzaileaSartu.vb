@@ -53,7 +53,7 @@ Public Class ErabiltzaileaSartu
         If balidatuHutza() Then
             Try
                 'conexion = New MySqlConnection("server=fdb22.runhosting.com; database=2831276_12345678; user id=2831276_12345678; password=a@12345678; port=3306")
-                konn = New MySqlConnection("server=localhost; database=ethazi_misifu; user id=root; port=3306")
+                konn = New MySqlConnection("server=192.168.13.33; database=ethazi_misifu; user id=root; port=3306")
                 konn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar al servidor")
@@ -64,6 +64,14 @@ Public Class ErabiltzaileaSartu
             Dim myCommand As New MySqlCommand("insert into erabiltzaileak (izenAbizena, pasahitza, erabIzena) values ('" & izAbEnc & "', '" & pshEnc & "', '" & eraIzEnc & "')", konn)
             myCommand.ExecuteNonQuery()
             konn.Close()
+        End If
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked Then
+            txtBPas1.UseSystemPasswordChar = False
+        Else
+            txtBPas1.UseSystemPasswordChar = True
         End If
     End Sub
 End Class

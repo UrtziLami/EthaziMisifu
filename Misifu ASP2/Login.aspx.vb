@@ -29,7 +29,7 @@ Public Class Login
         Dim konprobatu As Boolean = True
         Dim izenak(10) As String
         Try
-            conn = New MySqlConnection("server=localhost; database=" + bd + "; user id=root; port=3306")
+            conn = New MySqlConnection("server=192.168.13.33; database=" + bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             konprobatu = False
@@ -97,6 +97,11 @@ Public Class Login
             Return decrypted
         Catch ex As Exception
         End Try
+    End Function
+
+    Public Function select_query(ByVal selectdatu As String, ByVal taula As String, ByVal where As String, ByVal likedatu As String) As String
+        Dim sql = "SELECT " + selectdatu + " FROM " + taula + " WHERE " + where + " like '" + likedatu + "'"
+        Return sql
     End Function
 
 End Class

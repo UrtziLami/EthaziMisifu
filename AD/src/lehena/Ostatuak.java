@@ -1,5 +1,5 @@
 package lehena;
-// Generated 24-ene-2020 9:43:04 by Hibernate Tools 5.4.7.Final
+// Generated 03-feb-2020 9:22:48 by Hibernate Tools 5.4.7.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -30,8 +30,7 @@ public class Ostatuak implements java.io.Serializable {
 	}
 
 	public Ostatuak(String sinadura, String izena, String deskribapena, String udalerri, String probintzia,
-			String email, String telefonoa, String web, Double longitudea, Double latitudea, String ostatuMota
-			) {
+			String email, String telefonoa, String web, Double longitudea, Double latitudea, String ostatuMota) {
 		this.sinadura = sinadura;
 		this.izena = izena;
 		this.deskribapena = deskribapena;
@@ -43,7 +42,6 @@ public class Ostatuak implements java.io.Serializable {
 		this.longitudea = longitudea;
 		this.latitudea = latitudea;
 		this.ostatuMota = ostatuMota;
-	
 	}
 
 	public String getSinadura() {
@@ -133,7 +131,5 @@ public class Ostatuak implements java.io.Serializable {
 	public void setOstatuMota(String ostatuMota) {
 		this.ostatuMota = ostatuMota;
 	}
-
-	
 
 }

@@ -12,7 +12,7 @@ Public Class WebForm5
             Dim erabiltzaileak As New ArrayList()
             Dim ostatuak As New ArrayList()
             Try
-                conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
+                conn = New MySqlConnection("server=192.168.13.33; database=" + wf1.bd + "; user id=root; port=3306")
                 conn.Open()
             Catch ex As MySqlException
                 MessageBox.Show("No se ha podido conectar")
@@ -44,12 +44,13 @@ Public Class WebForm5
     Protected Sub insertatu(sender As Object, e As EventArgs) Handles btnInsertatu.Click
         Dim konprobatu As Boolean = False
         Try
-            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
+            conn = New MySqlConnection("server=192.168.13.33; database=" + wf1.bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             MessageBox.Show("No se ha podido conectar")
         End Try
-        Dim sql = "SELECT idBezeroak FROM erabiltzaileak WHERE erabIzena like '" + wf1.erabiltzailea.ToString + "'"
+        Dim sql = wf1.select_query("idbezeroak", "erabiltzaileak", "erabIzena", wf1.erabiltzailea.ToString)
+        'Dim sql = "SELECT idBezeroak FROM erabiltzaileak WHERE erabIzena like '" + wf1.erabiltzailea.ToString + "'"
         Dim cm = New MySqlCommand()
         cm.CommandText = sql
         cm.CommandType = CommandType.Text

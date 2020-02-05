@@ -11,7 +11,7 @@ Public Class Erregistratu
     Protected Sub erregistratu(sender As Object, e As EventArgs) Handles btnErregistratu.Click
         Dim konprobatu As Boolean = True
         Try
-            conn = New MySqlConnection("server=localhost; database=" + wf1.bd + "; user id=root; port=3306")
+            conn = New MySqlConnection("server=192.168.13.33; database=" + wf1.bd + "; user id=root; port=3306")
             conn.Open()
         Catch ex As MySqlException
             konprobatu = False

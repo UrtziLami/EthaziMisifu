@@ -163,4 +163,7 @@ public class Ostatuak implements Parcelable {
         parcel.writeDouble(longitudea);
         parcel.writeString(ostatuMota);
     }
+
+
+
 }

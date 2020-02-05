@@ -3,6 +3,7 @@ package com.example.ethazimisifu;
 import androidx.appcompat.app.AppCompatActivity;
 import cz.msebera.android.httpclient.HttpEntity;
 import cz.msebera.android.httpclient.HttpResponse;
+import cz.msebera.android.httpclient.NameValuePair;
 import cz.msebera.android.httpclient.client.ClientProtocolException;
 import cz.msebera.android.httpclient.client.HttpClient;
 import cz.msebera.android.httpclient.client.entity.UrlEncodedFormEntity;
@@ -12,6 +13,7 @@ import cz.msebera.android.httpclient.message.BasicNameValuePair;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,9 +25,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 public class Reserva extends AppCompatActivity {
 
@@ -35,7 +42,7 @@ public class Reserva extends AppCompatActivity {
 
     private EditText txtDate, txtDate2;
 
-    private String izena, id;
+    private String izena, kodea;
 
     private Button btnReserva;
 
@@ -57,10 +64,13 @@ public class Reserva extends AppCompatActivity {
             izena = extras.getString("KEY");
         }
 
-        extras = getIntent().getExtras();
         if(extras !=null) {
-            id = extras.getString("KEY2");
+            kodea = extras.getString("KEY2");
         }
+
+        SharedPreferences sp1=this.getSharedPreferences("Login", MODE_PRIVATE);
+
+        final int id = sp1.getInt("id", 0);
 
         nombre.setText(izena);
         btnReserva = (Button) findViewById(R.id.btnReserva);
@@ -68,10 +78,10 @@ public class Reserva extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                InsertData(izena, 2, txtDate.getText().toString(), txtDate2.getText().toString());
+                InsertData(kodea, id, txtDate.getText().toString(), txtDate2.getText().toString());
 
                 Intent intent = new Intent();
-                intent.setClass(getApplicationContext(), MainActivity.class);
+                intent.setClass(getApplicationContext(), Menu.class);
                 startActivity(intent);
 
             }
@@ -93,7 +103,7 @@ public class Reserva extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
 
-                        txtDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                        txtDate.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
 
                     }
                 }, mYear, mMonth, mDay);
@@ -104,6 +114,7 @@ public class Reserva extends AppCompatActivity {
 
 
     public void abrirCalendar2(View v){
+
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
@@ -117,15 +128,17 @@ public class Reserva extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
 
-                        txtDate2.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                        txtDate2.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
 
                     }
                 }, mYear, mMonth, mDay);
+
         datePickerDialog.getDatePicker().setMinDate(Calendar.getInstance().getTime().getTime());
         datePickerDialog.show();
+
     }
 
-    public void InsertData(final String nombre, final int user, final String sartu, final String atera){
+    public void InsertData(final String kodea, final int id, final String sartu, final String atera){
         if (!sartu.equals("") && !atera.equals("")) {
             class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
                 @Override
@@ -133,11 +146,10 @@ public class Reserva extends AppCompatActivity {
 
                     List<BasicNameValuePair> nameValuePairs = new ArrayList<>();
 
-                    nameValuePairs.add(new BasicNameValuePair("idErreserba", null));
-
                     try {
-                        nameValuePairs.add(new BasicNameValuePair("Ostatuak_sinadura", nombre));
-                        nameValuePairs.add(new BasicNameValuePair("Erabiltzaileak_idBezeroak", Integer.toString(2)));
+                        nameValuePairs.add(new BasicNameValuePair("idErreserba", null));
+                        nameValuePairs.add(new BasicNameValuePair("Ostatuak_sinadura", kodea));
+                        nameValuePairs.add(new BasicNameValuePair("Erabiltzaileak_idBezeroak", String.valueOf(id)));
                         nameValuePairs.add(new BasicNameValuePair("sartuData", sartu));
                         nameValuePairs.add(new BasicNameValuePair("ateraData", atera));
 
@@ -167,6 +179,7 @@ public class Reserva extends AppCompatActivity {
 
 
 
+
                 @Override
                 protected void onPostExecute(String result) {
 
@@ -179,7 +192,7 @@ public class Reserva extends AppCompatActivity {
 
             SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
 
-            sendPostReqAsyncTask.execute(null, nombre, Integer.toString(2), sartu, atera);
+            sendPostReqAsyncTask.execute(null, kodea, String.valueOf(id), sartu, atera);
 
         } else {
             Toast.makeText(getApplicationContext(), "No se permiten campos vacios", Toast.LENGTH_LONG).show();
@@ -187,5 +200,10 @@ public class Reserva extends AppCompatActivity {
 
     }
 
+    public void volver(View v){
+        Intent intent = new Intent(this, Lista.class);
+        startActivity(intent);
+        finish();
+    }
 
 }

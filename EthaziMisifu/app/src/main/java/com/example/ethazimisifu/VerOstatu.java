@@ -61,8 +61,6 @@ public class VerOstatu extends AppCompatActivity {
 
     public void reserva(View v){
 
-        Toast.makeText(getApplicationContext(), izena, Toast.LENGTH_SHORT).show();
-
         Intent intent = new Intent(this, Reserva.class);
         intent.putExtra("KEY", izena);
         intent.putExtra("KEY2", ostatuArray.get(6));

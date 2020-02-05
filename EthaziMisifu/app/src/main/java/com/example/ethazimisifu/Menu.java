@@ -18,27 +18,6 @@ public class Menu extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(android.view.Menu menu) {
-        getMenuInflater().inflate(R.menu.actionbar, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-
-        if(id == R.id.spanish){
-
-        } else if (id == R.id.basque) {
-
-        } else if (id == R.id.english) {
-
-        }
-
-        return true;
-    }
-
     public void abrirMapa(View view){
         Intent intent = new Intent();
         intent.setClass(getApplicationContext(), LocationComponentActivity.class);

@@ -83,7 +83,6 @@ C:\Users\Admin1\git\EthaziMisifu\EthaziMisifu_Form1\EthaziMisifu_Form\bin\Releas
 C:\Users\Admin1\git\EthaziMisifu\EthaziMisifu_Form1\EthaziMisifu_Form\bin\Release\BouncyCastle.Crypto.dll
 C:\Users\Admin1\git\EthaziMisifu\EthaziMisifu_Form1\EthaziMisifu_Form\bin\Release\Renci.SshNet.dll
 C:\Users\Admin1\git\EthaziMisifu\EthaziMisifu_Form1\EthaziMisifu_Form\bin\Release\MySql.Data.xml
-C:\Users\Admin1\git\EthaziMisifu\EthaziMisifu_Form1\EthaziMisifu_Form\obj\Release\EthaziMisifu_Form.vbprojAssemblyReference.cache
 C:\Users\Admin1\git\EthaziMisifu\EthaziMisifu_Form1\EthaziMisifu_Form\obj\Release\EthaziMisifu_Form.DatuakAldatuErab.resources
 C:\Users\Admin1\git\EthaziMisifu\EthaziMisifu_Form1\EthaziMisifu_Form\obj\Release\EthaziMisifu_Form.DatuakAldatuErre.resources
 C:\Users\Admin1\git\EthaziMisifu\EthaziMisifu_Form1\EthaziMisifu_Form\obj\Release\EthaziMisifu_Form.DatuakAldatuOst.resources

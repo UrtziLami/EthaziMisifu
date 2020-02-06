@@ -12,7 +12,6 @@ Public Class Taulak
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim konprobatu As Boolean = True
-        Dim i As Integer = 0
 
         Try
             conn = New MySqlConnection("server=192.168.13.33; database=" + wf1.bd + "; user id=root; port=3306")
@@ -95,6 +94,13 @@ Public Class Taulak
         DropDownList1.Visible = True
         TextBoxDatua.Visible = True
         btnBilatu.Visible = True
+        LabelProbintzia.Visible = False
+        DropDownList2.Visible = False
+        CheckBox1.Visible = False
+        CheckBox2.Visible = False
+        CheckBox3.Visible = False
+        CheckBox4.Visible = False
+        btnBilatu2.Visible = False
         conn.Close()
     End Sub
 
@@ -156,12 +162,21 @@ Public Class Taulak
         DropDownList1.Visible = True
         TextBoxDatua.Visible = True
         btnBilatu.Visible = True
+        LabelProbintzia.Visible = False
+        DropDownList2.Visible = False
+        CheckBox1.Visible = False
+        CheckBox2.Visible = False
+        CheckBox3.Visible = False
+        CheckBox4.Visible = False
+        btnBilatu2.Visible = False
         conn.Close()
     End Sub
 
     Protected Sub btnOstatuak_Click(sender As Object, e As EventArgs) Handles btnOstatuak.Click
         Dim table As New DataTable
         DropDownList1.Items.Clear()
+        DropDownList2.Items.Clear()
+        Dim probintziak As New ArrayList()
         taula = "ostatuak"
 
         Dim sql = "SELECT * FROM ostatuak"
@@ -186,6 +201,12 @@ Public Class Taulak
             Next
         Next
 
+        DropDownList2.Items.Insert(0, "Bizkaia")
+        DropDownList2.Items.Insert(1, "Gipuzkoa")
+        DropDownList2.Items.Insert(2, "Araba/Álava")
+
+
+
         GridView1.DataSource = table
         GridView1.DataBind()
         LabelTaula.Text = "OSTATUAK"
@@ -198,6 +219,13 @@ Public Class Taulak
         DropDownList1.Visible = True
         TextBoxDatua.Visible = True
         btnBilatu.Visible = True
+        LabelProbintzia.Visible = True
+        DropDownList2.Visible = True
+        CheckBox1.Visible = True
+        CheckBox2.Visible = True
+        CheckBox3.Visible = True
+        CheckBox4.Visible = True
+        btnBilatu2.Visible = True
         conn.Close()
     End Sub
 
@@ -336,5 +364,108 @@ Public Class Taulak
         taula = ""
         Response.Redirect("Login.aspx")
     End Sub
+
+    Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles btnBilatu2.Click
+        Dim table As New DataTable
+        Dim probintzia As String = DropDownList2.Text
+        Dim sql As String = "SELECT * FROM ostatuak WHERE "
+
+        Try
+            If probintzia IsNot "" Then
+                sql = sql + "probintzia = '" + probintzia + "'"
+
+            End If
+
+            If CheckBox1.Checked Then
+                If probintzia IsNot "" Then
+                    sql = sql + " AND ostatuMota IN ('Albergues'"
+                Else
+                    sql = sql + "ostatuMota IN ('Albergues'"
+                End If
+
+
+            End If
+            If CheckBox2.Checked Then
+                If CheckBox1.Checked Or CheckBox3.Checked Or CheckBox4.Checked Then
+                    If CheckBox1.Checked Then
+                        sql = sql + ", 'Agroturismos'"
+                    Else
+                        sql = sql + " AND ostatuMota IN ('Agroturismos'"
+                    End If
+
+                Else
+                    If probintzia IsNot "" Then
+                        sql = sql + " AND ostatuMota IN ('Agroturismos'"
+                    Else
+                        sql = sql + " ostatuMota IN ('Agroturismos'"
+                    End If
+
+
+                End If
+
+            End If
+            If CheckBox3.Checked Then
+                If CheckBox2.Checked Or CheckBox1.Checked Or CheckBox4.Checked Then
+                    If CheckBox2.Checked Then
+                        sql = sql + ", 'Campings'"
+                    Else
+                        sql = sql + " AND ostatuMota IN ('Campings'"
+                    End If
+
+                Else
+                    If probintzia IsNot "" Then
+                        sql = sql + " AND ostatuMota IN ('Campings'"
+                    Else
+                        sql = sql + " ostatuMota IN ('Campings'"
+                    End If
+
+                End If
+            End If
+
+            If CheckBox4.Checked Then
+                If CheckBox3.Checked Or CheckBox2.Checked Or CheckBox1.Checked Then
+                    If CheckBox3.Checked Then
+                        sql = sql + ", 'Casas Rurales'"
+                    Else
+                        sql = sql + " AND ostatuMota IN ('Casas Rurales'"
+                    End If
+                Else
+                    If probintzia IsNot "" Then
+                        sql = sql + " AND ostatuMota IN ('Casas Rurales'"
+                    Else
+                        sql = sql + " ostatuMota IN ('Casas Rurales'"
+                    End If
+
+                End If
+            End If
+            sql = sql + ")"
+
+            Dim cm = New MySqlCommand()
+            cm.CommandText = sql
+            cm.CommandType = CommandType.Text
+            cm.Connection = conn
+            Dim da = New MySqlDataAdapter(cm)
+
+            ds = New DataSet()
+            da.Fill(ds)
+
+            For i = 0 To ds.Tables(0).Columns.Count - 1
+                table.Columns.Add(ds.Tables(0).Columns(i).ColumnName)
+            Next
+
+            For i = 0 To ds.Tables(0).Rows.Count - 1
+                table.Rows.Add()
+                For j = 0 To ds.Tables(0).Columns.Count - 1
+                    table.Rows(i)(j) = ds.Tables(0).Rows(i)(j).ToString()
+                Next
+            Next
+
+            GridView1.DataSource = table
+            GridView1.DataBind()
+        Catch
+        End Try
+
+    End Sub
+
 
 End Class

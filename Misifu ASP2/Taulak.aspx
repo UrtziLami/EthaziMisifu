@@ -49,8 +49,18 @@
             <br />
             <br />
             <br />
+            <asp:Label ID="LabelProbintzia" runat="server" Font-Size="20pt" Text="Probintzia:" Visible="False"></asp:Label>
+&nbsp;
+            <asp:DropDownList ID="DropDownList2" runat="server" Visible="False">
+            </asp:DropDownList>
+&nbsp;&nbsp;&nbsp;
+            <asp:CheckBox ID="CheckBox1" runat="server" Font-Size="16pt" Text="Albergues" Visible="False" />
+            <asp:CheckBox ID="CheckBox2" runat="server" Font-Size="16pt" Text="Agroturismos" Visible="False" />
+            <asp:CheckBox ID="CheckBox3" runat="server" Font-Size="16pt" Text="Campings" Visible="False" />
+            <asp:CheckBox ID="CheckBox4" runat="server" Font-Size="16pt" Text="Casas Rurales" Visible="False" />
             <br />
             <br />
+            <asp:Button ID="btnBilatu2" runat="server" Height="45px" Text="Bilatu" Visible="False" Width="91px" />
             <br />
             <br />
             &nbsp;<asp:Button ID="btnInsertatu" runat="server" Height="43px" Text="Insertatu" Visible="False" Width="91px" />

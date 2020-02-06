@@ -73,31 +73,12 @@ public class MapaOstatu extends AppCompatActivity implements
         mapView.getMapAsync(new OnMapReadyCallback() {
                                 @Override
                                 public void onMapReady(@NonNull MapboxMap mapboxMap) {
-                                    allMarker.clear();
+                                    mapboxMap.removeAnnotations();
                                     MarkerOptions marker = new MarkerOptions()
                                             .position(new LatLng(Double.parseDouble(ostatuArray.get(2)), Double.parseDouble(ostatuArray.get(3))))
                                             .title(ostatuArray.get(0))
                                             .snippet(ostatuArray.get(1));
                                     mapboxMap.addMarker(marker);
-
-
-
-                                    /*LatLngBounds latLngBounds = new LatLngBounds.Builder()
-                                            .include(new LatLng(Double.parseDouble(ostatuArray.get(2)), Double.parseDouble(ostatuArray.get(3))))
-                                            .include(mapboxMap.getLocationComponent())
-                                            .build();
-
-                                    mapboxMap.animateCamera(CameraUpdateFactory.newLatLngBounds(latLngBounds, 10));*/
-
-                                    CameraPosition position = new CameraPosition.Builder()
-                                            .target(new LatLng(Double.parseDouble(ostatuArray.get(2)), Double.parseDouble(ostatuArray.get(3))))
-                                            .zoom(10)
-                                            .tilt(20)
-                                            .build();
-
-                                    mapboxMap.animateCamera(CameraUpdateFactory
-                                            .newCameraPosition(position), 7000);
-
                                 }
                             });
 
@@ -117,8 +98,26 @@ public class MapaOstatu extends AppCompatActivity implements
                     @Override
                     public void onStyleLoaded(@NonNull Style style) {
                         enableLocationComponent(style);
+                        CameraPosition position = new CameraPosition.Builder()
+                                .target(new LatLng(Double.parseDouble(ostatuArray.get(2)), Double.parseDouble(ostatuArray.get(3))))
+                                .zoom(10)
+                                .tilt(20)
+                                .build();
+
+                        mapboxMap.animateCamera(CameraUpdateFactory.newCameraPosition(position), 1000);
+
+                        LatLngBounds latLngBounds = new LatLngBounds.Builder()
+                                            .include(new LatLng(Double.parseDouble(ostatuArray.get(2)), Double.parseDouble(ostatuArray.get(3))))
+                                            .include(new LatLng(43.257, -2.92344))
+                                            .build();
+
+                        mapboxMap.animateCamera(CameraUpdateFactory.newLatLngBounds(latLngBounds, 10));
+
+
                     }
                 });
+
+
     }
 
     @SuppressWarnings( {"MissingPermission"})

@@ -99,9 +99,7 @@
   <ItemGroup>
     <Content Include="EzabatuErabiltzailea.aspx" />
     <Content Include="EzabatuErreserba.aspx" />
-    <Content Include="EzabatuOstatua.aspx" />
     <Content Include="AldatuErabiltzailea.aspx" />
-    <Content Include="InsertatuErabiltzailea.aspx" />
     <Content Include="Free-Background.jpg" />
     <Content Include="Erregistratu.aspx" />
     <Content Include="AldatuErreserba.aspx" />
@@ -109,9 +107,7 @@
     <Content Include="Web.config" />
     <Content Include="Login.aspx" />
     <Content Include="Taulak.aspx" />
-    <Content Include="InsertatuOstatua.aspx" />
     <Content Include="InsertatuErreserba.aspx" />
-    <Content Include="AldatuOstatua.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EzabatuErabiltzailea.aspx.designer.vb">
@@ -128,25 +124,11 @@
       <DependentUpon>EzabatuErreserba.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EzabatuOstatua.aspx.designer.vb">
-      <DependentUpon>EzabatuOstatua.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EzabatuOstatua.aspx.vb">
-      <DependentUpon>EzabatuOstatua.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="AldatuErabiltzailea.aspx.designer.vb">
       <DependentUpon>AldatuErabiltzailea.aspx</DependentUpon>
     </Compile>
     <Compile Include="AldatuErabiltzailea.aspx.vb">
       <DependentUpon>AldatuErabiltzailea.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="InsertatuErabiltzailea.aspx.designer.vb">
-      <DependentUpon>InsertatuErabiltzailea.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="InsertatuErabiltzailea.aspx.vb">
-      <DependentUpon>InsertatuErabiltzailea.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Erregistratu.aspx.designer.vb">
@@ -196,25 +178,11 @@
       <DependentUpon>Taulak.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="InsertatuOstatua.aspx.designer.vb">
-      <DependentUpon>InsertatuOstatua.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="InsertatuOstatua.aspx.vb">
-      <DependentUpon>InsertatuOstatua.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="InsertatuErreserba.aspx.designer.vb">
       <DependentUpon>InsertatuErreserba.aspx</DependentUpon>
     </Compile>
     <Compile Include="InsertatuErreserba.aspx.vb">
       <DependentUpon>InsertatuErreserba.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="AldatuOstatua.aspx.designer.vb">
-      <DependentUpon>AldatuOstatua.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AldatuOstatua.aspx.vb">
-      <DependentUpon>AldatuOstatua.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
